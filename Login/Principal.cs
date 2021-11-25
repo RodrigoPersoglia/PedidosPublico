@@ -265,5 +265,12 @@ namespace Login
 			gestionUsuario.MdiParent = this;
 			gestionUsuario.Show();
 		}
+
+        private void reporteProducciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+			ReporteProduccion reporte = new ReporteProduccion();
+			reporte.MdiParent = this;
+			reporte.Show();
+		}
     }
 }

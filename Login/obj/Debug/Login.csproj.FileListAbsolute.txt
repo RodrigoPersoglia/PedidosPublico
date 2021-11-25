@@ -100,3 +100,4 @@ C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\es-AR\Pedidos.resources.dll
 C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.csproj.CopyComplete
 C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.User.resources
 C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.NombreServidor.resources
+C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.ReporteProduccion.resources

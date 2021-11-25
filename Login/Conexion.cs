@@ -25,18 +25,12 @@ namespace Login
 			try
             {
 				StreamReader sr = new StreamReader("NombreServidor.txt");
-				//Read the first line of text
 				servidor = sr.ReadLine();
 			}
 			catch (Exception) { }
-
-			//string LocalHost = Dns.GetHostEntry(Dns.GetHostName()).AddressList.Where(ip => ip.AddressFamily.ToString().ToUpper().Equals("INTERNETWORK")).FirstOrDefault().ToString();
-
 			MySqlConnection Conexion = new MySqlConnection("Server="+servidor+";database=pedidos;Uid=cuaquierUsuario;pwd=;");
 			
 			return Conexion;
-
-
 		}
 
 		
@@ -883,6 +877,33 @@ namespace Login
 			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); }
 			finally { conectar.Close(); }
 
+		}
+
+
+		public static DataTable ObtenerReporteProdu( DateTime fechaIN , DateTime fechaFin)
+		{
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			DataTable dt = new DataTable();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand("ObtenerKGrango", conectar);
+				comand.CommandType = CommandType.StoredProcedure;
+				comand.Parameters.AddWithValue("@p1", fechaIN);
+				comand.Parameters.AddWithValue("@p2", fechaFin);
+				MySqlDataAdapter adp = new MySqlDataAdapter(comand);
+				adp.Fill(dt);
+				if (dt.Rows.Count > 0)
+				{
+
+					return dt;
+				}
+				else { MessageBox.Show("No hay registros en el intervalo seleccionado"); return null; }
+
+			}
+
+			catch (Exception ex) { MessageBox.Show("Error al buscar " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); return null; }
+			finally { conectar.Close(); }
 		}
 	}
 }

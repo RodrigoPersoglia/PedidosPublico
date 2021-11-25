@@ -67,8 +67,9 @@ namespace Login
             this.agregarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteProducciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -182,7 +183,8 @@ namespace Login
             this.ListadoPedidoMenu,
             this.detallaDeFabricaciónMenu,
             this.proyecciónToolStripMenuItem,
-            this.enProduccionToolStripMenuItem});
+            this.enProduccionToolStripMenuItem,
+            this.reporteProducciónToolStripMenuItem});
             this.PedidosToolStripMenuItem.Name = "PedidosToolStripMenuItem";
             resources.ApplyResources(this.PedidosToolStripMenuItem, "PedidosToolStripMenuItem");
             // 
@@ -260,17 +262,23 @@ namespace Login
             resources.ApplyResources(this.salirToolStripMenuItem, "salirToolStripMenuItem");
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
+            // usuarioToolStripMenuItem
+            // 
+            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            resources.ApplyResources(this.usuarioToolStripMenuItem, "usuarioToolStripMenuItem");
+            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
+            // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             resources.ApplyResources(this.ayudaToolStripMenuItem, "ayudaToolStripMenuItem");
             this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
             // 
-            // usuarioToolStripMenuItem
+            // reporteProducciónToolStripMenuItem
             // 
-            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            resources.ApplyResources(this.usuarioToolStripMenuItem, "usuarioToolStripMenuItem");
-            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
+            this.reporteProducciónToolStripMenuItem.Name = "reporteProducciónToolStripMenuItem";
+            resources.ApplyResources(this.reporteProducciónToolStripMenuItem, "reporteProducciónToolStripMenuItem");
+            this.reporteProducciónToolStripMenuItem.Click += new System.EventHandler(this.reporteProducciónToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -305,5 +313,6 @@ namespace Login
         private System.Windows.Forms.ToolStripMenuItem proyecciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem enProduccionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteProducciónToolStripMenuItem;
     }
 }

@@ -222,6 +222,12 @@
       <DependentUpon>Proyeccion.cs</DependentUpon>
     </Compile>
     <Compile Include="rendimiento.cs" />
+    <Compile Include="ReporteProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteProduccion.designer.cs">
+      <DependentUpon>ReporteProduccion.cs</DependentUpon>
+    </Compile>
     <Compile Include="SeleccionArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proyeccion.resx">
       <DependentUpon>Proyeccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteProduccion.resx">
+      <DependentUpon>ReporteProduccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SeleccionArticulo.resx">
       <DependentUpon>SeleccionArticulo.cs</DependentUpon>
