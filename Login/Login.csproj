@@ -391,6 +391,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\reporte.png" />
     <None Include="Resources\wsp.png" />
     <None Include="Resources\usuario.png" />
     <None Include="Resources\ubicacion.png" />

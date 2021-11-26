@@ -122,7 +122,7 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ciudadesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 22</value>
+    <value>184, 26</value>
   </data>
   <data name="ciudadesToolStripMenuItem.Text" xml:space="preserve">
     <value>Localidades</value>
@@ -138,7 +138,7 @@
     <value>Ctrl+A</value>
   </data>
   <data name="AgregarArticuloMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>184, 26</value>
   </data>
   <data name="AgregarArticuloMenu.Text" xml:space="preserve">
     <value>Agregar</value>
@@ -147,7 +147,7 @@
     <value>Ctrl+E</value>
   </data>
   <data name="EliminarArticuloMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>184, 26</value>
   </data>
   <data name="EliminarArticuloMenu.Text" xml:space="preserve">
     <value>Eliminar</value>
@@ -156,7 +156,7 @@
     <value>Ctrl+M</value>
   </data>
   <data name="ModifArt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>184, 26</value>
   </data>
   <data name="ModifArt.Text" xml:space="preserve">
     <value>Modificar</value>
@@ -165,7 +165,7 @@
     <value>Ctrl+L</value>
   </data>
   <data name="verListadoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>184, 26</value>
   </data>
   <data name="verListadoToolStripMenuItem.Text" xml:space="preserve">
     <value>Ver Listado</value>
@@ -180,7 +180,7 @@
     <value>Alt+A</value>
   </data>
   <data name="agregarToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 22</value>
+    <value>184, 26</value>
   </data>
   <data name="agregarToolStripMenuItem1.Text" xml:space="preserve">
     <value>Agregar</value>
@@ -189,7 +189,7 @@
     <value>Alt+M</value>
   </data>
   <data name="modificarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 22</value>
+    <value>184, 26</value>
   </data>
   <data name="modificarToolStripMenuItem.Text" xml:space="preserve">
     <value>Modificar</value>
@@ -198,7 +198,7 @@
     <value>Alt+L</value>
   </data>
   <data name="verListadoToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 22</value>
+    <value>184, 26</value>
   </data>
   <data name="verListadoToolStripMenuItem1.Text" xml:space="preserve">
     <value>Ver Listado</value>
@@ -213,7 +213,7 @@
     <value>Ctrl+Alt+A</value>
   </data>
   <data name="AgregarPedidoMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 26</value>
+    <value>240, 26</value>
   </data>
   <data name="AgregarPedidoMenu.Text" xml:space="preserve">
     <value>Agregar</value>
@@ -222,7 +222,7 @@
     <value>Ctrl+Alt+M</value>
   </data>
   <data name="ModificarPedidoMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 26</value>
+    <value>240, 26</value>
   </data>
   <data name="ModificarPedidoMenu.Text" xml:space="preserve">
     <value>Modificar</value>
@@ -231,7 +231,7 @@
     <value>Ctrl+Alt+L</value>
   </data>
   <data name="ListadoPedidoMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 26</value>
+    <value>240, 26</value>
   </data>
   <data name="ListadoPedidoMenu.Text" xml:space="preserve">
     <value>Ver Listado</value>
@@ -240,28 +240,37 @@
     <value>Ctrl+D</value>
   </data>
   <data name="detallaDeFabricaciónMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 26</value>
+    <value>240, 26</value>
   </data>
   <data name="detallaDeFabricaciónMenu.Text" xml:space="preserve">
     <value>Detalle de Fabric.</value>
   </data>
+  <data name="proyecciónToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+P</value>
+  </data>
   <data name="proyecciónToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 26</value>
+    <value>240, 26</value>
   </data>
   <data name="proyecciónToolStripMenuItem.Text" xml:space="preserve">
     <value>Proyección</value>
   </data>
+  <data name="enProduccionToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Alt+P</value>
+  </data>
   <data name="enProduccionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 26</value>
+    <value>240, 26</value>
   </data>
   <data name="enProduccionToolStripMenuItem.Text" xml:space="preserve">
     <value>En Produccion</value>
   </data>
+  <data name="reporteProducciónToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+R</value>
+  </data>
   <data name="reporteProducciónToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 26</value>
+    <value>240, 26</value>
   </data>
   <data name="reporteProducciónToolStripMenuItem.Text" xml:space="preserve">
-    <value>Reporte Producción</value>
+    <value>Reporte de Producción</value>
   </data>
   <data name="PedidosToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+D</value>
@@ -276,7 +285,7 @@
     <value>Ctrl+F1</value>
   </data>
   <data name="agregarToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>184, 26</value>
   </data>
   <data name="agregarToolStripMenuItem2.Text" xml:space="preserve">
     <value>Agregar</value>
@@ -285,7 +294,7 @@
     <value>Ctrl+F2</value>
   </data>
   <data name="modificarToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>184, 26</value>
   </data>
   <data name="modificarToolStripMenuItem1.Text" xml:space="preserve">
     <value>Modificar</value>
@@ -4959,6 +4968,12 @@
   <data name="&gt;&gt;enProduccionToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;reporteProducciónToolStripMenuItem.Name" xml:space="preserve">
+    <value>reporteProducciónToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;reporteProducciónToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;matricesToolStripMenuItem.Name" xml:space="preserve">
     <value>matricesToolStripMenuItem</value>
   </data>
@@ -4993,12 +5008,6 @@
     <value>ayudaToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;ayudaToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;reporteProducciónToolStripMenuItem.Name" xml:space="preserve">
-    <value>reporteProducciónToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;reporteProducciónToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

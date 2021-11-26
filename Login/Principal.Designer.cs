@@ -63,13 +63,13 @@ namespace Login
             this.detallaDeFabricaciónMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.proyecciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enProduccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteProducciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matricesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteProducciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -231,6 +231,13 @@ namespace Login
             resources.ApplyResources(this.enProduccionToolStripMenuItem, "enProduccionToolStripMenuItem");
             this.enProduccionToolStripMenuItem.Click += new System.EventHandler(this.enProduccionToolStripMenuItem_Click);
             // 
+            // reporteProducciónToolStripMenuItem
+            // 
+            this.reporteProducciónToolStripMenuItem.Image = global::Login.Properties.Resources.reporte;
+            this.reporteProducciónToolStripMenuItem.Name = "reporteProducciónToolStripMenuItem";
+            resources.ApplyResources(this.reporteProducciónToolStripMenuItem, "reporteProducciónToolStripMenuItem");
+            this.reporteProducciónToolStripMenuItem.Click += new System.EventHandler(this.reporteProducciónToolStripMenuItem_Click);
+            // 
             // matricesToolStripMenuItem
             // 
             this.matricesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -273,12 +280,6 @@ namespace Login
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             resources.ApplyResources(this.ayudaToolStripMenuItem, "ayudaToolStripMenuItem");
             this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
-            // 
-            // reporteProducciónToolStripMenuItem
-            // 
-            this.reporteProducciónToolStripMenuItem.Name = "reporteProducciónToolStripMenuItem";
-            resources.ApplyResources(this.reporteProducciónToolStripMenuItem, "reporteProducciónToolStripMenuItem");
-            this.reporteProducciónToolStripMenuItem.Click += new System.EventHandler(this.reporteProducciónToolStripMenuItem_Click);
             // 
             // Principal
             // 

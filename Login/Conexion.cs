@@ -905,5 +905,34 @@ namespace Login
 			catch (Exception ex) { MessageBox.Show("Error al buscar " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); return null; }
 			finally { conectar.Close(); }
 		}
+
+		public static DataTable ObtenerReporteDiario(DateTime fecha)
+		{
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			DataTable dt = new DataTable();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand("ObtenerKgDia", conectar);
+				comand.CommandType = CommandType.StoredProcedure;
+				comand.Parameters.AddWithValue("@p1", fecha);
+				MySqlDataAdapter adp = new MySqlDataAdapter(comand);
+				adp.Fill(dt);
+				if (dt.Rows.Count > 0)
+				{
+
+					return dt;
+				}
+				else { MessageBox.Show("No hay registros en la fecha seleccionada"); return null; }
+
+			}
+
+			catch (Exception ex) { MessageBox.Show("Error al buscar " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); return null; }
+			finally { conectar.Close(); }
+		}
+
+
 	}
+
+
 }

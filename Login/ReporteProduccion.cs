@@ -40,11 +40,10 @@ namespace Login
 					foreach (DataRow x in dt2.Rows)
 					{
 						int n = Cuadro.Rows.Add();
-						Cuadro.Rows[n].Cells[0].Value = true;
+						Cuadro.Rows[n].Cells[0].Value = false;
 						Cuadro.Rows[n].Cells[1].Value = ((DateTime)x[0]).ToString("dd-MM-yyyy");
 						Cuadro.Rows[n].Cells[2].Value = ((decimal)x[1]).ToString();
-					Cuadro.Rows[n].Cells[3].Value = "Ver Detalle";
-					kgAcumulados += decimal.ToDouble((decimal)x[1]);
+						kgAcumulados += decimal.ToDouble((decimal)x[1]);
 
 
 				}
@@ -67,10 +66,11 @@ namespace Login
 		// Devuelve el indice de la celda seleccionada
 		int n;
 		void Selecccioncelda(object sender, DataGridViewCellEventArgs e)
-		{    //n = e.RowIndex;
-			//string numeroPedido = Cuadro.Rows[n].Cells[1].Value.ToString();
-			//MessageBox.Show(n.ToString());
+		{    
+
+
 		}
+
 
 		private void Cuadro_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
@@ -79,8 +79,49 @@ namespace Login
 		}
 		private void Cuadro_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
+			n = e.RowIndex;
+			if ((bool)Cuadro.Rows[n].Cells[0].Value == true)
+			{
+				Cuadro.Rows[n].Cells[0].Value = false;
+				Cuadro.Rows[n].DefaultCellStyle.BackColor = Color.White;
+				Cuadro2.Rows.Clear();
+			}
+			else
+			{
+				try
+				{
+					for (int fila = 0; fila < Cuadro.Rows.Count; fila++)
+					{
+						Cuadro.Rows[fila].Cells[0].Value = false;
+						Cuadro.Rows[fila].DefaultCellStyle.BackColor = Color.White;
 
-        }
+					}
+					Cuadro.Rows[n].DefaultCellStyle.BackColor = Color.Yellow;
+					Cuadro.Rows[n].Cells[0].Value = true;
+					//string seleccion = (string)Cuadro.Rows[n].Cells[1].Value;
+					DateTime fecha = new DateTime(int.Parse(((string)Cuadro.Rows[n].Cells[1].Value).Substring(6, 4)), int.Parse(((string)Cuadro.Rows[n].Cells[1].Value).Substring(3, 2)), int.Parse(((string)Cuadro.Rows[n].Cells[1].Value).Substring(0, 2)));
+					
+					DataTable dt2 = Conexion.ObtenerReporteDiario(fecha);
+					Cuadro2.Rows.Clear();
+
+					if (dt2 != null)
+					{
+
+						foreach (DataRow x in dt2.Rows)
+						{
+							int n = Cuadro2.Rows.Add();
+							Cuadro2.Rows[n].Cells[0].Value = (string)x[0];
+							Cuadro2.Rows[n].Cells[1].Value = (string)x[1];
+							Cuadro2.Rows[n].Cells[2].Value = ((decimal)x[2]).ToString();
+							Cuadro2.Rows[n].Cells[3].Value = (string)x[3];
+
+						}
+					}
+
+					}
+				catch (Exception) { }
+			}
+		}
 
 
 		private void Cancelar_Click(object sender, EventArgs e)
@@ -90,8 +131,7 @@ namespace Login
 
         private void Exportarboton_Click(object sender, EventArgs e)
         {
-			Exportar.Exportar2(Cuadro);
-
+			Exportar.Exportar_Articulos(Cuadro);
         }
 
 
