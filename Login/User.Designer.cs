@@ -46,6 +46,7 @@ namespace Login
             this.Agregar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.Cuadro = new System.Windows.Forms.DataGridView();
+            this.ReporteCKB = new System.Windows.Forms.CheckBox();
             this.check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +57,7 @@ namespace Login
             this.Telefono1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Telefono2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Usuarios = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.VerReportes = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -73,6 +75,7 @@ namespace Login
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.splitContainer1.Panel1.Controls.Add(this.ReporteCKB);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.UsuarioCKB);
             this.splitContainer1.Panel1.Controls.Add(this.MatricesCKB);
@@ -114,9 +117,9 @@ namespace Login
             this.UsuarioCKB.AutoSize = true;
             this.UsuarioCKB.Location = new System.Drawing.Point(494, 95);
             this.UsuarioCKB.Name = "UsuarioCKB";
-            this.UsuarioCKB.Size = new System.Drawing.Size(81, 17);
+            this.UsuarioCKB.Size = new System.Drawing.Size(86, 17);
             this.UsuarioCKB.TabIndex = 7;
-            this.UsuarioCKB.Text = "Ver Usuario";
+            this.UsuarioCKB.Text = "Ver Usuarios";
             this.UsuarioCKB.UseVisualStyleBackColor = true;
             // 
             // MatricesCKB
@@ -264,7 +267,8 @@ namespace Login
             this.Provincia,
             this.Telefono1,
             this.Telefono2,
-            this.Usuarios});
+            this.Usuarios,
+            this.VerReportes});
             this.Cuadro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Cuadro.Location = new System.Drawing.Point(0, 0);
             this.Cuadro.Name = "Cuadro";
@@ -273,6 +277,16 @@ namespace Login
             this.Cuadro.Size = new System.Drawing.Size(774, 277);
             this.Cuadro.TabIndex = 0;
             this.Cuadro.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cuadro_CellClick);
+            // 
+            // ReporteCKB
+            // 
+            this.ReporteCKB.AutoSize = true;
+            this.ReporteCKB.Location = new System.Drawing.Point(494, 118);
+            this.ReporteCKB.Name = "ReporteCKB";
+            this.ReporteCKB.Size = new System.Drawing.Size(88, 17);
+            this.ReporteCKB.TabIndex = 20;
+            this.ReporteCKB.Text = "Ver Reportes";
+            this.ReporteCKB.UseVisualStyleBackColor = true;
             // 
             // check
             // 
@@ -356,6 +370,14 @@ namespace Login
             this.Usuarios.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Usuarios.Width = 90;
             // 
+            // VerReportes
+            // 
+            this.VerReportes.HeaderText = "Ver Reportes";
+            this.VerReportes.Name = "VerReportes";
+            this.VerReportes.ReadOnly = true;
+            this.VerReportes.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.VerReportes.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -397,6 +419,7 @@ namespace Login
         private System.Windows.Forms.CheckBox ClienteCKB;
         private System.Windows.Forms.CheckBox UsuarioCKB;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox ReporteCKB;
         private System.Windows.Forms.DataGridViewCheckBoxColumn check;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn numero;
@@ -407,5 +430,6 @@ namespace Login
         private System.Windows.Forms.DataGridViewCheckBoxColumn Telefono1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Telefono2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Usuarios;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn VerReportes;
     }
 }

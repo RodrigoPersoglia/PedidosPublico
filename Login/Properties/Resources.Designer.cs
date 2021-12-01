@@ -143,6 +143,16 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap nitrogeno {
+            get {
+                object obj = ResourceManager.GetObject("nitrogeno", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap reloj_calendario {
             get {
                 object obj = ResourceManager.GetObject("reloj-calendario", resourceCulture);

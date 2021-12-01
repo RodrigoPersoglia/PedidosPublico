@@ -19,6 +19,7 @@ namespace Login
 		// Carga los Combobox iniciales desde la base de datos
 		void ModificarMatrizLoad(object sender, EventArgs e)
 		{
+			
 			MySqlConnection conectar = Conexion.ObtenerConexion();
 			conectar.Open();
 			MySqlDataReader reader;
@@ -194,7 +195,6 @@ namespace Login
 					}
 			}
 			catch (Exception){
-				MessageBox.Show("EXEPCION");
 				SalidasTXT.Value = 0;
 				PesoActual.Value = 0;
 				ClienteComboBox.Text = "Seleccione";

@@ -195,6 +195,12 @@
     <Compile Include="ModificarPedido.Designer.cs">
       <DependentUpon>ModificarPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nitrurado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nitrurado.Designer.cs">
+      <DependentUpon>Nitrurado.cs</DependentUpon>
+    </Compile>
     <Compile Include="NombreServidor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -309,6 +315,9 @@
     <EmbeddedResource Include="ModificarPedido.resx">
       <DependentUpon>ModificarPedido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Nitrurado.resx">
+      <DependentUpon>Nitrurado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NombreServidor.resx">
       <DependentUpon>NombreServidor.cs</DependentUpon>
     </EmbeddedResource>
@@ -391,6 +400,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\nitrogeno.png" />
     <None Include="Resources\reporte.png" />
     <None Include="Resources\wsp.png" />
     <None Include="Resources\usuario.png" />

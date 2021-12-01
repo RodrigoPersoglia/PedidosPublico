@@ -61,13 +61,15 @@ namespace Login
             this.ModificarPedidoMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ListadoPedidoMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.detallaDeFabricaciónMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.proyecciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.enProduccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteProducciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matricesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proyeccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.enProducciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeProducciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -85,6 +87,7 @@ namespace Login
             this.PedidosToolStripMenuItem,
             this.matricesToolStripMenuItem,
             this.salirToolStripMenuItem,
+            this.reportesToolStripMenuItem,
             this.usuarioToolStripMenuItem,
             this.ayudaToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
@@ -181,10 +184,7 @@ namespace Login
             this.AgregarPedidoMenu,
             this.ModificarPedidoMenu,
             this.ListadoPedidoMenu,
-            this.detallaDeFabricaciónMenu,
-            this.proyecciónToolStripMenuItem,
-            this.enProduccionToolStripMenuItem,
-            this.reporteProducciónToolStripMenuItem});
+            this.detallaDeFabricaciónMenu});
             this.PedidosToolStripMenuItem.Name = "PedidosToolStripMenuItem";
             resources.ApplyResources(this.PedidosToolStripMenuItem, "PedidosToolStripMenuItem");
             // 
@@ -217,32 +217,12 @@ namespace Login
             resources.ApplyResources(this.detallaDeFabricaciónMenu, "detallaDeFabricaciónMenu");
             this.detallaDeFabricaciónMenu.Click += new System.EventHandler(this.detallaDeFabricaciónToolStripMenuItem_Click);
             // 
-            // proyecciónToolStripMenuItem
-            // 
-            this.proyecciónToolStripMenuItem.Image = global::Login.Properties.Resources.reloj_calendario;
-            this.proyecciónToolStripMenuItem.Name = "proyecciónToolStripMenuItem";
-            resources.ApplyResources(this.proyecciónToolStripMenuItem, "proyecciónToolStripMenuItem");
-            this.proyecciónToolStripMenuItem.Click += new System.EventHandler(this.proyecciónToolStripMenuItem_Click);
-            // 
-            // enProduccionToolStripMenuItem
-            // 
-            this.enProduccionToolStripMenuItem.Image = global::Login.Properties.Resources.listado;
-            this.enProduccionToolStripMenuItem.Name = "enProduccionToolStripMenuItem";
-            resources.ApplyResources(this.enProduccionToolStripMenuItem, "enProduccionToolStripMenuItem");
-            this.enProduccionToolStripMenuItem.Click += new System.EventHandler(this.enProduccionToolStripMenuItem_Click);
-            // 
-            // reporteProducciónToolStripMenuItem
-            // 
-            this.reporteProducciónToolStripMenuItem.Image = global::Login.Properties.Resources.reporte;
-            this.reporteProducciónToolStripMenuItem.Name = "reporteProducciónToolStripMenuItem";
-            resources.ApplyResources(this.reporteProducciónToolStripMenuItem, "reporteProducciónToolStripMenuItem");
-            this.reporteProducciónToolStripMenuItem.Click += new System.EventHandler(this.reporteProducciónToolStripMenuItem_Click);
-            // 
             // matricesToolStripMenuItem
             // 
             this.matricesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarToolStripMenuItem2,
-            this.modificarToolStripMenuItem1});
+            this.modificarToolStripMenuItem1,
+            this.toolStripMenuItem1});
             this.matricesToolStripMenuItem.Name = "matricesToolStripMenuItem";
             resources.ApplyResources(this.matricesToolStripMenuItem, "matricesToolStripMenuItem");
             // 
@@ -260,6 +240,13 @@ namespace Login
             resources.ApplyResources(this.modificarToolStripMenuItem1, "modificarToolStripMenuItem1");
             this.modificarToolStripMenuItem1.Click += new System.EventHandler(this.modificarToolStripMenuItem1_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Image = global::Login.Properties.Resources.nitrogeno;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -268,6 +255,36 @@ namespace Login
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             resources.ApplyResources(this.salirToolStripMenuItem, "salirToolStripMenuItem");
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.proyeccionToolStripMenuItem,
+            this.enProducciónToolStripMenuItem,
+            this.reporteDeProducciónToolStripMenuItem});
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            resources.ApplyResources(this.reportesToolStripMenuItem, "reportesToolStripMenuItem");
+            // 
+            // proyeccionToolStripMenuItem
+            // 
+            this.proyeccionToolStripMenuItem.Image = global::Login.Properties.Resources.reloj_calendario;
+            this.proyeccionToolStripMenuItem.Name = "proyeccionToolStripMenuItem";
+            resources.ApplyResources(this.proyeccionToolStripMenuItem, "proyeccionToolStripMenuItem");
+            this.proyeccionToolStripMenuItem.Click += new System.EventHandler(this.proyeccionToolStripMenuItem_Click);
+            // 
+            // enProducciónToolStripMenuItem
+            // 
+            this.enProducciónToolStripMenuItem.Image = global::Login.Properties.Resources.listado;
+            this.enProducciónToolStripMenuItem.Name = "enProducciónToolStripMenuItem";
+            resources.ApplyResources(this.enProducciónToolStripMenuItem, "enProducciónToolStripMenuItem");
+            this.enProducciónToolStripMenuItem.Click += new System.EventHandler(this.enProducciónToolStripMenuItem_Click_1);
+            // 
+            // reporteDeProducciónToolStripMenuItem
+            // 
+            this.reporteDeProducciónToolStripMenuItem.Image = global::Login.Properties.Resources.reporte;
+            this.reporteDeProducciónToolStripMenuItem.Name = "reporteDeProducciónToolStripMenuItem";
+            resources.ApplyResources(this.reporteDeProducciónToolStripMenuItem, "reporteDeProducciónToolStripMenuItem");
+            this.reporteDeProducciónToolStripMenuItem.Click += new System.EventHandler(this.reporteDeProducciónToolStripMenuItem_Click_1);
             // 
             // usuarioToolStripMenuItem
             // 
@@ -311,9 +328,11 @@ namespace Login
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem proyecciónToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem enProduccionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reporteProducciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem proyeccionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem enProducciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeProducciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

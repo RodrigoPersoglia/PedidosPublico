@@ -409,7 +409,9 @@ namespace Login
         {
 			try
 			{
-				if (UnidadComboBox.Text == "Seleccione" || DescripcionTxt.Text == "" || DescripcionTxt.Text == null || matrizComboBox.Text == "Seleccione" || matrizComboBox.SelectedValue == null) { MessageBox.Show("Complete el campos unidad, seleccione un articulo y una matriz", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+				if (dataGridView1.Rows.Count < 9)
+				{
+					if (UnidadComboBox.Text == "Seleccione" || DescripcionTxt.Text == "" || DescripcionTxt.Text == null || matrizComboBox.Text == "Seleccione" || matrizComboBox.SelectedValue == null) { MessageBox.Show("Complete el campos unidad, seleccione un articulo y una matriz", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
 				else
 				{
 					int id = (int)matrizComboBox.SelectedValue;
@@ -443,7 +445,10 @@ namespace Login
 
 					}
 					else { MessageBox.Show("Revise los campos ingresados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
+			}
 				}
+
+				else { MessageBox.Show("No se pueden ingresar mas de 8 registros", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
 			}
 			catch (Exception ex) { MessageBox.Show("Error: " + ex.Message); }
 		}

@@ -350,40 +350,46 @@ namespace Login
         {
 			try
 			{
-				if (UnidadComboBox.Text == "Seleccione" || DescripcionTxt.Text == "" || DescripcionTxt.Text == null || matrizComboBox.Text == "Seleccione" || matrizComboBox.SelectedValue==null) { MessageBox.Show("Complete el campos unidad, seleccione un articulo y una matriz", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-				else
+				if (dataGridView1.Rows.Count < 9)
 				{
-					int id = (int)matrizComboBox.SelectedValue;
-					matriz = Conexion.ObtenerMatriz(id);
 
-					if (LargoNumeric.Value > 0 && CantidadNumeric.Value > 0)
+
+					if (UnidadComboBox.Text == "Seleccione" || DescripcionTxt.Text == "" || DescripcionTxt.Text == null || matrizComboBox.Text == "Seleccione" || matrizComboBox.SelectedValue == null) { MessageBox.Show("Complete el campos unidad, seleccione un articulo y una matriz", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+					else
 					{
-                        if (decimal.ToDouble(LargoNumeric.Value) > largoOK)
-                        {
-							largoOK = decimal.ToDouble(LargoNumeric.Value);
+						int id = (int)matrizComboBox.SelectedValue;
+						matriz = Conexion.ObtenerMatriz(id);
 
-						}
+						if (LargoNumeric.Value > 0 && CantidadNumeric.Value > 0)
+						{
+							if (decimal.ToDouble(LargoNumeric.Value) > largoOK)
+							{
+								largoOK = decimal.ToDouble(LargoNumeric.Value);
+
+							}
 							//Adicionamos un nuevo renglon
 							int n = dataGridView1.Rows.Add();
-						dataGridView1.Rows[n].Cells[0].Value = CantidadNumeric.Value;
-						dataGridView1.Rows[n].Cells[1].Value = LargoNumeric.Value;
-						if ((int)UnidadComboBox.SelectedValue == 1) { dataGridView1.Rows[n].Cells[2].Value = (double)CantidadNumeric.Value; kgsEstimados += (double)CantidadNumeric.Value; }
-						else
-						{
-							
-							double num = 0;
-							num = decimal.ToDouble(CantidadNumeric.Value) * decimal.ToDouble(LargoNumeric.Value/1000) * matriz.Peso;
-							kgsEstimados += num;
-							dataGridView1.Rows[n].Cells[2].Value = num; 
+							dataGridView1.Rows[n].Cells[0].Value = CantidadNumeric.Value;
+							dataGridView1.Rows[n].Cells[1].Value = LargoNumeric.Value;
+							if ((int)UnidadComboBox.SelectedValue == 1) { dataGridView1.Rows[n].Cells[2].Value = (double)CantidadNumeric.Value; kgsEstimados += (double)CantidadNumeric.Value; }
+							else
+							{
+
+								double num = 0;
+								num = decimal.ToDouble(CantidadNumeric.Value) * decimal.ToDouble(LargoNumeric.Value / 1000) * matriz.Peso;
+								kgsEstimados += num;
+								dataGridView1.Rows[n].Cells[2].Value = num;
+
+							}
+							//Ponemos en cero 
+							LargoNumeric.Value = 0; CantidadNumeric.Value = 0;
+
 
 						}
-						//Ponemos en cero 
-						LargoNumeric.Value = 0; CantidadNumeric.Value = 0;
-
-
+						else { MessageBox.Show("Revise los campos ingresados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
 					}
-					else { MessageBox.Show("Revise los campos ingresados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
 				}
+                else { MessageBox.Show("No se pueden ingresar mas de 8 registros", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
 			}
 			catch (Exception ex) { MessageBox.Show("Error: " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); }
 		}

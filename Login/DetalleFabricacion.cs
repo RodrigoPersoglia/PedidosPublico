@@ -16,6 +16,15 @@ namespace Login
 			InitializeComponent();
 		}
 
+
+		public DetalleFabricacion( string pedido)
+		{
+			InitializeComponent();
+			NumOPTXT.Text = pedido;
+
+
+		}
+
 		//Declaracion de variables, sirve para vincular con la ventana que las instancia.
 		private Articulo articuloSeleccionado = new Articulo();
 		private Pedido pedido = new Pedido();
@@ -194,6 +203,12 @@ namespace Login
 			}
 			catch (MySqlException ex) { MessageBox.Show("Error al buscar " + ex.Message,"Atención",MessageBoxButtons.OK,MessageBoxIcon.Error); }
 			finally { conectar.Close();}
+
+			if (NumOPTXT.Text != "")
+            {
+				Buscar_Click(sender, e);
+
+			}
 		}
 
         private void Articulocambia(object sender, EventArgs e)
@@ -414,6 +429,19 @@ namespace Login
 				Conexion.AgregarDetallePedido(FechaDTP.Value, horaIN.Text, HoraFin.Text, kg_fabricados, tiras_fabricadas, LargoTXT.Text, peso_metro, ColadaTXT.Text, ObervTXT.Text, largo_tochos, cantidad_tochos,(int)MatrizComboBox.SelectedValue, (int)PrensaCBX.SelectedValue, pedido.ID, (int)TurnoCBX.SelectedValue, (int)AleacionComboBox.SelectedValue, kg_acumulados);
 				Limpiar();
 				Buscar_Click(sender, e);
+
+				DialogResult result = MessageBox.Show("¿Desea marcar el pedido " + pedido.Numero.ToString() + " como Terminado?", "Reporte de Producción", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+				switch (result)
+				{
+					case DialogResult.Yes:
+						Conexion.ModificarEstado(pedido.Numero.ToString(), 5,false);
+						break;
+					case DialogResult.No:
+						Conexion.ModificarEstado(pedido.Numero.ToString(), 2,false);
+						break;
+
+				}
 
 			}
             else

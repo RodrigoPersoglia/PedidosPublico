@@ -38,10 +38,10 @@ namespace Login
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteProduccion));
             this.Buscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,9 +50,6 @@ namespace Login
             this.Fecha1DTP = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.Cuadro = new System.Windows.Forms.DataGridView();
-            this.imprime = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Kgs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.Fecha2DTP = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,10 +57,14 @@ namespace Login
             this.Acumulados = new System.Windows.Forms.TextBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.Cuadro2 = new System.Windows.Forms.DataGridView();
+            this.OP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn201 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn200 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.imprime = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Kgs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Cuadro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -163,43 +164,11 @@ namespace Login
             this.Cuadro.RowHeadersVisible = false;
             this.Cuadro.RowHeadersWidth = 51;
             this.Cuadro.RowTemplate.Height = 24;
-            this.Cuadro.Size = new System.Drawing.Size(234, 448);
+            this.Cuadro.Size = new System.Drawing.Size(221, 448);
             this.Cuadro.TabIndex = 38;
             this.Cuadro.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cuadro_CellClick);
             this.Cuadro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cuadro_CellContentClick);
             this.Cuadro.SelectionChanged += new System.EventHandler(this.Cuadro_SelectionChanged);
-            // 
-            // imprime
-            // 
-            this.imprime.FalseValue = "";
-            this.imprime.HeaderText = " ";
-            this.imprime.Name = "imprime";
-            this.imprime.ReadOnly = true;
-            this.imprime.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.imprime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.imprime.TrueValue = "";
-            this.imprime.Width = 30;
-            // 
-            // Fecha
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Fecha.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.MinimumWidth = 6;
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            // 
-            // Kgs
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Kgs.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Kgs.HeaderText = "Kgs";
-            this.Kgs.MinimumWidth = 6;
-            this.Kgs.Name = "Kgs";
-            this.Kgs.ReadOnly = true;
             // 
             // splitContainer1
             // 
@@ -224,7 +193,7 @@ namespace Login
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(732, 562);
+            this.splitContainer1.Size = new System.Drawing.Size(778, 562);
             this.splitContainer1.SplitterDistance = 110;
             this.splitContainer1.TabIndex = 50;
             // 
@@ -285,8 +254,8 @@ namespace Login
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.Cuadro2);
-            this.splitContainer2.Size = new System.Drawing.Size(732, 448);
-            this.splitContainer2.SplitterDistance = 234;
+            this.splitContainer2.Size = new System.Drawing.Size(778, 448);
+            this.splitContainer2.SplitterDistance = 221;
             this.splitContainer2.TabIndex = 39;
             // 
             // Cuadro2
@@ -295,6 +264,7 @@ namespace Login
             this.Cuadro2.AllowUserToDeleteRows = false;
             this.Cuadro2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Cuadro2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.OP,
             this.dataGridViewTextBoxColumn201,
             this.Articulo,
             this.dataGridViewTextBoxColumn200,
@@ -307,8 +277,16 @@ namespace Login
             this.Cuadro2.RowHeadersVisible = false;
             this.Cuadro2.RowHeadersWidth = 51;
             this.Cuadro2.RowTemplate.Height = 24;
-            this.Cuadro2.Size = new System.Drawing.Size(494, 448);
+            this.Cuadro2.Size = new System.Drawing.Size(553, 448);
             this.Cuadro2.TabIndex = 39;
+            this.Cuadro2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cuadro2_CellClick);
+            // 
+            // OP
+            // 
+            this.OP.HeaderText = "OP";
+            this.OP.Name = "OP";
+            this.OP.ReadOnly = true;
+            this.OP.Width = 60;
             // 
             // dataGridViewTextBoxColumn201
             // 
@@ -350,13 +328,46 @@ namespace Login
             this.dataGridViewButtonColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewButtonColumn1.Text = "Ver Detalle";
             // 
+            // imprime
+            // 
+            this.imprime.FalseValue = "";
+            this.imprime.HeaderText = " ";
+            this.imprime.Name = "imprime";
+            this.imprime.ReadOnly = true;
+            this.imprime.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.imprime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.imprime.TrueValue = "";
+            this.imprime.Width = 30;
+            // 
+            // Fecha
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Fecha.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.MinimumWidth = 6;
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            // 
+            // Kgs
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Kgs.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Kgs.HeaderText = "Kgs";
+            this.Kgs.MinimumWidth = 6;
+            this.Kgs.Name = "Kgs";
+            this.Kgs.ReadOnly = true;
+            this.Kgs.Width = 87;
+            // 
             // ReporteProduccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.CancelButton = this.Cancelar;
-            this.ClientSize = new System.Drawing.Size(732, 562);
+            this.ClientSize = new System.Drawing.Size(778, 562);
             this.ControlBox = false;
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -621,6 +632,7 @@ namespace Login
         private System.Windows.Forms.DataGridViewCheckBoxColumn imprime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kgs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OP;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn201;
         private System.Windows.Forms.DataGridViewTextBoxColumn Articulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn200;

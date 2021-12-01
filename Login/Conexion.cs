@@ -371,6 +371,45 @@ namespace Login
 			finally { conectar.Close(); }
 		}
 
+		public static void ModificarEstado(string numPedido, int EstadoID, bool notificar)
+		{
+            if (notificar)
+			{
+				MySqlConnection conectar = Conexion.ObtenerConexion();
+				conectar.Open();
+				try
+				{
+					MySqlCommand comand = new MySqlCommand("modificarEstado", conectar);
+					comand.CommandType = CommandType.StoredProcedure;
+					comand.Parameters.AddWithValue("@p1", numPedido);
+					comand.Parameters.AddWithValue("@p2", EstadoID);
+					comand.ExecuteNonQuery();
+					AutoClosingMessageBox.Show("Estado del pedido Modificado", "Pedido", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, 1600);
+				}
+				catch (Exception ex) { MessageBox.Show("Error " + ex.Message); }
+				finally { conectar.Close(); }
+
+            }
+            else
+            {
+				MySqlConnection conectar = Conexion.ObtenerConexion();
+				conectar.Open();
+				try
+				{
+					MySqlCommand comand = new MySqlCommand("modificarEstado", conectar);
+					comand.CommandType = CommandType.StoredProcedure;
+					comand.Parameters.AddWithValue("@p1", numPedido);
+					comand.Parameters.AddWithValue("@p2", EstadoID);
+					comand.ExecuteNonQuery();
+					
+				}
+				catch (Exception ex) { MessageBox.Show("Error " + ex.Message); }
+				finally { conectar.Close(); }
+
+			}
+
+		}
+
 
 		public static void AgregarMatriz(int ejemplar,int salidas, double pesoActual,int Articulo_ID,int Cliente_ID)
 		{
@@ -789,7 +828,7 @@ namespace Login
 		}
 
 
-		public static void AgregarUsuario(string usuario, string contraseña , int cliente, int archivos, int articulos, int pedidos , int matrices, int usuarios)
+		public static void AgregarUsuario(string usuario, string contraseña , int cliente, int archivos, int articulos, int pedidos , int matrices, int usuarios, int reportes)
 		{
 			MySqlConnection conectar = Conexion.ObtenerConexion();
 			conectar.Open();
@@ -805,7 +844,7 @@ namespace Login
 				comand.Parameters.AddWithValue("@p6", pedidos);
 				comand.Parameters.AddWithValue("@p7", matrices);
 				comand.Parameters.AddWithValue("@p8", usuarios);
-
+				comand.Parameters.AddWithValue("@p9", reportes);
 				comand.ExecuteNonQuery();
 				AutoClosingMessageBox.Show("Usuario Creado Correctamente","Usuario",MessageBoxButtons.OK,MessageBoxIcon.Information,1600);
 			}
@@ -835,7 +874,7 @@ namespace Login
 
 
 
-		public static void ModificarUsuario(int id,string usuario, string contraseña, int cliente, int archivos, int articulos, int pedidos, int matrices, int usuarios)
+		public static void ModificarUsuario(int id,string usuario, string contraseña, int cliente, int archivos, int articulos, int pedidos, int matrices, int usuarios, int reportes)
 		{
 			MySqlConnection conectar = Conexion.ObtenerConexion();
 			conectar.Open();
@@ -853,6 +892,7 @@ namespace Login
 				comand.Parameters.AddWithValue("@p6", pedidos);
 				comand.Parameters.AddWithValue("@p7", matrices);
 				comand.Parameters.AddWithValue("@p8", usuarios);
+				comand.Parameters.AddWithValue("@p9", reportes);
 
 				comand.ExecuteNonQuery();
 				AutoClosingMessageBox.Show("Usuario Modificado","Usuario",MessageBoxButtons.OK,MessageBoxIcon.Information,1600);
@@ -928,6 +968,26 @@ namespace Login
 			}
 
 			catch (Exception ex) { MessageBox.Show("Error al buscar " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); return null; }
+			finally { conectar.Close(); }
+		}
+
+
+
+		public static void AgregarNitrurado(DateTime fecha, int matriz_ID)
+		{
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand("AgregarNitrurado", conectar);
+				comand.CommandType = CommandType.StoredProcedure;
+				comand.Parameters.AddWithValue("@p1", fecha);
+				comand.Parameters.AddWithValue("@p2", matriz_ID);
+
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Nitrurado cargado correctamente", "Nitrurado", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
 			finally { conectar.Close(); }
 		}
 

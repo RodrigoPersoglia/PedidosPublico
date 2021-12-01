@@ -101,3 +101,4 @@ C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.csproj.CopyComplete
 C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.User.resources
 C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.NombreServidor.resources
 C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.ReporteProduccion.resources
+C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.Nitrurado.resources

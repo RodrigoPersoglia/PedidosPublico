@@ -28,8 +28,8 @@ namespace Login
 		//Muestra en el cuadro las coincidencias
 		void BuscarClick(object sender, EventArgs e)
 		{
-
-				kgAcumulados = 0;
+			Cuadro2.Rows.Clear();
+			kgAcumulados = 0;
 			//completo el cuadro
 			DataTable dt2 = Conexion.ObtenerReporteProdu(Fecha1DTP.Value, Fecha2DTP.Value);
 				Cuadro.Rows.Clear();
@@ -88,9 +88,9 @@ namespace Login
 			}
 			else
 			{
-				try
-				{
-					for (int fila = 0; fila < Cuadro.Rows.Count; fila++)
+                try
+                {
+                    for (int fila = 0; fila < Cuadro.Rows.Count; fila++)
 					{
 						Cuadro.Rows[fila].Cells[0].Value = false;
 						Cuadro.Rows[fila].DefaultCellStyle.BackColor = Color.White;
@@ -110,17 +110,19 @@ namespace Login
 						foreach (DataRow x in dt2.Rows)
 						{
 							int n = Cuadro2.Rows.Add();
-							Cuadro2.Rows[n].Cells[0].Value = (string)x[0];
+							Cuadro2.Rows[n].Cells[0].Value = (int)x[0];
 							Cuadro2.Rows[n].Cells[1].Value = (string)x[1];
-							Cuadro2.Rows[n].Cells[2].Value = ((decimal)x[2]).ToString();
-							Cuadro2.Rows[n].Cells[3].Value = (string)x[3];
+							Cuadro2.Rows[n].Cells[2].Value = (string)x[2];
+							Cuadro2.Rows[n].Cells[3].Value = ((decimal)x[3]).ToString();
+							Cuadro2.Rows[n].Cells[4].Value = (string)x[4];
 
 						}
 					}
 
-					}
-				catch (Exception) { }
-			}
+            }
+
+                catch (Exception) { }
+        }
 		}
 
 
@@ -159,5 +161,28 @@ namespace Login
         {
 			Cuadro.Rows.Clear();
         }
+
+		int n2 = 0-1;
+        private void Cuadro2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+			n2 = e.RowIndex;
+			if (n2 != -1)
+            {
+				DialogResult result = MessageBox.Show("¿Desea ver el detalle de produccion del pedido " + (Cuadro2.Rows[n2].Cells[0].Value).ToString()+"?", "Reporte de Producción", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+
+				switch (result)
+				{
+					case DialogResult.Yes:
+						DetalleFabricacion detalleFabricacion = new DetalleFabricacion((Cuadro2.Rows[n2].Cells[0].Value).ToString());
+						detalleFabricacion.MdiParent = this.MdiParent;
+						detalleFabricacion.Show();
+						break;
+					case DialogResult.No:
+						break;
+
+				}
+
+            }
+		}
     }
 }

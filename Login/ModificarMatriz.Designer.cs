@@ -54,7 +54,6 @@ namespace Login
             this.PesoActual = new System.Windows.Forms.NumericUpDown();
             this.Modificar = new System.Windows.Forms.Button();
             this.Cancelar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SalidasTXT = new System.Windows.Forms.NumericUpDown();
             this.ClienteComboBox = new System.Windows.Forms.ComboBox();
@@ -68,18 +67,19 @@ namespace Login
             this.label9 = new System.Windows.Forms.Label();
             this.KgAcumuladosTXT = new System.Windows.Forms.TextBox();
             this.MetrosTXT = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PesoActual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalidasTXT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(5, 80);
+            this.label2.Location = new System.Drawing.Point(38, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 23);
+            this.label2.Size = new System.Drawing.Size(69, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "CODIGO";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -88,9 +88,9 @@ namespace Login
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(0, 154);
+            this.label5.Location = new System.Drawing.Point(35, 154);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 23);
+            this.label5.Size = new System.Drawing.Size(67, 23);
             this.label5.TabIndex = 4;
             this.label5.Text = "SALIDAS";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -99,9 +99,9 @@ namespace Login
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(6, 179);
+            this.label6.Location = new System.Drawing.Point(-6, 180);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 23);
+            this.label6.Size = new System.Drawing.Size(114, 23);
             this.label6.TabIndex = 5;
             this.label6.Text = "PESO ACTUAL";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -110,46 +110,46 @@ namespace Login
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(0, 127);
+            this.label7.Location = new System.Drawing.Point(14, 127);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(129, 23);
+            this.label7.Size = new System.Drawing.Size(88, 23);
             this.label7.TabIndex = 6;
             this.label7.Text = "EJEMPLAR";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // DescripcionTxt
             // 
-            this.DescripcionTxt.Location = new System.Drawing.Point(152, 104);
+            this.DescripcionTxt.Location = new System.Drawing.Point(125, 104);
             this.DescripcionTxt.MaxLength = 60;
             this.DescripcionTxt.Name = "DescripcionTxt";
             this.DescripcionTxt.ReadOnly = true;
-            this.DescripcionTxt.Size = new System.Drawing.Size(200, 19);
+            this.DescripcionTxt.Size = new System.Drawing.Size(141, 19);
             this.DescripcionTxt.TabIndex = 3;
             // 
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(5, 104);
+            this.label8.Location = new System.Drawing.Point(6, 104);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(129, 23);
+            this.label8.Size = new System.Drawing.Size(101, 23);
             this.label8.TabIndex = 13;
             this.label8.Text = "DESCRIPCION";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // Codigotxt
             // 
-            this.Codigotxt.Location = new System.Drawing.Point(152, 81);
+            this.Codigotxt.Location = new System.Drawing.Point(125, 81);
             this.Codigotxt.MaxLength = 20;
             this.Codigotxt.Name = "Codigotxt";
-            this.Codigotxt.Size = new System.Drawing.Size(141, 19);
+            this.Codigotxt.Size = new System.Drawing.Size(78, 19);
             this.Codigotxt.TabIndex = 1;
             this.Codigotxt.TextChanged += new System.EventHandler(this.Codigotxt_TextChanged);
             // 
             // PesoActual
             // 
             this.PesoActual.DecimalPlaces = 3;
-            this.PesoActual.Location = new System.Drawing.Point(152, 177);
+            this.PesoActual.Location = new System.Drawing.Point(125, 178);
             this.PesoActual.Name = "PesoActual";
             this.PesoActual.Size = new System.Drawing.Size(141, 19);
             this.PesoActual.TabIndex = 6;
@@ -157,7 +157,7 @@ namespace Login
             // Modificar
             // 
             this.Modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Modificar.Location = new System.Drawing.Point(152, 324);
+            this.Modificar.Location = new System.Drawing.Point(125, 323);
             this.Modificar.Name = "Modificar";
             this.Modificar.Size = new System.Drawing.Size(90, 27);
             this.Modificar.TabIndex = 11;
@@ -169,22 +169,13 @@ namespace Login
             // 
             this.Cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancelar.Location = new System.Drawing.Point(248, 324);
+            this.Cancelar.Location = new System.Drawing.Point(235, 323);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(90, 27);
             this.Cancelar.TabIndex = 12;
             this.Cancelar.Text = "Salir";
             this.Cancelar.UseVisualStyleBackColor = true;
             this.Cancelar.Click += new System.EventHandler(this.CancelarClick);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(317, 179);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(170, 85);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -198,7 +189,7 @@ namespace Login
             // 
             // SalidasTXT
             // 
-            this.SalidasTXT.Location = new System.Drawing.Point(152, 153);
+            this.SalidasTXT.Location = new System.Drawing.Point(125, 153);
             this.SalidasTXT.Maximum = new decimal(new int[] {
             6000,
             0,
@@ -210,8 +201,9 @@ namespace Login
             // 
             // ClienteComboBox
             // 
+            this.ClienteComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ClienteComboBox.FormattingEnabled = true;
-            this.ClienteComboBox.Location = new System.Drawing.Point(152, 200);
+            this.ClienteComboBox.Location = new System.Drawing.Point(125, 201);
             this.ClienteComboBox.Name = "ClienteComboBox";
             this.ClienteComboBox.Size = new System.Drawing.Size(141, 21);
             this.ClienteComboBox.TabIndex = 7;
@@ -220,7 +212,7 @@ namespace Login
             // 
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(0, 202);
+            this.label11.Location = new System.Drawing.Point(-27, 203);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(129, 23);
             this.label11.TabIndex = 31;
@@ -232,7 +224,7 @@ namespace Login
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label12.Location = new System.Drawing.Point(314, 143);
+            this.label12.Location = new System.Drawing.Point(339, 46);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(70, 23);
             this.label12.TabIndex = 32;
@@ -241,7 +233,7 @@ namespace Login
             // 
             // BuscarBTN
             // 
-            this.BuscarBTN.Location = new System.Drawing.Point(299, 77);
+            this.BuscarBTN.Location = new System.Drawing.Point(213, 79);
             this.BuscarBTN.Name = "BuscarBTN";
             this.BuscarBTN.Size = new System.Drawing.Size(53, 23);
             this.BuscarBTN.TabIndex = 2;
@@ -252,7 +244,7 @@ namespace Login
             // Ejemplar_ComboBox
             // 
             this.Ejemplar_ComboBox.FormattingEnabled = true;
-            this.Ejemplar_ComboBox.Location = new System.Drawing.Point(152, 127);
+            this.Ejemplar_ComboBox.Location = new System.Drawing.Point(125, 127);
             this.Ejemplar_ComboBox.Name = "Ejemplar_ComboBox";
             this.Ejemplar_ComboBox.Size = new System.Drawing.Size(141, 21);
             this.Ejemplar_ComboBox.TabIndex = 4;
@@ -262,7 +254,7 @@ namespace Login
             // Estado_ComboBox
             // 
             this.Estado_ComboBox.FormattingEnabled = true;
-            this.Estado_ComboBox.Location = new System.Drawing.Point(152, 225);
+            this.Estado_ComboBox.Location = new System.Drawing.Point(125, 226);
             this.Estado_ComboBox.Name = "Estado_ComboBox";
             this.Estado_ComboBox.Size = new System.Drawing.Size(141, 21);
             this.Estado_ComboBox.TabIndex = 8;
@@ -271,7 +263,7 @@ namespace Login
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(0, 227);
+            this.label3.Location = new System.Drawing.Point(-27, 228);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(129, 23);
             this.label3.TabIndex = 37;
@@ -282,27 +274,27 @@ namespace Login
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(0, 253);
+            this.label4.Location = new System.Drawing.Point(-27, 254);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(129, 23);
             this.label4.TabIndex = 38;
-            this.label4.Text = "KG ACUMULADOS";
+            this.label4.Text = "KG ACUM.";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(0, 278);
+            this.label9.Location = new System.Drawing.Point(-10, 279);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(129, 23);
             this.label9.TabIndex = 40;
-            this.label9.Text = "Metros Estimados";
+            this.label9.Text = "METROS ACUM.";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // KgAcumuladosTXT
             // 
-            this.KgAcumuladosTXT.Location = new System.Drawing.Point(152, 253);
+            this.KgAcumuladosTXT.Location = new System.Drawing.Point(125, 254);
             this.KgAcumuladosTXT.MaxLength = 20;
             this.KgAcumuladosTXT.Name = "KgAcumuladosTXT";
             this.KgAcumuladosTXT.Size = new System.Drawing.Size(141, 19);
@@ -312,13 +304,22 @@ namespace Login
             // 
             // MetrosTXT
             // 
-            this.MetrosTXT.Location = new System.Drawing.Point(152, 278);
+            this.MetrosTXT.Location = new System.Drawing.Point(125, 279);
             this.MetrosTXT.MaxLength = 20;
             this.MetrosTXT.Name = "MetrosTXT";
             this.MetrosTXT.ReadOnly = true;
             this.MetrosTXT.Size = new System.Drawing.Size(141, 19);
             this.MetrosTXT.TabIndex = 42;
             this.MetrosTXT.Text = "0";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(290, 81);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(170, 85);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
             // 
             // ModificarMatriz
             // 
@@ -327,7 +328,7 @@ namespace Login
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.CancelButton = this.Cancelar;
-            this.ClientSize = new System.Drawing.Size(565, 377);
+            this.ClientSize = new System.Drawing.Size(480, 377);
             this.ControlBox = false;
             this.Controls.Add(this.MetrosTXT);
             this.Controls.Add(this.KgAcumuladosTXT);
@@ -360,8 +361,8 @@ namespace Login
             this.Text = "Modificar Matriz";
             this.Load += new System.EventHandler(this.ModificarMatrizLoad);
             ((System.ComponentModel.ISupportInitialize)(this.PesoActual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalidasTXT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

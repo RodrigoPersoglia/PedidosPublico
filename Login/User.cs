@@ -39,8 +39,9 @@ namespace Login
                         Cuadro.Rows[n].Cells[7].Value = intToBool((int)x[6]);
                         Cuadro.Rows[n].Cells[8].Value = intToBool((int)x[7]);
                         Cuadro.Rows[n].Cells[9].Value = intToBool((int)x[8]);
+                        Cuadro.Rows[n].Cells[10].Value = intToBool((int)x[9]);
 
-            }
+                }
 
 
         }
@@ -107,7 +108,7 @@ namespace Login
             {
                 try
                 {
-                    Conexion.AgregarUsuario(UsuarioTBX.Text,ContraseñaTBX.Text,boolToInt(ClienteCKB.Checked),boolToInt(ArchivosCKB.Checked), boolToInt(ArticulosCKB.Checked), boolToInt(PedidosCKB.Checked), boolToInt(MatricesCKB.Checked), boolToInt(UsuarioCKB.Checked));
+                    Conexion.AgregarUsuario(UsuarioTBX.Text,ContraseñaTBX.Text,boolToInt(ClienteCKB.Checked),boolToInt(ArchivosCKB.Checked), boolToInt(ArticulosCKB.Checked), boolToInt(PedidosCKB.Checked), boolToInt(MatricesCKB.Checked), boolToInt(UsuarioCKB.Checked), boolToInt(ReporteCKB.Checked));
                     Limpiar();
                     User_Load(sender, e);
                 }
@@ -126,7 +127,7 @@ namespace Login
             PedidosCKB.Checked = false;
             MatricesCKB.Checked = false;
             UsuarioCKB.Checked = false;
-
+            ReporteCKB.Checked = false;
         }
 
         private void ModificarBTN_Click(object sender, EventArgs e)
@@ -146,7 +147,7 @@ namespace Login
 
                     if (check == true)
                     {
-                        Conexion.ModificarUsuario((int)Cuadro.Rows[n].Cells[1].Value, UsuarioTBX.Text, ContraseñaTBX.Text,boolToInt(ClienteCKB.Checked), boolToInt(ArchivosCKB.Checked), boolToInt(ArticulosCKB.Checked), boolToInt(PedidosCKB.Checked), boolToInt(MatricesCKB.Checked), boolToInt(UsuarioCKB.Checked));
+                        Conexion.ModificarUsuario((int)Cuadro.Rows[n].Cells[1].Value, UsuarioTBX.Text, ContraseñaTBX.Text,boolToInt(ClienteCKB.Checked), boolToInt(ArchivosCKB.Checked), boolToInt(ArticulosCKB.Checked), boolToInt(PedidosCKB.Checked), boolToInt(MatricesCKB.Checked), boolToInt(UsuarioCKB.Checked), boolToInt(ReporteCKB.Checked));
                         Limpiar();
                         User_Load(sender, e);
                     }
@@ -198,6 +199,7 @@ namespace Login
                         PedidosCKB.Checked = (bool)Cuadro.Rows[n].Cells[7].Value;
                         MatricesCKB.Checked = (bool)Cuadro.Rows[n].Cells[8].Value;
                         UsuarioCKB.Checked = (bool)Cuadro.Rows[n].Cells[9].Value;
+                        ReporteCKB.Checked = (bool)Cuadro.Rows[n].Cells[10].Value;
                     }
                     catch (Exception) { }
                 }

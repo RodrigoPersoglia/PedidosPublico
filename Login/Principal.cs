@@ -61,7 +61,9 @@ namespace Login
 			matricesToolStripMenuItem.Visible = usuario.TablaMatrices;
 			PedidosToolStripMenuItem.Visible = usuario.TablaPedidos;
 			artículosToolStripMenuItem.Visible = usuario.TablaArticulos;
+			
 			usuarioToolStripMenuItem.Visible = usuario.Tablausuario;
+			reportesToolStripMenuItem.Visible = usuario.TablaReporte;
 
 			if (usuario.User  == "Produccion")
             {
@@ -272,5 +274,37 @@ namespace Login
 			reporte.MdiParent = this;
 			reporte.Show();
 		}
+
+
+
+        private void proyeccionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+			Proyeccion proye = new Proyeccion();
+			proye.MdiParent = this;
+			proye.Show();
+
+		}
+
+        private void enProducciónToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+			EnProduccion produ = new EnProduccion();
+			produ.MdiParent = this;
+			produ.Show();
+		}
+
+        private void reporteDeProducciónToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+			ReporteProduccion reporte = new ReporteProduccion();
+			reporte.MdiParent = this;
+			reporte.Show();
+
+		}
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+			Nitrurado nitrurado = new Nitrurado();
+			nitrurado.MdiParent = this;
+			nitrurado.Show();
+        }
     }
 }

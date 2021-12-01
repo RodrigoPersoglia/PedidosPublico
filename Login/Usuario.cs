@@ -18,6 +18,7 @@ namespace Login
         private bool _tablaPedidos;
         private bool _tablaMatrices;
         private bool _tablaUsuario;
+        private bool _tablaReportes;
 
 
 
@@ -30,7 +31,7 @@ namespace Login
         public bool TablaPedidos { get { return this._tablaPedidos; }  set { this._tablaPedidos = value; } }
         public bool TablaMatrices { get { return this._tablaMatrices; } set { this._tablaMatrices = value; } }
         public bool Tablausuario { get { return this._tablaUsuario; } set { this._tablaUsuario = value; } }
-
+        public bool TablaReporte { get { return this._tablaReportes; } set { this._tablaReportes = value; } }
 
         public Usuario() { }
 

@@ -83,8 +83,13 @@ namespace Login
 										if ((int)y[7] == 0) { usuarioNuevo.TablaMatrices = false; }
 										else { usuarioNuevo.TablaMatrices = true; }
 
+
 										if ((int)y[8] == 0) { usuarioNuevo.Tablausuario = false; }
 										else { usuarioNuevo.Tablausuario = true; }
+
+
+										if ((int)y[9] == 0) { usuarioNuevo.TablaReporte = false; }
+										else { usuarioNuevo.TablaReporte = true; }
 
 									}
 
