@@ -992,6 +992,197 @@ namespace Login
 		}
 
 
+		public static DataTable VerLocalidad(int provincia_ID)
+		{
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			DataTable dt = new DataTable();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand("verLocalidad", conectar);
+				comand.CommandType = CommandType.StoredProcedure;
+				comand.Parameters.AddWithValue("@p1", provincia_ID);
+				MySqlDataAdapter adp = new MySqlDataAdapter(comand);
+				adp.Fill(dt);
+				if (dt.Rows.Count > 0)
+				{
+
+					return dt;
+				}
+				else { MessageBox.Show("No hay registros en la provincia seleccionada"); return null; }
+
+			}
+
+			catch (Exception ex) { MessageBox.Show("Error al buscar " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); return null; }
+			finally { conectar.Close(); }
+		}
+
+		public static DataTable VerProvincias()
+		{
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			DataTable dt = new DataTable();
+			MySqlDataReader reader;
+			string consulta = "SELECT * FROM provincia";
+			try
+			{
+
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				reader = comand.ExecuteReader();
+				dt.Load(reader);
+				
+				if (dt.Rows.Count > 0)
+				{
+
+					return dt;
+				}
+				else { return null; }
+
+			}
+
+			catch (Exception ex) { MessageBox.Show("Error al buscar " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); return null; }
+			finally { conectar.Close(); }
+		}
+
+
+		public static void AgregarLocalidad(string localidad, int Provincia_ID)
+		{
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand("AgregarLocalidad", conectar);
+				comand.CommandType = CommandType.StoredProcedure;
+				comand.Parameters.AddWithValue("@p1", localidad);
+				comand.Parameters.AddWithValue("@p2", Provincia_ID);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Localidad creada correctamente", "Localidad", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+		}
+
+		public static void ModificarLocalidad(int id,string localidad, int Provincia_ID)
+		{
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand("ModificarLocalidad", conectar);
+				comand.CommandType = CommandType.StoredProcedure;
+				comand.Parameters.AddWithValue("@p0", id);
+				comand.Parameters.AddWithValue("@p1", localidad);
+				comand.Parameters.AddWithValue("@p2", Provincia_ID);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Localidad modificada correctamente", "Localidad", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+		}
+
+
+		public static void EliminarLocalidad(int ID)
+		{
+			MySqlConnection conectar = ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand("EliminarLocalidad", conectar);
+				comand.CommandType = CommandType.StoredProcedure;
+				comand.Parameters.AddWithValue("@p0", ID);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Localidad Eliminada", "Localidad", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+
+		}
+
+
+		public static DataTable VerPuesto()
+		{
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			DataTable dt = new DataTable();
+			MySqlDataReader reader;
+			string consulta = "SELECT * FROM puesto p order by p.descripcion";
+			try
+			{
+
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				reader = comand.ExecuteReader();
+				dt.Load(reader);
+
+				if (dt.Rows.Count > 0)
+				{
+
+					return dt;
+				}
+				else { return null; }
+
+			}
+
+			catch (Exception ex) { MessageBox.Show("Error al buscar " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); return null; }
+			finally { conectar.Close(); }
+		}
+
+		public static void AgregarPuesto(string puesto, string maquinista,string encargado)
+		{
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand("AgregarPuesto", conectar);
+				comand.CommandType = CommandType.StoredProcedure;
+				comand.Parameters.AddWithValue("@p1", puesto);
+				comand.Parameters.AddWithValue("@p2", maquinista);
+				comand.Parameters.AddWithValue("@p3", encargado);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Puesto creado correctamente", "Puesto", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+		}
+
+
+		public static void ModificarPuesto(int id, string puesto, string maquinista, string encargado)
+		{
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand("ModificarPuesto", conectar);
+				comand.CommandType = CommandType.StoredProcedure;
+				comand.Parameters.AddWithValue("@p0", id);
+				comand.Parameters.AddWithValue("@p1", puesto);
+				comand.Parameters.AddWithValue("@p2", maquinista);
+				comand.Parameters.AddWithValue("@p3", encargado);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Puesto modificado correctamente", "Puesto", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+		}
+
+
+		public static void EliminarPuesto(int ID)
+		{
+			MySqlConnection conectar = ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand("EliminarPuesto", conectar);
+				comand.CommandType = CommandType.StoredProcedure;
+				comand.Parameters.AddWithValue("@p0", ID);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Puesto Eliminado", "Puesto", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+
+		}
+
+
 	}
 
 

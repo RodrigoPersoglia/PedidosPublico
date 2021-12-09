@@ -102,3 +102,5 @@ C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.User.resources
 C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.NombreServidor.resources
 C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.ReporteProduccion.resources
 C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.Nitrurado.resources
+C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.Ciudad.resources
+C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.Puesto.resources

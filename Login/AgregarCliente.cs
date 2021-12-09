@@ -235,7 +235,7 @@ namespace Login
 			LocEnt_Cbx.DataSource = null;  //  Ponemos el ComboBox en blanco
 			LocEnt_Cbx.Items.Clear();      //  Ponemos el ComboBox en blanco
 
-			AgregarCiudad agregar = new AgregarCiudad();
+			Ciudad agregar = new Ciudad();
 			DialogResult resultado = agregar.ShowDialog();
         }
 

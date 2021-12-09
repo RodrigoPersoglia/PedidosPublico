@@ -72,6 +72,7 @@ namespace Login
             this.reporteDeProducciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.puestosDeTrabajoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,7 +98,8 @@ namespace Login
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ciudadesToolStripMenuItem});
+            this.ciudadesToolStripMenuItem,
+            this.puestosDeTrabajoToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             resources.ApplyResources(this.archivoToolStripMenuItem, "archivoToolStripMenuItem");
             // 
@@ -298,6 +300,12 @@ namespace Login
             resources.ApplyResources(this.ayudaToolStripMenuItem, "ayudaToolStripMenuItem");
             this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
             // 
+            // puestosDeTrabajoToolStripMenuItem
+            // 
+            this.puestosDeTrabajoToolStripMenuItem.Name = "puestosDeTrabajoToolStripMenuItem";
+            resources.ApplyResources(this.puestosDeTrabajoToolStripMenuItem, "puestosDeTrabajoToolStripMenuItem");
+            this.puestosDeTrabajoToolStripMenuItem.Click += new System.EventHandler(this.puestosDeTrabajoToolStripMenuItem_Click);
+            // 
             // Principal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -334,5 +342,6 @@ namespace Login
         private System.Windows.Forms.ToolStripMenuItem enProducciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDeProducciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem puestosDeTrabajoToolStripMenuItem;
     }
 }

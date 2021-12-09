@@ -372,7 +372,7 @@ namespace Login
 			}
 			if (contador == 0)
 			{
-				AgregarCiudad ciudad = new AgregarCiudad();
+				Ciudad ciudad = new Ciudad();
 				ciudad.MdiParent = this;
 				ciudad.Show();
 			}
@@ -662,5 +662,30 @@ namespace Login
 			}
 			contador = 0;
         }
-    }
+
+        private void puestosDeTrabajoToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			int contador = 0;
+			foreach (Form f in Application.OpenForms)
+			{
+				if (f is Nitrurado)
+				{
+					f.Show();
+					if (f.WindowState == FormWindowState.Minimized)
+						f.WindowState = FormWindowState.Normal;
+					f.BringToFront();
+					contador++;
+					return;
+				}
+
+			}
+			if (contador == 0)
+			{
+				Puesto puesto = new Puesto();
+				puesto.MdiParent = this;
+				puesto.Show();
+			}
+			contador = 0;
+		}
+	}
 }
