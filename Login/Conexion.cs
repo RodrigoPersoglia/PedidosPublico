@@ -1183,6 +1183,376 @@ namespace Login
 		}
 
 
+		public static DataTable GetClasificacion()
+		{
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			DataTable dt = new DataTable();
+			MySqlDataReader reader;
+			string consulta = "SELECT * FROM clasificacion c order by c.descripcion";
+			try
+			{
+
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				reader = comand.ExecuteReader();
+				dt.Load(reader);
+
+				if (dt.Rows.Count > 0)
+				{
+
+					return dt;
+				}
+				else { return null; }
+
+			}
+
+			catch (Exception ex) { MessageBox.Show("Error al buscar " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); return null; }
+			finally { conectar.Close(); }
+		}
+
+		public static void AddClasificacion(string descripcion, string precio)
+		{
+			string consulta = "insert into clasificacion (descripcion,precio) values ('" + descripcion + "', '" + precio + "')";
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Clasificación creada correctamente", "Clasificación", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+		}
+
+
+		public static void SetClasificacion(int id, string descripcion, string precio)
+		{
+			string consulta = "update clasificacion c set descripcion = '"+descripcion+ "', precio = '" + precio + "' where c.id = '" + id.ToString() + "'";
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Clasificación modificada correctamente", "Clasificación", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+		}
+
+		public static void DeleteClasificacion(int id)
+		{
+			string consulta = "delete from clasificacion where id = '" + id.ToString() + "'";
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Clasificación eliminada correctamente", "Clasificación", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+		}
+
+
+
+		public static DataTable GetPrioridad()
+		{
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			DataTable dt = new DataTable();
+			MySqlDataReader reader;
+			string consulta = "SELECT * FROM prioridad p order by p.descripcion";
+			try
+			{
+
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				reader = comand.ExecuteReader();
+				dt.Load(reader);
+
+				if (dt.Rows.Count > 0)
+				{
+
+					return dt;
+				}
+				else { return null; }
+
+			}
+
+			catch (Exception ex) { MessageBox.Show("Error al buscar " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); return null; }
+			finally { conectar.Close(); }
+		}
+
+		public static void AddPrioridad(string descripcion, string plazo)
+		{
+			string consulta = "insert into prioridad (descripcion,plazo) values ('" + descripcion + "', '" + plazo + "')";
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Prioridad creada correctamente", "Prioridad", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+		}
+
+
+		public static void SetPrioridad(int id, string descripcion, string plazo)
+		{
+			string consulta = "update prioridad p set descripcion = '" + descripcion + "', plazo = '" + plazo + "' where p.id = '" + id.ToString() + "'";
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Prioridad modificada correctamente", "Prioridad", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+		}
+
+		public static void DeletePrioridad(int id)
+		{
+			string consulta = "delete from Prioridad where id = '" + id.ToString() + "'";
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Prioridad eliminada correctamente", "Prioridad", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+		}
+
+
+		public static DataTable GetAleacion()
+		{
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			DataTable dt = new DataTable();
+			MySqlDataReader reader;
+			string consulta = "SELECT * FROM aleacion a order by a.descripcion";
+			try
+			{
+
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				reader = comand.ExecuteReader();
+				dt.Load(reader);
+
+				if (dt.Rows.Count > 0)
+				{
+
+					return dt;
+				}
+				else { return null; }
+
+			}
+
+			catch (Exception ex) { MessageBox.Show("Error al buscar " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); return null; }
+			finally { conectar.Close(); }
+		}
+
+		public static void AddAleacion(string descripcion)
+		{
+			string consulta = "insert into aleacion (descripcion) values ('" + descripcion + "')";
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Aleación creada correctamente", "Aleación", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+		}
+
+
+		public static void SetAleacion(int id, string descripcion)
+		{
+			string consulta = "update aleacion a set descripcion = '" + descripcion + "' where a.id = " + id.ToString();
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Aleación modificada correctamente", "Aleación", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+		}
+
+		public static void DeleteAleacion(int id)
+		{
+			string consulta = "delete from Aleacion where id = '" + id.ToString() + "'";
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Aleación eliminada correctamente", "Aleación", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+		}
+
+
+		public static DataTable GetTemple()
+		{
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			DataTable dt = new DataTable();
+			MySqlDataReader reader;
+			string consulta = "SELECT * FROM temple a order by a.descripcion";
+			try
+			{
+
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				reader = comand.ExecuteReader();
+				dt.Load(reader);
+
+				if (dt.Rows.Count > 0)
+				{
+
+					return dt;
+				}
+				else { return null; }
+
+			}
+
+			catch (Exception ex) { MessageBox.Show("Error al buscar " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); return null; }
+			finally { conectar.Close(); }
+		}
+
+		public static void AddTemple(string descripcion)
+		{
+			string consulta = "insert into temple (descripcion) values ('" + descripcion + "')";
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Temple creado correctamente", "Temple", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+		}
+
+
+		public static void SetTemple(int id, string descripcion)
+		{
+			string consulta = "update temple a set descripcion = '" + descripcion + "' where a.id = " + id.ToString();
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Temple modificado correctamente", "Temple", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+		}
+
+		public static void DeleteTemple(int id)
+		{
+			string consulta = "delete from temple where id = '" + id.ToString() + "'";
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Temple eliminado correctamente", "Temple", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+		}
+
+
+		public static DataTable GetTerminacion()
+		{
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			DataTable dt = new DataTable();
+			MySqlDataReader reader;
+			string consulta = "SELECT * FROM terminacion a order by a.descripcion";
+			try
+			{
+
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				reader = comand.ExecuteReader();
+				dt.Load(reader);
+
+				if (dt.Rows.Count > 0)
+				{
+
+					return dt;
+				}
+				else { return null; }
+
+			}
+
+			catch (Exception ex) { MessageBox.Show("Error al buscar " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); return null; }
+			finally { conectar.Close(); }
+		}
+
+		public static void AddTerminacion(string descripcion)
+		{
+			string consulta = "insert into terminacion (descripcion) values ('" + descripcion + "')";
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Terminación creada correctamente", "Terminación", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+		}
+
+
+		public static void SetTerminacion(int id, string descripcion)
+		{
+			string consulta = "update terminacion a set descripcion = '" + descripcion + "' where a.id = " + id.ToString();
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Terminación modificada correctamente", "Terminación", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+		}
+
+		public static void DeleteTerminacion(int id)
+		{
+			string consulta = "delete from terminacion where id = '" + id.ToString() + "'";
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand(consulta, conectar);
+				comand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("Terminación eliminada correctamente", "Terminación", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
+			}
+			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+		}
+
 	}
 
 

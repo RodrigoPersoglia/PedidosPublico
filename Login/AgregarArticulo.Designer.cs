@@ -298,7 +298,7 @@ namespace Login
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(129, 23);
             this.label10.TabIndex = 30;
-            this.label10.Text = "TOPOLOGIA";
+            this.label10.Text = "FORMA";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label11

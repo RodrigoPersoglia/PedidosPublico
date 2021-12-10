@@ -104,3 +104,8 @@ C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.ReporteProduccion.resourc
 C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.Nitrurado.resources
 C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.Ciudad.resources
 C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.Puesto.resources
+C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.Clasificacion.resources
+C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.Prioridad.resources
+C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.Aleacion.resources
+C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.Temple.resources
+C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.Terminacion.resources

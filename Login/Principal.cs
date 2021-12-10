@@ -668,7 +668,7 @@ namespace Login
 			int contador = 0;
 			foreach (Form f in Application.OpenForms)
 			{
-				if (f is Nitrurado)
+				if (f is Puesto)
 				{
 					f.Show();
 					if (f.WindowState == FormWindowState.Minimized)
@@ -684,6 +684,131 @@ namespace Login
 				Puesto puesto = new Puesto();
 				puesto.MdiParent = this;
 				puesto.Show();
+			}
+			contador = 0;
+		}
+
+        private void clasificaciónToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			int contador = 0;
+			foreach (Form f in Application.OpenForms)
+			{
+				if (f is Clasificacion)
+				{
+					f.Show();
+					if (f.WindowState == FormWindowState.Minimized)
+						f.WindowState = FormWindowState.Normal;
+					f.BringToFront();
+					contador++;
+					return;
+				}
+
+			}
+			if (contador == 0)
+			{
+				Clasificacion clasificacion = new Clasificacion();
+				clasificacion.MdiParent = this;
+				clasificacion.Show();
+			}
+			contador = 0;
+		}
+
+        private void prioridadToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			int contador = 0;
+			foreach (Form f in Application.OpenForms)
+			{
+				if (f is Prioridad)
+				{
+					f.Show();
+					if (f.WindowState == FormWindowState.Minimized)
+						f.WindowState = FormWindowState.Normal;
+					f.BringToFront();
+					contador++;
+					return;
+				}
+
+			}
+			if (contador == 0)
+			{
+				Prioridad prioridad = new Prioridad();
+				prioridad.MdiParent = this;
+				prioridad.Show();
+			}
+			contador = 0;
+		}
+
+        private void aleaciónToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			int contador = 0;
+			foreach (Form f in Application.OpenForms)
+			{
+				if (f is Aleacion)
+				{
+					f.Show();
+					if (f.WindowState == FormWindowState.Minimized)
+						f.WindowState = FormWindowState.Normal;
+					f.BringToFront();
+					contador++;
+					return;
+				}
+
+			}
+			if (contador == 0)
+			{
+				Aleacion ventana = new Aleacion();
+				ventana.MdiParent = this;
+				ventana.Show();
+			}
+			contador = 0;
+		}
+
+        private void templeToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			int contador = 0;
+			foreach (Form f in Application.OpenForms)
+			{
+				if (f is Temple)
+				{
+					f.Show();
+					if (f.WindowState == FormWindowState.Minimized)
+						f.WindowState = FormWindowState.Normal;
+					f.BringToFront();
+					contador++;
+					return;
+				}
+
+			}
+			if (contador == 0)
+			{
+				Temple ventana = new Temple();
+				ventana.MdiParent = this;
+				ventana.Show();
+			}
+			contador = 0;
+		}
+
+        private void terminaciónToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			int contador = 0;
+			foreach (Form f in Application.OpenForms)
+			{
+				if (f is Terminacion)
+				{
+					f.Show();
+					if (f.WindowState == FormWindowState.Minimized)
+						f.WindowState = FormWindowState.Normal;
+					f.BringToFront();
+					contador++;
+					return;
+				}
+
+			}
+			if (contador == 0)
+			{
+				Terminacion ventana = new Terminacion();
+				ventana.MdiParent = this;
+				ventana.Show();
 			}
 			contador = 0;
 		}
