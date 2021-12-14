@@ -122,6 +122,7 @@ namespace Login
             // 
             this.Cuadro.AllowUserToAddRows = false;
             this.Cuadro.AllowUserToDeleteRows = false;
+            this.Cuadro.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.Cuadro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Cuadro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.imprime,
@@ -321,6 +322,7 @@ namespace Login
             // 
             // splitContainer1
             // 
+            this.splitContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
@@ -328,6 +330,7 @@ namespace Login
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.Acumulados);
             this.splitContainer1.Panel1.Controls.Add(this.label2);

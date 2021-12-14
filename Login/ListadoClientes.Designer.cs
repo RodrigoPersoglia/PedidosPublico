@@ -41,12 +41,6 @@ namespace Login
             this.label1 = new System.Windows.Forms.Label();
             this.Busquedatext = new System.Windows.Forms.TextBox();
             this.Cuadro = new System.Windows.Forms.DataGridView();
-            this.Buscar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Cancelar = new System.Windows.Forms.Button();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.VerTodosBTN = new System.Windows.Forms.Button();
-            this.ExportarBTN = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Alias = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +60,12 @@ namespace Login
             this.CP2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Buscar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Cancelar = new System.Windows.Forms.Button();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.VerTodosBTN = new System.Windows.Forms.Button();
+            this.ExportarBTN = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Cuadro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -97,7 +97,7 @@ namespace Login
             this.Cuadro.AllowUserToAddRows = false;
             this.Cuadro.AllowUserToDeleteRows = false;
             this.Cuadro.AllowUserToOrderColumns = true;
-            this.Cuadro.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.Cuadro.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.Cuadro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Cuadro.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -140,86 +140,6 @@ namespace Login
             this.Cuadro.Size = new System.Drawing.Size(578, 328);
             this.Cuadro.TabIndex = 2;
             this.Cuadro.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Selecccioncelda);
-            // 
-            // Buscar
-            // 
-            this.Buscar.Location = new System.Drawing.Point(292, 50);
-            this.Buscar.Margin = new System.Windows.Forms.Padding(2);
-            this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(67, 24);
-            this.Buscar.TabIndex = 3;
-            this.Buscar.Text = "Buscar";
-            this.Buscar.UseVisualStyleBackColor = true;
-            this.Buscar.Click += new System.EventHandler(this.BuscarClick);
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(11, 9);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(230, 19);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "SELECCCIÓN";
-            // 
-            // Cancelar
-            // 
-            this.Cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.Cancelar.Location = new System.Drawing.Point(500, 11);
-            this.Cancelar.Margin = new System.Windows.Forms.Padding(2);
-            this.Cancelar.Name = "Cancelar";
-            this.Cancelar.Size = new System.Drawing.Size(67, 24);
-            this.Cancelar.TabIndex = 27;
-            this.Cancelar.Text = "Cerrar";
-            this.Cancelar.UseVisualStyleBackColor = true;
-            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.VerTodosBTN);
-            this.splitContainer1.Panel1.Controls.Add(this.ExportarBTN);
-            this.splitContainer1.Panel1.Controls.Add(this.label2);
-            this.splitContainer1.Panel1.Controls.Add(this.Cancelar);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.Busquedatext);
-            this.splitContainer1.Panel1.Controls.Add(this.Buscar);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.Cuadro);
-            this.splitContainer1.Size = new System.Drawing.Size(578, 432);
-            this.splitContainer1.SplitterDistance = 100;
-            this.splitContainer1.TabIndex = 29;
-            // 
-            // VerTodosBTN
-            // 
-            this.VerTodosBTN.Location = new System.Drawing.Point(372, 50);
-            this.VerTodosBTN.Margin = new System.Windows.Forms.Padding(2);
-            this.VerTodosBTN.Name = "VerTodosBTN";
-            this.VerTodosBTN.Size = new System.Drawing.Size(67, 24);
-            this.VerTodosBTN.TabIndex = 29;
-            this.VerTodosBTN.Text = "Ver todos";
-            this.VerTodosBTN.UseVisualStyleBackColor = true;
-            // 
-            // ExportarBTN
-            // 
-            this.ExportarBTN.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ExportarBTN.Location = new System.Drawing.Point(500, 49);
-            this.ExportarBTN.Margin = new System.Windows.Forms.Padding(2);
-            this.ExportarBTN.Name = "ExportarBTN";
-            this.ExportarBTN.Size = new System.Drawing.Size(67, 24);
-            this.ExportarBTN.TabIndex = 28;
-            this.ExportarBTN.Text = "Exportar";
-            this.ExportarBTN.UseVisualStyleBackColor = true;
-            this.ExportarBTN.Click += new System.EventHandler(this.ExportarBTN_Click);
             // 
             // ID
             // 
@@ -328,6 +248,88 @@ namespace Login
             this.TipoDocumento.HeaderText = "Tipo Doc.";
             this.TipoDocumento.Name = "TipoDocumento";
             this.TipoDocumento.Visible = false;
+            // 
+            // Buscar
+            // 
+            this.Buscar.Location = new System.Drawing.Point(292, 50);
+            this.Buscar.Margin = new System.Windows.Forms.Padding(2);
+            this.Buscar.Name = "Buscar";
+            this.Buscar.Size = new System.Drawing.Size(67, 24);
+            this.Buscar.TabIndex = 3;
+            this.Buscar.Text = "Buscar";
+            this.Buscar.UseVisualStyleBackColor = true;
+            this.Buscar.Click += new System.EventHandler(this.BuscarClick);
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(11, 9);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(230, 19);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "SELECCCIÓN";
+            // 
+            // Cancelar
+            // 
+            this.Cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Cancelar.Location = new System.Drawing.Point(500, 11);
+            this.Cancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.Cancelar.Name = "Cancelar";
+            this.Cancelar.Size = new System.Drawing.Size(67, 24);
+            this.Cancelar.TabIndex = 27;
+            this.Cancelar.Text = "Cerrar";
+            this.Cancelar.UseVisualStyleBackColor = true;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.splitContainer1.Panel1.Controls.Add(this.VerTodosBTN);
+            this.splitContainer1.Panel1.Controls.Add(this.ExportarBTN);
+            this.splitContainer1.Panel1.Controls.Add(this.label2);
+            this.splitContainer1.Panel1.Controls.Add(this.Cancelar);
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Controls.Add(this.Busquedatext);
+            this.splitContainer1.Panel1.Controls.Add(this.Buscar);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.Cuadro);
+            this.splitContainer1.Size = new System.Drawing.Size(578, 432);
+            this.splitContainer1.SplitterDistance = 100;
+            this.splitContainer1.TabIndex = 29;
+            // 
+            // VerTodosBTN
+            // 
+            this.VerTodosBTN.Location = new System.Drawing.Point(372, 50);
+            this.VerTodosBTN.Margin = new System.Windows.Forms.Padding(2);
+            this.VerTodosBTN.Name = "VerTodosBTN";
+            this.VerTodosBTN.Size = new System.Drawing.Size(67, 24);
+            this.VerTodosBTN.TabIndex = 29;
+            this.VerTodosBTN.Text = "Ver todos";
+            this.VerTodosBTN.UseVisualStyleBackColor = true;
+            // 
+            // ExportarBTN
+            // 
+            this.ExportarBTN.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.ExportarBTN.Location = new System.Drawing.Point(500, 49);
+            this.ExportarBTN.Margin = new System.Windows.Forms.Padding(2);
+            this.ExportarBTN.Name = "ExportarBTN";
+            this.ExportarBTN.Size = new System.Drawing.Size(67, 24);
+            this.ExportarBTN.TabIndex = 28;
+            this.ExportarBTN.Text = "Exportar";
+            this.ExportarBTN.UseVisualStyleBackColor = true;
+            this.ExportarBTN.Click += new System.EventHandler(this.ExportarBTN_Click);
             // 
             // ListadoClientes
             // 

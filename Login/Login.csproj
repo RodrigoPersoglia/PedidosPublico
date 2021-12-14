@@ -170,6 +170,12 @@
     <Compile Include="Acceso.Designer.cs">
       <DependentUpon>Acceso.cs</DependentUpon>
     </Compile>
+    <Compile Include="fondo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fondo.Designer.cs">
+      <DependentUpon>fondo.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListadoArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,6 +351,9 @@
     <EmbeddedResource Include="Acceso.resx">
       <DependentUpon>Acceso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fondo.resx">
+      <DependentUpon>fondo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListadoArticulos.resx">
       <DependentUpon>ListadoArticulos.cs</DependentUpon>
     </EmbeddedResource>
@@ -463,6 +472,14 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\fondo10.gif" />
+    <None Include="Resources\fondo10.tif" />
+    <None Include="Resources\fondo9.jpg" />
+    <None Include="Resources\fondo8.jpg" />
+    <None Include="Resources\fondo7.jpeg" />
+    <None Include="Resources\FONDO6.jpg" />
+    <None Include="Resources\fondo5.jpg" />
+    <None Include="Resources\Foto de fondo wonderful Negros, Windows Vista 1600x1000.jpg" />
     <None Include="Resources\configDatos.png" />
     <None Include="Resources\config.png" />
     <None Include="Resources\configuracion2.png" />

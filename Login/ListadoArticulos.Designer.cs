@@ -57,9 +57,9 @@ namespace Login
             this.label2 = new System.Windows.Forms.Label();
             this.Cerrar = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ExportarBTN = new System.Windows.Forms.Button();
             this.VerTodos = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Cuadro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -92,7 +92,7 @@ namespace Login
             this.Cuadro.AllowUserToAddRows = false;
             this.Cuadro.AllowUserToDeleteRows = false;
             this.Cuadro.AllowUserToOrderColumns = true;
-            this.Cuadro.BackgroundColor = System.Drawing.Color.Navy;
+            this.Cuadro.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.Cuadro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Cuadro.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -237,6 +237,7 @@ namespace Login
             // 
             // splitContainer1
             // 
+            this.splitContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
@@ -244,6 +245,7 @@ namespace Login
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
             this.splitContainer1.Panel1.Controls.Add(this.ExportarBTN);
             this.splitContainer1.Panel1.Controls.Add(this.VerTodos);
@@ -259,6 +261,17 @@ namespace Login
             this.splitContainer1.Size = new System.Drawing.Size(634, 432);
             this.splitContainer1.SplitterDistance = 130;
             this.splitContainer1.TabIndex = 29;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(294, 11);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(227, 105);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
             // 
             // ExportarBTN
             // 
@@ -282,17 +295,6 @@ namespace Login
             this.VerTodos.Text = "Ver todos";
             this.VerTodos.UseVisualStyleBackColor = true;
             this.VerTodos.Click += new System.EventHandler(this.VerTodos_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(294, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(227, 105);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
             // 
             // ListadoArticulos
             // 

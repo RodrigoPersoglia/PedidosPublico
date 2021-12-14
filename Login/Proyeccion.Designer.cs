@@ -59,10 +59,6 @@ namespace Login
             this.Fecha1DTP = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.Cuadro = new System.Windows.Forms.DataGridView();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.Ignorar_Chek = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Acumulados = new System.Windows.Forms.TextBox();
             this.imprime = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,6 +76,10 @@ namespace Login
             this.Prioridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KgEstimados = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Terminacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.Ignorar_Chek = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Acumulados = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Cuadro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -161,6 +161,7 @@ namespace Login
             // 
             this.Cuadro.AllowUserToAddRows = false;
             this.Cuadro.AllowUserToDeleteRows = false;
+            this.Cuadro.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.Cuadro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Cuadro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.imprime,
@@ -193,65 +194,6 @@ namespace Login
             this.Cuadro.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cuadro_CellClick);
             this.Cuadro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cuadro_CellContentClick);
             this.Cuadro.SelectionChanged += new System.EventHandler(this.Cuadro_SelectionChanged);
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.Ignorar_Chek);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.Acumulados);
-            this.splitContainer1.Panel1.Controls.Add(this.label2);
-            this.splitContainer1.Panel1.Controls.Add(this.Buscar);
-            this.splitContainer1.Panel1.Controls.Add(this.Cancelar);
-            this.splitContainer1.Panel1.Controls.Add(this.Exportarboton);
-            this.splitContainer1.Panel1.Controls.Add(this.Fecha1DTP);
-            this.splitContainer1.Panel1.Controls.Add(this.label3);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.Cuadro);
-            this.splitContainer1.Size = new System.Drawing.Size(734, 562);
-            this.splitContainer1.SplitterDistance = 126;
-            this.splitContainer1.TabIndex = 50;
-            // 
-            // Ignorar_Chek
-            // 
-            this.Ignorar_Chek.AutoSize = true;
-            this.Ignorar_Chek.ForeColor = System.Drawing.Color.White;
-            this.Ignorar_Chek.Location = new System.Drawing.Point(15, 87);
-            this.Ignorar_Chek.Name = "Ignorar_Chek";
-            this.Ignorar_Chek.Size = new System.Drawing.Size(173, 17);
-            this.Ignorar_Chek.TabIndex = 48;
-            this.Ignorar_Chek.Text = "Ignorar los pedidos incumplidos";
-            this.Ignorar_Chek.UseVisualStyleBackColor = true;
-            this.Ignorar_Chek.CheckedChanged += new System.EventHandler(this.Ignorar_Chek_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(309, 46);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 25);
-            this.label1.TabIndex = 47;
-            this.label1.Text = "Kg Acumulados";
-            // 
-            // Acumulados
-            // 
-            this.Acumulados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Acumulados.ForeColor = System.Drawing.Color.Red;
-            this.Acumulados.Location = new System.Drawing.Point(477, 47);
-            this.Acumulados.Name = "Acumulados";
-            this.Acumulados.Size = new System.Drawing.Size(100, 22);
-            this.Acumulados.TabIndex = 46;
-            this.Acumulados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // imprime
             // 
@@ -416,6 +358,67 @@ namespace Login
             this.Terminacion.HeaderText = "Terminación";
             this.Terminacion.Name = "Terminacion";
             this.Terminacion.ReadOnly = true;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.splitContainer1.Panel1.Controls.Add(this.Ignorar_Chek);
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Controls.Add(this.Acumulados);
+            this.splitContainer1.Panel1.Controls.Add(this.label2);
+            this.splitContainer1.Panel1.Controls.Add(this.Buscar);
+            this.splitContainer1.Panel1.Controls.Add(this.Cancelar);
+            this.splitContainer1.Panel1.Controls.Add(this.Exportarboton);
+            this.splitContainer1.Panel1.Controls.Add(this.Fecha1DTP);
+            this.splitContainer1.Panel1.Controls.Add(this.label3);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.Cuadro);
+            this.splitContainer1.Size = new System.Drawing.Size(734, 562);
+            this.splitContainer1.SplitterDistance = 126;
+            this.splitContainer1.TabIndex = 50;
+            // 
+            // Ignorar_Chek
+            // 
+            this.Ignorar_Chek.AutoSize = true;
+            this.Ignorar_Chek.ForeColor = System.Drawing.Color.White;
+            this.Ignorar_Chek.Location = new System.Drawing.Point(15, 87);
+            this.Ignorar_Chek.Name = "Ignorar_Chek";
+            this.Ignorar_Chek.Size = new System.Drawing.Size(173, 17);
+            this.Ignorar_Chek.TabIndex = 48;
+            this.Ignorar_Chek.Text = "Ignorar los pedidos incumplidos";
+            this.Ignorar_Chek.UseVisualStyleBackColor = true;
+            this.Ignorar_Chek.CheckedChanged += new System.EventHandler(this.Ignorar_Chek_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(309, 46);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(172, 25);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "Kg Acumulados";
+            // 
+            // Acumulados
+            // 
+            this.Acumulados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Acumulados.ForeColor = System.Drawing.Color.Red;
+            this.Acumulados.Location = new System.Drawing.Point(477, 47);
+            this.Acumulados.Name = "Acumulados";
+            this.Acumulados.Size = new System.Drawing.Size(100, 22);
+            this.Acumulados.TabIndex = 46;
+            this.Acumulados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Proyeccion
             // 

@@ -52,6 +52,7 @@ namespace Login
             this.prioridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aleaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.templeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.terminaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.artículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AgregarArticuloMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.EliminarArticuloMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,7 +78,6 @@ namespace Login
             this.reporteDeProducciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.terminaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,7 +115,7 @@ namespace Login
             // 
             // ciudadesToolStripMenuItem
             // 
-            this.ciudadesToolStripMenuItem.Image = global::Login.Properties.Resources.ubicacion;
+            this.ciudadesToolStripMenuItem.Image = global::Login.Properties.Resources.configDatos;
             this.ciudadesToolStripMenuItem.Name = "ciudadesToolStripMenuItem";
             resources.ApplyResources(this.ciudadesToolStripMenuItem, "ciudadesToolStripMenuItem");
             this.ciudadesToolStripMenuItem.Click += new System.EventHandler(this.ciudadesToolStripMenuItem_Click);
@@ -154,6 +154,13 @@ namespace Login
             this.templeToolStripMenuItem.Name = "templeToolStripMenuItem";
             resources.ApplyResources(this.templeToolStripMenuItem, "templeToolStripMenuItem");
             this.templeToolStripMenuItem.Click += new System.EventHandler(this.templeToolStripMenuItem_Click);
+            // 
+            // terminaciónToolStripMenuItem
+            // 
+            this.terminaciónToolStripMenuItem.Image = global::Login.Properties.Resources.configDatos;
+            this.terminaciónToolStripMenuItem.Name = "terminaciónToolStripMenuItem";
+            resources.ApplyResources(this.terminaciónToolStripMenuItem, "terminaciónToolStripMenuItem");
+            this.terminaciónToolStripMenuItem.Click += new System.EventHandler(this.terminaciónToolStripMenuItem_Click);
             // 
             // artículosToolStripMenuItem
             // 
@@ -345,19 +352,11 @@ namespace Login
             resources.ApplyResources(this.ayudaToolStripMenuItem, "ayudaToolStripMenuItem");
             this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
             // 
-            // terminaciónToolStripMenuItem
-            // 
-            this.terminaciónToolStripMenuItem.Image = global::Login.Properties.Resources.configDatos;
-            this.terminaciónToolStripMenuItem.Name = "terminaciónToolStripMenuItem";
-            resources.ApplyResources(this.terminaciónToolStripMenuItem, "terminaciónToolStripMenuItem");
-            this.terminaciónToolStripMenuItem.Click += new System.EventHandler(this.terminaciónToolStripMenuItem_Click);
-            // 
             // Principal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.Navy;
-            this.BackgroundImage = global::Login.Properties.Resources.FONDO_3;
             resources.ApplyResources(this, "$this");
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

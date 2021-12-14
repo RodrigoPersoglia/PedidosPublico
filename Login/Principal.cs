@@ -114,6 +114,12 @@ namespace Login
 		}
 		void PrincipalLoad(object sender, EventArgs e)	
 		{
+			fondo fond = new fondo(usuario);
+			fond.MdiParent = this;
+			fond.Dock = DockStyle.Fill;
+
+			
+			fond.Show();
 
 
 			clientesToolStripMenuItem.Visible = usuario.TablaCliente;
@@ -155,20 +161,20 @@ namespace Login
 
 			//Haz esto en el evento Load de tu formulario MDI
 
-			salirToolStripMenuItem.Text = "Usuario: " + usuario.User + "     Cerrar Sesión";
+			salirToolStripMenuItem.Text = "Cerrar Sesión";
 
-			MdiClient oMDI;
+			//MdiClient oMDI;
  
-			//recorremos todos los controles hijos del formulario
-			foreach (Control ctl in this.Controls)
-			{
-        try
-        {// Intentamos castear el objeto MdiClient
-           oMDI = (MdiClient)ctl;
-          // Cuando sea casteado con éxito, podremos cambiar el color así
-          oMDI.BackColor = Color.Navy;}
-        catch (InvalidCastException){// No hacemos nada cuando el control no sea tupo MdiClient
-        }}
+			////recorremos todos los controles hijos del formulario
+			//foreach (Control ctl in this.Controls)
+			//{
+   //     try
+   //     {// Intentamos castear el objeto MdiClient
+   //        oMDI = (MdiClient)ctl;
+   //       // Cuando sea casteado con éxito, podremos cambiar el color así
+   //       oMDI.BackColor = Color.Navy;}
+   //     catch (InvalidCastException){// No hacemos nada cuando el control no sea tupo MdiClient
+   //     }}
 	
 		}
 		

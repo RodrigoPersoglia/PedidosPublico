@@ -383,7 +383,7 @@ namespace Login
             this.AcceptButton = this.EliminarBoton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Navy;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.CancelButton = this.Cancelar;
             this.ClientSize = new System.Drawing.Size(735, 548);
             this.ControlBox = false;

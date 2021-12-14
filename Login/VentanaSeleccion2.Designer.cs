@@ -95,7 +95,7 @@ namespace Login
             // 
             this.Cuadro.AllowUserToDeleteRows = false;
             this.Cuadro.AllowUserToOrderColumns = true;
-            this.Cuadro.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.Cuadro.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.Cuadro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Cuadro.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -301,6 +301,7 @@ namespace Login
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.Aceptar);
             this.splitContainer1.Panel1.Controls.Add(this.Cancelar);

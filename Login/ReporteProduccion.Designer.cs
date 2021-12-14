@@ -38,10 +38,10 @@ namespace Login
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteProduccion));
             this.Buscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,6 +50,9 @@ namespace Login
             this.Fecha1DTP = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.Cuadro = new System.Windows.Forms.DataGridView();
+            this.imprime = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Kgs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.Fecha2DTP = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
@@ -62,9 +65,6 @@ namespace Login
             this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn200 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.imprime = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Kgs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Cuadro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -151,6 +151,7 @@ namespace Login
             // 
             this.Cuadro.AllowUserToAddRows = false;
             this.Cuadro.AllowUserToDeleteRows = false;
+            this.Cuadro.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.Cuadro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Cuadro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.imprime,
@@ -170,8 +171,42 @@ namespace Login
             this.Cuadro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cuadro_CellContentClick);
             this.Cuadro.SelectionChanged += new System.EventHandler(this.Cuadro_SelectionChanged);
             // 
+            // imprime
+            // 
+            this.imprime.FalseValue = "";
+            this.imprime.HeaderText = " ";
+            this.imprime.Name = "imprime";
+            this.imprime.ReadOnly = true;
+            this.imprime.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.imprime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.imprime.TrueValue = "";
+            this.imprime.Width = 30;
+            // 
+            // Fecha
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Fecha.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.MinimumWidth = 6;
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            // 
+            // Kgs
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Kgs.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Kgs.HeaderText = "Kgs";
+            this.Kgs.MinimumWidth = 6;
+            this.Kgs.Name = "Kgs";
+            this.Kgs.ReadOnly = true;
+            this.Kgs.Width = 87;
+            // 
             // splitContainer1
             // 
+            this.splitContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
@@ -179,6 +214,7 @@ namespace Login
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.splitContainer1.Panel1.Controls.Add(this.Fecha2DTP);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
@@ -262,6 +298,7 @@ namespace Login
             // 
             this.Cuadro2.AllowUserToAddRows = false;
             this.Cuadro2.AllowUserToDeleteRows = false;
+            this.Cuadro2.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.Cuadro2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Cuadro2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.OP,
@@ -327,39 +364,6 @@ namespace Login
             this.dataGridViewButtonColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewButtonColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewButtonColumn1.Text = "Ver Detalle";
-            // 
-            // imprime
-            // 
-            this.imprime.FalseValue = "";
-            this.imprime.HeaderText = " ";
-            this.imprime.Name = "imprime";
-            this.imprime.ReadOnly = true;
-            this.imprime.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.imprime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.imprime.TrueValue = "";
-            this.imprime.Width = 30;
-            // 
-            // Fecha
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Fecha.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.MinimumWidth = 6;
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            // 
-            // Kgs
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Kgs.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Kgs.HeaderText = "Kgs";
-            this.Kgs.MinimumWidth = 6;
-            this.Kgs.Name = "Kgs";
-            this.Kgs.ReadOnly = true;
-            this.Kgs.Width = 87;
             // 
             // ReporteProduccion
             // 
