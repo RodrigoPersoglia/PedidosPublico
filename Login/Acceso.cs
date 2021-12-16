@@ -91,6 +91,40 @@ namespace Login
 										if ((int)y[9] == 0) { usuarioNuevo.TablaReporte = false; }
 										else { usuarioNuevo.TablaReporte = true; }
 
+										//Items Menu
+										if ((int)y[10] == 0) { usuarioNuevo.AltaArticulos = false; }
+										else { usuarioNuevo.AltaArticulos = true; }
+
+										if ((int)y[11] == 0) { usuarioNuevo.BajaArticulos = false; }
+										else { usuarioNuevo.BajaArticulos = true; }
+
+										if ((int)y[12] == 0) { usuarioNuevo.ModificaArticulos = false; }
+										else { usuarioNuevo.ModificaArticulos = true; }
+
+										if ((int)y[13] == 0) { usuarioNuevo.AltaClientes = false; }
+										else { usuarioNuevo.AltaClientes = true; }
+
+										if ((int)y[14] == 0) { usuarioNuevo.ModificaClientes = false; }
+										else { usuarioNuevo.ModificaClientes = true; }
+
+										if ((int)y[15] == 0) { usuarioNuevo.AltaPedidos = false; }
+										else { usuarioNuevo.AltaPedidos = true; }
+
+										if ((int)y[16] == 0) { usuarioNuevo.ModificaPedidos = false; }
+										else { usuarioNuevo.ModificaPedidos = true; }
+
+										if ((int)y[17] == 0) { usuarioNuevo.DetallePedidos = false; }
+										else { usuarioNuevo.DetallePedidos = true; }
+
+										if ((int)y[18] == 0) { usuarioNuevo.AltaMatrices = false; }
+										else { usuarioNuevo.AltaMatrices = true; }
+
+										if ((int)y[19] == 0) { usuarioNuevo.ModificaMatrices = false; }
+										else { usuarioNuevo.ModificaMatrices = true; }
+
+										if ((int)y[20] == 0) { usuarioNuevo.Nitrurado = false; }
+										else { usuarioNuevo.Nitrurado = true; }
+
 									}
 
 									Principal vnappal = new Principal(usuarioNuevo);

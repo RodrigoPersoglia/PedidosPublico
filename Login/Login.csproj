@@ -264,6 +264,12 @@
       <DependentUpon>Puesto.cs</DependentUpon>
     </Compile>
     <Compile Include="rendimiento.cs" />
+    <Compile Include="ReporteNitrurado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteNitrurado.designer.cs">
+      <DependentUpon>ReporteNitrurado.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReporteProduccion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -399,6 +405,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Puesto.resx">
       <DependentUpon>Puesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteNitrurado.resx">
+      <DependentUpon>ReporteNitrurado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteProduccion.resx">
       <DependentUpon>ReporteProduccion.cs</DependentUpon>

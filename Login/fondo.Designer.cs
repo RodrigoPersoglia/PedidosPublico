@@ -39,6 +39,8 @@ namespace Login
             this.Calendario.Location = new System.Drawing.Point(124, 141);
             this.Calendario.Name = "Calendario";
             this.Calendario.TabIndex = 0;
+            this.Calendario.MouseEnter += new System.EventHandler(this.Calendario_MouseEnter);
+            this.Calendario.MouseLeave += new System.EventHandler(this.Calendario_MouseLeave);
             // 
             // label1
             // 
@@ -56,11 +58,11 @@ namespace Login
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(384, 236);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 18);
+            this.label2.Size = new System.Drawing.Size(68, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "usuario";
             // 
@@ -79,6 +81,7 @@ namespace Login
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fondo";
             this.Load += new System.EventHandler(this.fondo_Load);
+            this.Click += new System.EventHandler(this.fondo_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -33,7 +33,25 @@ namespace Login
                 hoja_trabajo =
                     (Microsoft.Office.Interop.Excel.Worksheet)libros_trabajo.Worksheets.get_Item(1);
 
-     
+
+                    hoja_trabajo.Rows.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+
+                    Range rango = hoja_trabajo.Cells.Range[hoja_trabajo.Cells[1, 1], hoja_trabajo.Cells[1, grd.Columns.Count]];
+                    rango.Font.Bold = true;
+                    rango.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Silver);
+                    rango.Borders.Weight = Excel.XlBorderWeight.xlThin;
+                    rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                    rango.Borders.ColorIndex = Excel.XlColorIndex.xlColorIndexAutomatic;
+
+
+                    for (int i = 2; i < grd.Columns.Count; i++)
+                    {
+                        hoja_trabajo.Cells[1, i - 1] = grd.Columns[i].HeaderCell.Value.ToString().ToUpper();
+
+                    }
+
+
 
                     for (int i = 0; i < grd.Columns.Count; i++)
                     {

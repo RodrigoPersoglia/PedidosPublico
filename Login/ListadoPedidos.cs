@@ -10,13 +10,13 @@ namespace Login
 {
 	public partial class ListadoPedidos : Form
 	{
-		string usuario;
+		Usuario usuario;
 		public ListadoPedidos()
 		{
 			InitializeComponent();
 		}
 
-		public ListadoPedidos(string user)
+		public ListadoPedidos(Usuario user)
 		{
 			usuario = user;
 			InitializeComponent();
@@ -258,22 +258,8 @@ namespace Login
 
         private void ListadoPedidos_Load(object sender, EventArgs e)
         {
-
-			if (usuario == "Produccion")
-            {
-				ModificarBTN.Enabled = false;
-				GuardarBTN.Enabled = false;
-
-			}
-
-			if (usuario == "Gerencia")
-			{
-				ModificarBTN.Enabled = false;
-
-			}
-
-
-
+			ModificarBTN.Enabled = usuario.ModificaPedidos;
+			GuardarBTN.Enabled = usuario.ModificaPedidos;
 
 
 			fecha2DTP.Value = DateTime.Today;

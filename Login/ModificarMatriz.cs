@@ -85,7 +85,7 @@ namespace Login
 
 					if ( _descripcion != "" && _salidas >0 &&  ClienteComboBox.Text != "Seleccione" && Estado_ComboBox.Text != "Seleccione" && KgAcumuladosTXT.ForeColor!=Color.Red)
 					{
-						Conexion.ModificarMatriz((int)Ejemplar_ComboBox.SelectedValue, _salidas, _pesoNominal,(int)ClienteComboBox.SelectedValue,(int)Estado_ComboBox.SelectedValue, int.Parse(KgAcumuladosTXT.Text));
+						Conexion.ModificarMatriz((int)Ejemplar_ComboBox.SelectedValue, _salidas, _pesoNominal,(int)ClienteComboBox.SelectedValue,(int)Estado_ComboBox.SelectedValue, int.Parse(KgAcumuladosTXT.Text), int.Parse(KgAcumulados2TBX.Text) , ControladaCKB.Checked);
 
 							//limpiar();
 							Codigotxt.Text = "";
@@ -93,7 +93,9 @@ namespace Login
 							PesoActual.Value = 0;
 							SalidasTXT.Value = 0;
 						    KgAcumuladosTXT.Text = "0";
-						MetrosTXT.Text = "0";
+							MetrosTXT.Text = "0";
+							KgAcumulados2TBX.Text = "0";
+							Metros2TBX.Text = "0";
 							ClienteComboBox.Text = "Seleccione";
 							pictureBox1.ImageLocation = null;
 
@@ -180,8 +182,9 @@ namespace Login
 
         private void Ejemplar_ComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-			try { 
-			matrizEjemplar = Conexion.ObtenerMatriz((int)Ejemplar_ComboBox.SelectedValue);
+            try
+            {
+                matrizEjemplar = Conexion.ObtenerMatriz((int)Ejemplar_ComboBox.SelectedValue);
 			if (matrizEjemplar != null)
 			{
 					
@@ -192,8 +195,17 @@ namespace Login
 					KgAcumuladosTXT.Text = matrizEjemplar.KgAcumulados.ToString();
 					try { MetrosTXT.Text = (Math.Round(Double.Parse(KgAcumuladosTXT.Text) / decimal.ToDouble(PesoActual.Value),2)).ToString(); }
 					catch (Exception) { }
-					}
+					KgAcumulados2TBX.Text = matrizEjemplar.KgAcumulados2.ToString();
+					try { Metros2TBX.Text = (Math.Round(Double.Parse(KgAcumulados2TBX.Text) / decimal.ToDouble(PesoActual.Value), 2)).ToString(); }
+					catch (Exception) { }
+
+					ControladaCKB.Checked = matrizEjemplar.Controlada;
+				
 			}
+
+
+
+        }
 			catch (Exception){
 				SalidasTXT.Value = 0;
 				PesoActual.Value = 0;
@@ -201,7 +213,7 @@ namespace Login
 				Estado_ComboBox.Text = "Seleccione";
 				MetrosTXT.Text = "0";
 			}
-		}
+}
 
         private void KgAcumuladosTXT_TextChanged(object sender, EventArgs e)
         {

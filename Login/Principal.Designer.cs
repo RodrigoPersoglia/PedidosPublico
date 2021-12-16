@@ -78,6 +78,7 @@ namespace Login
             this.reporteDeProducciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeNitruradoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -315,7 +316,8 @@ namespace Login
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.proyeccionToolStripMenuItem,
             this.enProducciónToolStripMenuItem,
-            this.reporteDeProducciónToolStripMenuItem});
+            this.reporteDeProducciónToolStripMenuItem,
+            this.reporteDeNitruradoToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             resources.ApplyResources(this.reportesToolStripMenuItem, "reportesToolStripMenuItem");
             // 
@@ -351,6 +353,13 @@ namespace Login
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             resources.ApplyResources(this.ayudaToolStripMenuItem, "ayudaToolStripMenuItem");
             this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
+            // 
+            // reporteDeNitruradoToolStripMenuItem
+            // 
+            this.reporteDeNitruradoToolStripMenuItem.Image = global::Login.Properties.Resources.reporte;
+            this.reporteDeNitruradoToolStripMenuItem.Name = "reporteDeNitruradoToolStripMenuItem";
+            resources.ApplyResources(this.reporteDeNitruradoToolStripMenuItem, "reporteDeNitruradoToolStripMenuItem");
+            this.reporteDeNitruradoToolStripMenuItem.Click += new System.EventHandler(this.reporteDeNitruradoToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -393,5 +402,6 @@ namespace Login
         private System.Windows.Forms.ToolStripMenuItem aleaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem templeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem terminaciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeNitruradoToolStripMenuItem;
     }
 }

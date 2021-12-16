@@ -68,6 +68,10 @@ namespace Login
             this.KgAcumuladosTXT = new System.Windows.Forms.TextBox();
             this.MetrosTXT = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Metros2TBX = new System.Windows.Forms.TextBox();
+            this.KgAcumulados2TBX = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ControladaCKB = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.PesoActual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalidasTXT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -162,7 +166,7 @@ namespace Login
             // Modificar
             // 
             this.Modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Modificar.Location = new System.Drawing.Point(125, 323);
+            this.Modificar.Location = new System.Drawing.Point(125, 338);
             this.Modificar.Name = "Modificar";
             this.Modificar.Size = new System.Drawing.Size(90, 27);
             this.Modificar.TabIndex = 11;
@@ -174,7 +178,7 @@ namespace Login
             // 
             this.Cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancelar.Location = new System.Drawing.Point(235, 323);
+            this.Cancelar.Location = new System.Drawing.Point(235, 338);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(90, 27);
             this.Cancelar.TabIndex = 12;
@@ -333,6 +337,49 @@ namespace Login
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
+            // Metros2TBX
+            // 
+            this.Metros2TBX.Location = new System.Drawing.Point(290, 279);
+            this.Metros2TBX.MaxLength = 20;
+            this.Metros2TBX.Name = "Metros2TBX";
+            this.Metros2TBX.ReadOnly = true;
+            this.Metros2TBX.Size = new System.Drawing.Size(141, 19);
+            this.Metros2TBX.TabIndex = 44;
+            this.Metros2TBX.Text = "0";
+            // 
+            // KgAcumulados2TBX
+            // 
+            this.KgAcumulados2TBX.Location = new System.Drawing.Point(290, 254);
+            this.KgAcumulados2TBX.MaxLength = 20;
+            this.KgAcumulados2TBX.Name = "KgAcumulados2TBX";
+            this.KgAcumulados2TBX.Size = new System.Drawing.Size(141, 19);
+            this.KgAcumulados2TBX.TabIndex = 43;
+            this.KgAcumulados2TBX.Text = "0";
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(287, 228);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(155, 23);
+            this.label10.TabIndex = 45;
+            this.label10.Text = "Desde último nitrurado";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // ControladaCKB
+            // 
+            this.ControladaCKB.AutoSize = true;
+            this.ControladaCKB.BackColor = System.Drawing.Color.Transparent;
+            this.ControladaCKB.ForeColor = System.Drawing.Color.White;
+            this.ControladaCKB.Location = new System.Drawing.Point(125, 304);
+            this.ControladaCKB.Name = "ControladaCKB";
+            this.ControladaCKB.Size = new System.Drawing.Size(77, 17);
+            this.ControladaCKB.TabIndex = 46;
+            this.ControladaCKB.Text = "Controlada";
+            this.ControladaCKB.UseVisualStyleBackColor = false;
+            // 
             // ModificarMatriz
             // 
             this.AcceptButton = this.Modificar;
@@ -342,6 +389,10 @@ namespace Login
             this.CancelButton = this.Cancelar;
             this.ClientSize = new System.Drawing.Size(480, 377);
             this.ControlBox = false;
+            this.Controls.Add(this.ControladaCKB);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.Metros2TBX);
+            this.Controls.Add(this.KgAcumulados2TBX);
             this.Controls.Add(this.MetrosTXT);
             this.Controls.Add(this.KgAcumuladosTXT);
             this.Controls.Add(this.label9);
@@ -392,5 +443,9 @@ namespace Login
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox KgAcumuladosTXT;
         private System.Windows.Forms.TextBox MetrosTXT;
+        private System.Windows.Forms.TextBox Metros2TBX;
+        private System.Windows.Forms.TextBox KgAcumulados2TBX;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.CheckBox ControladaCKB;
     }
 }

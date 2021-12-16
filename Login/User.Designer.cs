@@ -30,6 +30,7 @@ namespace Login
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.ReporteCKB = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.UsuarioCKB = new System.Windows.Forms.CheckBox();
             this.MatricesCKB = new System.Windows.Forms.CheckBox();
@@ -46,7 +47,17 @@ namespace Login
             this.Agregar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.Cuadro = new System.Windows.Forms.DataGridView();
-            this.ReporteCKB = new System.Windows.Forms.CheckBox();
+            this.AltaCliente = new System.Windows.Forms.CheckBox();
+            this.ModificaCliente = new System.Windows.Forms.CheckBox();
+            this.BajaArticulos = new System.Windows.Forms.CheckBox();
+            this.AltaArticulos = new System.Windows.Forms.CheckBox();
+            this.ModificaArticulos = new System.Windows.Forms.CheckBox();
+            this.DetallePedidos = new System.Windows.Forms.CheckBox();
+            this.ModificaPedidos = new System.Windows.Forms.CheckBox();
+            this.AltaPedidos = new System.Windows.Forms.CheckBox();
+            this.NitruradoMatrices = new System.Windows.Forms.CheckBox();
+            this.ModificaMatrices = new System.Windows.Forms.CheckBox();
+            this.AltaMatrices = new System.Windows.Forms.CheckBox();
             this.check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +69,17 @@ namespace Login
             this.Telefono2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Usuarios = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.VerReportes = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.AltArticulo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.bajarticulo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.modarticulo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.AltCliente = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.modificCliente = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.altpedido = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.MOdifiPedido = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.detall = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.altamat = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.bajamat = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.nitru = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -75,6 +97,17 @@ namespace Login
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.splitContainer1.Panel1.Controls.Add(this.NitruradoMatrices);
+            this.splitContainer1.Panel1.Controls.Add(this.ModificaMatrices);
+            this.splitContainer1.Panel1.Controls.Add(this.AltaMatrices);
+            this.splitContainer1.Panel1.Controls.Add(this.DetallePedidos);
+            this.splitContainer1.Panel1.Controls.Add(this.ModificaPedidos);
+            this.splitContainer1.Panel1.Controls.Add(this.AltaPedidos);
+            this.splitContainer1.Panel1.Controls.Add(this.ModificaArticulos);
+            this.splitContainer1.Panel1.Controls.Add(this.BajaArticulos);
+            this.splitContainer1.Panel1.Controls.Add(this.AltaArticulos);
+            this.splitContainer1.Panel1.Controls.Add(this.ModificaCliente);
+            this.splitContainer1.Panel1.Controls.Add(this.AltaCliente);
             this.splitContainer1.Panel1.Controls.Add(this.ReporteCKB);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.UsuarioCKB);
@@ -98,15 +131,25 @@ namespace Login
             this.splitContainer1.Panel2.Controls.Add(this.Cuadro);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(774, 441);
-            this.splitContainer1.SplitterDistance = 160;
+            this.splitContainer1.SplitterDistance = 175;
             this.splitContainer1.TabIndex = 12;
+            // 
+            // ReporteCKB
+            // 
+            this.ReporteCKB.AutoSize = true;
+            this.ReporteCKB.Location = new System.Drawing.Point(547, 68);
+            this.ReporteCKB.Name = "ReporteCKB";
+            this.ReporteCKB.Size = new System.Drawing.Size(88, 17);
+            this.ReporteCKB.TabIndex = 20;
+            this.ReporteCKB.Text = "Ver Reportes";
+            this.ReporteCKB.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(366, 27);
+            this.label1.Location = new System.Drawing.Point(224, 118);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 15);
             this.label1.TabIndex = 19;
@@ -115,7 +158,7 @@ namespace Login
             // UsuarioCKB
             // 
             this.UsuarioCKB.AutoSize = true;
-            this.UsuarioCKB.Location = new System.Drawing.Point(494, 95);
+            this.UsuarioCKB.Location = new System.Drawing.Point(549, 23);
             this.UsuarioCKB.Name = "UsuarioCKB";
             this.UsuarioCKB.Size = new System.Drawing.Size(86, 17);
             this.UsuarioCKB.TabIndex = 7;
@@ -125,37 +168,40 @@ namespace Login
             // MatricesCKB
             // 
             this.MatricesCKB.AutoSize = true;
-            this.MatricesCKB.Location = new System.Drawing.Point(494, 70);
+            this.MatricesCKB.Location = new System.Drawing.Point(413, 91);
             this.MatricesCKB.Name = "MatricesCKB";
             this.MatricesCKB.Size = new System.Drawing.Size(85, 17);
             this.MatricesCKB.TabIndex = 8;
             this.MatricesCKB.Text = "Ver Matrices";
             this.MatricesCKB.UseVisualStyleBackColor = true;
+            this.MatricesCKB.CheckedChanged += new System.EventHandler(this.MatricesCKB_CheckedChanged);
             // 
             // PedidosCKB
             // 
             this.PedidosCKB.AutoSize = true;
-            this.PedidosCKB.Location = new System.Drawing.Point(494, 47);
+            this.PedidosCKB.Location = new System.Drawing.Point(413, 8);
             this.PedidosCKB.Name = "PedidosCKB";
             this.PedidosCKB.Size = new System.Drawing.Size(83, 17);
             this.PedidosCKB.TabIndex = 6;
             this.PedidosCKB.Text = "Ver Pedidos";
             this.PedidosCKB.UseVisualStyleBackColor = true;
+            this.PedidosCKB.CheckedChanged += new System.EventHandler(this.PedidosCKB_CheckedChanged);
             // 
             // ArticulosCKB
             // 
             this.ArticulosCKB.AutoSize = true;
-            this.ArticulosCKB.Location = new System.Drawing.Point(369, 95);
+            this.ArticulosCKB.Location = new System.Drawing.Point(300, 73);
             this.ArticulosCKB.Name = "ArticulosCKB";
             this.ArticulosCKB.Size = new System.Drawing.Size(87, 17);
             this.ArticulosCKB.TabIndex = 5;
             this.ArticulosCKB.Text = "Ver Artículos";
             this.ArticulosCKB.UseVisualStyleBackColor = true;
+            this.ArticulosCKB.CheckedChanged += new System.EventHandler(this.ArticulosCKB_CheckedChanged);
             // 
             // ArchivosCKB
             // 
             this.ArchivosCKB.AutoSize = true;
-            this.ArchivosCKB.Location = new System.Drawing.Point(369, 70);
+            this.ArchivosCKB.Location = new System.Drawing.Point(547, 111);
             this.ArchivosCKB.Name = "ArchivosCKB";
             this.ArchivosCKB.Size = new System.Drawing.Size(86, 17);
             this.ArchivosCKB.TabIndex = 4;
@@ -165,12 +211,13 @@ namespace Login
             // ClienteCKB
             // 
             this.ClienteCKB.AutoSize = true;
-            this.ClienteCKB.Location = new System.Drawing.Point(369, 47);
+            this.ClienteCKB.Location = new System.Drawing.Point(305, 8);
             this.ClienteCKB.Name = "ClienteCKB";
             this.ClienteCKB.Size = new System.Drawing.Size(82, 17);
             this.ClienteCKB.TabIndex = 3;
             this.ClienteCKB.Text = "Ver Clientes";
             this.ClienteCKB.UseVisualStyleBackColor = true;
+            this.ClienteCKB.CheckedChanged += new System.EventHandler(this.ClienteCKB_CheckedChanged);
             // 
             // EliminarBTN
             // 
@@ -268,25 +315,136 @@ namespace Login
             this.Telefono1,
             this.Telefono2,
             this.Usuarios,
-            this.VerReportes});
+            this.VerReportes,
+            this.AltArticulo,
+            this.bajarticulo,
+            this.modarticulo,
+            this.AltCliente,
+            this.modificCliente,
+            this.altpedido,
+            this.MOdifiPedido,
+            this.detall,
+            this.altamat,
+            this.bajamat,
+            this.nitru});
             this.Cuadro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Cuadro.Location = new System.Drawing.Point(0, 0);
             this.Cuadro.Name = "Cuadro";
             this.Cuadro.ReadOnly = true;
             this.Cuadro.RowHeadersVisible = false;
-            this.Cuadro.Size = new System.Drawing.Size(774, 277);
+            this.Cuadro.Size = new System.Drawing.Size(774, 262);
             this.Cuadro.TabIndex = 0;
             this.Cuadro.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cuadro_CellClick);
             // 
-            // ReporteCKB
+            // AltaCliente
             // 
-            this.ReporteCKB.AutoSize = true;
-            this.ReporteCKB.Location = new System.Drawing.Point(494, 118);
-            this.ReporteCKB.Name = "ReporteCKB";
-            this.ReporteCKB.Size = new System.Drawing.Size(88, 17);
-            this.ReporteCKB.TabIndex = 20;
-            this.ReporteCKB.Text = "Ver Reportes";
-            this.ReporteCKB.UseVisualStyleBackColor = true;
+            this.AltaCliente.AutoSize = true;
+            this.AltaCliente.Location = new System.Drawing.Point(322, 28);
+            this.AltaCliente.Name = "AltaCliente";
+            this.AltaCliente.Size = new System.Drawing.Size(44, 17);
+            this.AltaCliente.TabIndex = 21;
+            this.AltaCliente.Text = "Alta";
+            this.AltaCliente.UseVisualStyleBackColor = true;
+            // 
+            // ModificaCliente
+            // 
+            this.ModificaCliente.AutoSize = true;
+            this.ModificaCliente.Location = new System.Drawing.Point(322, 48);
+            this.ModificaCliente.Name = "ModificaCliente";
+            this.ModificaCliente.Size = new System.Drawing.Size(86, 17);
+            this.ModificaCliente.TabIndex = 22;
+            this.ModificaCliente.Text = "Modificación";
+            this.ModificaCliente.UseVisualStyleBackColor = true;
+            // 
+            // BajaArticulos
+            // 
+            this.BajaArticulos.AutoSize = true;
+            this.BajaArticulos.Location = new System.Drawing.Point(322, 113);
+            this.BajaArticulos.Name = "BajaArticulos";
+            this.BajaArticulos.Size = new System.Drawing.Size(47, 17);
+            this.BajaArticulos.TabIndex = 24;
+            this.BajaArticulos.Text = "Baja";
+            this.BajaArticulos.UseVisualStyleBackColor = true;
+            // 
+            // AltaArticulos
+            // 
+            this.AltaArticulos.AutoSize = true;
+            this.AltaArticulos.Location = new System.Drawing.Point(322, 93);
+            this.AltaArticulos.Name = "AltaArticulos";
+            this.AltaArticulos.Size = new System.Drawing.Size(44, 17);
+            this.AltaArticulos.TabIndex = 23;
+            this.AltaArticulos.Text = "Alta";
+            this.AltaArticulos.UseVisualStyleBackColor = true;
+            // 
+            // ModificaArticulos
+            // 
+            this.ModificaArticulos.AutoSize = true;
+            this.ModificaArticulos.Location = new System.Drawing.Point(322, 133);
+            this.ModificaArticulos.Name = "ModificaArticulos";
+            this.ModificaArticulos.Size = new System.Drawing.Size(86, 17);
+            this.ModificaArticulos.TabIndex = 25;
+            this.ModificaArticulos.Text = "Modificación";
+            this.ModificaArticulos.UseVisualStyleBackColor = true;
+            // 
+            // DetallePedidos
+            // 
+            this.DetallePedidos.AutoSize = true;
+            this.DetallePedidos.Location = new System.Drawing.Point(431, 68);
+            this.DetallePedidos.Name = "DetallePedidos";
+            this.DetallePedidos.Size = new System.Drawing.Size(83, 17);
+            this.DetallePedidos.TabIndex = 28;
+            this.DetallePedidos.Text = "Detalle Fab.";
+            this.DetallePedidos.UseVisualStyleBackColor = true;
+            // 
+            // ModificaPedidos
+            // 
+            this.ModificaPedidos.AutoSize = true;
+            this.ModificaPedidos.Location = new System.Drawing.Point(431, 48);
+            this.ModificaPedidos.Name = "ModificaPedidos";
+            this.ModificaPedidos.Size = new System.Drawing.Size(86, 17);
+            this.ModificaPedidos.TabIndex = 27;
+            this.ModificaPedidos.Text = "Modificación";
+            this.ModificaPedidos.UseVisualStyleBackColor = true;
+            // 
+            // AltaPedidos
+            // 
+            this.AltaPedidos.AutoSize = true;
+            this.AltaPedidos.Location = new System.Drawing.Point(431, 28);
+            this.AltaPedidos.Name = "AltaPedidos";
+            this.AltaPedidos.Size = new System.Drawing.Size(44, 17);
+            this.AltaPedidos.TabIndex = 26;
+            this.AltaPedidos.Text = "Alta";
+            this.AltaPedidos.UseVisualStyleBackColor = true;
+            // 
+            // NitruradoMatrices
+            // 
+            this.NitruradoMatrices.AutoSize = true;
+            this.NitruradoMatrices.Location = new System.Drawing.Point(431, 147);
+            this.NitruradoMatrices.Name = "NitruradoMatrices";
+            this.NitruradoMatrices.Size = new System.Drawing.Size(69, 17);
+            this.NitruradoMatrices.TabIndex = 31;
+            this.NitruradoMatrices.Text = "Nitrurado";
+            this.NitruradoMatrices.UseVisualStyleBackColor = true;
+            // 
+            // ModificaMatrices
+            // 
+            this.ModificaMatrices.AutoSize = true;
+            this.ModificaMatrices.Location = new System.Drawing.Point(431, 127);
+            this.ModificaMatrices.Name = "ModificaMatrices";
+            this.ModificaMatrices.Size = new System.Drawing.Size(86, 17);
+            this.ModificaMatrices.TabIndex = 30;
+            this.ModificaMatrices.Text = "Modificación";
+            this.ModificaMatrices.UseVisualStyleBackColor = true;
+            // 
+            // AltaMatrices
+            // 
+            this.AltaMatrices.AutoSize = true;
+            this.AltaMatrices.Location = new System.Drawing.Point(431, 107);
+            this.AltaMatrices.Name = "AltaMatrices";
+            this.AltaMatrices.Size = new System.Drawing.Size(44, 17);
+            this.AltaMatrices.TabIndex = 29;
+            this.AltaMatrices.Text = "Alta";
+            this.AltaMatrices.UseVisualStyleBackColor = true;
             // 
             // check
             // 
@@ -378,6 +536,72 @@ namespace Login
             this.VerReportes.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.VerReportes.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // AltArticulo
+            // 
+            this.AltArticulo.HeaderText = "Alta Artículo";
+            this.AltArticulo.Name = "AltArticulo";
+            this.AltArticulo.ReadOnly = true;
+            // 
+            // bajarticulo
+            // 
+            this.bajarticulo.HeaderText = "Baja Artículo";
+            this.bajarticulo.Name = "bajarticulo";
+            this.bajarticulo.ReadOnly = true;
+            // 
+            // modarticulo
+            // 
+            this.modarticulo.HeaderText = "Modifica Artículo";
+            this.modarticulo.Name = "modarticulo";
+            this.modarticulo.ReadOnly = true;
+            // 
+            // AltCliente
+            // 
+            this.AltCliente.HeaderText = "Alta Cliente";
+            this.AltCliente.Name = "AltCliente";
+            this.AltCliente.ReadOnly = true;
+            // 
+            // modificCliente
+            // 
+            this.modificCliente.HeaderText = "Modifica Cliente";
+            this.modificCliente.Name = "modificCliente";
+            this.modificCliente.ReadOnly = true;
+            // 
+            // altpedido
+            // 
+            this.altpedido.HeaderText = "Alta Pedido";
+            this.altpedido.Name = "altpedido";
+            this.altpedido.ReadOnly = true;
+            // 
+            // MOdifiPedido
+            // 
+            this.MOdifiPedido.HeaderText = "Modifica Pedido";
+            this.MOdifiPedido.Name = "MOdifiPedido";
+            this.MOdifiPedido.ReadOnly = true;
+            // 
+            // detall
+            // 
+            this.detall.HeaderText = "Detalle Pedido";
+            this.detall.Name = "detall";
+            this.detall.ReadOnly = true;
+            // 
+            // altamat
+            // 
+            this.altamat.HeaderText = "Alta Matriz";
+            this.altamat.Name = "altamat";
+            this.altamat.ReadOnly = true;
+            // 
+            // bajamat
+            // 
+            this.bajamat.HeaderText = "Modifica Matriz";
+            this.bajamat.Name = "bajamat";
+            this.bajamat.ReadOnly = true;
+            // 
+            // nitru
+            // 
+            this.nitru.HeaderText = "Nitrurado";
+            this.nitru.Name = "nitru";
+            this.nitru.ReadOnly = true;
+            // 
             // User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,6 +644,17 @@ namespace Login
         private System.Windows.Forms.CheckBox UsuarioCKB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox ReporteCKB;
+        private System.Windows.Forms.CheckBox NitruradoMatrices;
+        private System.Windows.Forms.CheckBox ModificaMatrices;
+        private System.Windows.Forms.CheckBox AltaMatrices;
+        private System.Windows.Forms.CheckBox DetallePedidos;
+        private System.Windows.Forms.CheckBox ModificaPedidos;
+        private System.Windows.Forms.CheckBox AltaPedidos;
+        private System.Windows.Forms.CheckBox ModificaArticulos;
+        private System.Windows.Forms.CheckBox BajaArticulos;
+        private System.Windows.Forms.CheckBox AltaArticulos;
+        private System.Windows.Forms.CheckBox ModificaCliente;
+        private System.Windows.Forms.CheckBox AltaCliente;
         private System.Windows.Forms.DataGridViewCheckBoxColumn check;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn numero;
@@ -431,5 +666,16 @@ namespace Login
         private System.Windows.Forms.DataGridViewCheckBoxColumn Telefono2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Usuarios;
         private System.Windows.Forms.DataGridViewCheckBoxColumn VerReportes;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn AltArticulo;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn bajarticulo;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn modarticulo;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn AltCliente;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn modificCliente;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn altpedido;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn MOdifiPedido;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn detall;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn altamat;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn bajamat;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn nitru;
     }
 }

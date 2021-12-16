@@ -32,5 +32,25 @@ namespace Login
             
             label1.Location = new Point(20, this.Height - 20 - label1.Height);
         }
+
+        private void fondo_Click(object sender, EventArgs e)
+        {
+            if(Calendario.Visible == false) { Calendario.Visible = true ; }
+            else { Calendario.Visible = false; }
+            
+        }
+
+        private void Calendario_MouseEnter(object sender, EventArgs e)
+        {
+            Calendario.Size = new Size(Calendario.Width * 2, Calendario.Height * 2);
+            Calendario.Location = new Point(this.Width - 20 - Calendario.Width, this.Height - 20 - Calendario.Height);
+        }
+
+        private void Calendario_MouseLeave(object sender, EventArgs e)
+        {
+            Calendario.Size = new Size(248, 162);
+            Calendario.Location = new Point(this.Width - 20 - Calendario.Width, this.Height - 20 - Calendario.Height);
+        }
+
     }
 }

@@ -114,68 +114,42 @@ namespace Login
 		}
 		void PrincipalLoad(object sender, EventArgs e)	
 		{
+			//El formulario fondo cubre todo el area de la pantalla principal
 			fondo fond = new fondo(usuario);
 			fond.MdiParent = this;
 			fond.Dock = DockStyle.Fill;
-
-			
 			fond.Show();
 
-
+			//opciones de menu principal
 			clientesToolStripMenuItem.Visible = usuario.TablaCliente;
 			archivoToolStripMenuItem.Visible = usuario.TablaArchivos;
 			matricesToolStripMenuItem.Visible = usuario.TablaMatrices;
 			PedidosToolStripMenuItem.Visible = usuario.TablaPedidos;
 			artículosToolStripMenuItem.Visible = usuario.TablaArticulos;
-			
 			usuarioToolStripMenuItem.Visible = usuario.Tablausuario;
 			reportesToolStripMenuItem.Visible = usuario.TablaReporte;
+			//opciones de articulos
+			AgregarArticuloMenu.Visible = usuario.AltaArticulos;
+			EliminarArticuloMenu.Visible = usuario.BajaArticulos;
+			ModifArt.Visible = usuario.ModificaArticulos;
+			//opciones de cliente
+			agregarToolStripMenuItem1.Visible = usuario.AltaClientes;
+			modificarToolStripMenuItem.Visible = usuario.ModificaClientes;
+			//opciones de pedidos
+			AgregarPedidoMenu.Visible = usuario.AltaPedidos;
+			ModificarPedidoMenu.Visible = usuario.ModificaPedidos;
+			detallaDeFabricaciónMenu.Visible = usuario.DetallePedidos;
+			//opciones de matrices
+			agregarToolStripMenuItem2.Visible = usuario.AltaMatrices;
+			modificarToolStripMenuItem1.Visible = usuario.ModificaMatrices;
+			toolStripMenuItem1.Visible = usuario.Nitrurado;
 
-			if (usuario.User  == "Produccion")
+			if (usuario.User  != "Rodrigo")
             {
-				
-
-				AgregarPedidoMenu.Enabled = false;
-				ModificarPedidoMenu.Enabled = false;
-				AgregarArticuloMenu.Enabled = false;
-				ModifArt.Enabled = false;
-				EliminarArticuloMenu.Enabled = false;
-				ControlBox = false;
-
-
-			}
-
-
-			if (usuario.User == "Gerencia")
-			{
-
-				AgregarPedidoMenu.Enabled = false;
-				ModificarPedidoMenu.Enabled = false;
-				AgregarArticuloMenu.Enabled = false;
-				ModifArt.Enabled = false;
-				EliminarArticuloMenu.Enabled = false;
 				ControlBox = false;
 
 			}
 
-
-			//Haz esto en el evento Load de tu formulario MDI
-
-			salirToolStripMenuItem.Text = "Cerrar Sesión";
-
-			//MdiClient oMDI;
- 
-			////recorremos todos los controles hijos del formulario
-			//foreach (Control ctl in this.Controls)
-			//{
-   //     try
-   //     {// Intentamos castear el objeto MdiClient
-   //        oMDI = (MdiClient)ctl;
-   //       // Cuando sea casteado con éxito, podremos cambiar el color así
-   //       oMDI.BackColor = Color.Navy;}
-   //     catch (InvalidCastException){// No hacemos nada cuando el control no sea tupo MdiClient
-   //     }}
-	
 		}
 		
 		
@@ -303,7 +277,7 @@ namespace Login
 			}
 			if (contador == 0)
 			{
-				ListadoPedidos listPed = new ListadoPedidos(usuario.User);
+				ListadoPedidos listPed = new ListadoPedidos(usuario);
 				listPed.MdiParent = this;
 				listPed.Show();
 			}
@@ -813,6 +787,31 @@ namespace Login
 			if (contador == 0)
 			{
 				Terminacion ventana = new Terminacion();
+				ventana.MdiParent = this;
+				ventana.Show();
+			}
+			contador = 0;
+		}
+
+        private void reporteDeNitruradoToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			int contador = 0;
+			foreach (Form f in Application.OpenForms)
+			{
+				if (f is ReporteNitrurado)
+				{
+					f.Show();
+					if (f.WindowState == FormWindowState.Minimized)
+						f.WindowState = FormWindowState.Normal;
+					f.BringToFront();
+					contador++;
+					return;
+				}
+
+			}
+			if (contador == 0)
+			{
+				ReporteNitrurado ventana = new ReporteNitrurado();
 				ventana.MdiParent = this;
 				ventana.Show();
 			}

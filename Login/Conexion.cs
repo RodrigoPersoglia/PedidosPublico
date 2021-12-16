@@ -309,13 +309,15 @@ namespace Login
                         matriz.Estado = (string)x[6];
 						matriz.Propietario = (int)x[7];
 						matriz.KgAcumulados = (int)x[8];
+						matriz.KgAcumulados2 = (int)x[9];
+						matriz.Controlada = (bool)x[10];
 
 					}
 					return matriz;
 				}
 				else { MessageBox.Show("El numero ingresado no corresponde a un pedido"); return null; }
 
-            }
+        }
             catch (Exception ex) { MessageBox.Show("Error al buscar " + ex.Message,"Atención",MessageBoxButtons.OK,MessageBoxIcon.Error); return null; }
             finally { conectar.Close(); }
 
@@ -548,7 +550,6 @@ namespace Login
 				comand.Parameters.AddWithValue("@turno_ID", turno_ID);
 				comand.Parameters.AddWithValue("@Aleacion_ID", Aleacion_ID);
 				comand.Parameters.AddWithValue("@kg_acumulados", Kg);
-
 				comand.ExecuteNonQuery();
 				MessageBox.Show("Detalle de fabricación guardado");
 			}
@@ -667,7 +668,7 @@ namespace Login
 
 
 
-		public static void ModificarMatriz(int ID, int salidas, double peso, int cliente, int estado , int  kgAcumulados)
+		public static void ModificarMatriz(int ID, int salidas, double peso, int cliente, int estado , int  kgAcumulados, int kgAcumulados2, bool controlada)
 		{
 			MySqlConnection conectar = Conexion.ObtenerConexion();
 			conectar.Open();
@@ -681,7 +682,8 @@ namespace Login
 				comand.Parameters.AddWithValue("@p4", cliente);
 				comand.Parameters.AddWithValue("@p5", estado);
 				comand.Parameters.AddWithValue("@p6", kgAcumulados);
-
+				comand.Parameters.AddWithValue("@p7", kgAcumulados2);
+				comand.Parameters.AddWithValue("@p8", controlada);
 				comand.ExecuteNonQuery();
 				MessageBox.Show("Matriz modificada");
 			}
@@ -828,13 +830,13 @@ namespace Login
 		}
 
 
-		public static void AgregarUsuario(string usuario, string contraseña , int cliente, int archivos, int articulos, int pedidos , int matrices, int usuarios, int reportes)
+		public static void AgregarUsuario(string usuario, string contraseña , int cliente, int archivos, int articulos, int pedidos , int matrices, int usuarios, int reportes, int altaArticulo, int BajaArticulo, int ModificaArticulo, int AltaCliente, int modificaCliente, int altaPedido, int ModificaPedido, int detallePedido, int altaMatriz, int modificaMatriz, int nitrurado)
 		{
 			MySqlConnection conectar = Conexion.ObtenerConexion();
 			conectar.Open();
-			try
-			{
-				MySqlCommand comand = new MySqlCommand("AgregarUsuario", conectar);
+            try
+            {
+                MySqlCommand comand = new MySqlCommand("AgregarUsuario", conectar);
 				comand.CommandType = CommandType.StoredProcedure;
 				comand.Parameters.AddWithValue("@p1", usuario);
 				comand.Parameters.AddWithValue("@p2", contraseña);
@@ -845,12 +847,24 @@ namespace Login
 				comand.Parameters.AddWithValue("@p7", matrices);
 				comand.Parameters.AddWithValue("@p8", usuarios);
 				comand.Parameters.AddWithValue("@p9", reportes);
+
+				comand.Parameters.AddWithValue("@p10", altaArticulo);
+				comand.Parameters.AddWithValue("@p11", BajaArticulo);
+				comand.Parameters.AddWithValue("@p12", ModificaArticulo);
+				comand.Parameters.AddWithValue("@p13", AltaCliente);
+				comand.Parameters.AddWithValue("@p14", modificaCliente);
+				comand.Parameters.AddWithValue("@p15", altaPedido);
+				comand.Parameters.AddWithValue("@p16", ModificaPedido);
+				comand.Parameters.AddWithValue("@p17", detallePedido);
+				comand.Parameters.AddWithValue("@p18", altaMatriz);
+				comand.Parameters.AddWithValue("@p19", modificaMatriz);
+				comand.Parameters.AddWithValue("@p20", nitrurado);
 				comand.ExecuteNonQuery();
 				AutoClosingMessageBox.Show("Usuario Creado Correctamente","Usuario",MessageBoxButtons.OK,MessageBoxIcon.Information,1600);
-			}
-			catch (Exception ex) { MessageBox.Show("Error " + ex.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-			finally { conectar.Close(); }
-		}
+            }
+            catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            finally { conectar.Close(); }
+        }
 
 
 
@@ -874,7 +888,7 @@ namespace Login
 
 
 
-		public static void ModificarUsuario(int id,string usuario, string contraseña, int cliente, int archivos, int articulos, int pedidos, int matrices, int usuarios, int reportes)
+		public static void ModificarUsuario(int id,string usuario, string contraseña, int cliente, int archivos, int articulos, int pedidos, int matrices, int usuarios, int reportes, int altaArticulo, int BajaArticulo, int ModificaArticulo, int AltaCliente, int modificaCliente, int altaPedido, int ModificaPedido, int detallePedido, int altaMatriz, int modificaMatriz, int nitrurado)
 		{
 			MySqlConnection conectar = Conexion.ObtenerConexion();
 			conectar.Open();
@@ -893,6 +907,18 @@ namespace Login
 				comand.Parameters.AddWithValue("@p7", matrices);
 				comand.Parameters.AddWithValue("@p8", usuarios);
 				comand.Parameters.AddWithValue("@p9", reportes);
+
+				comand.Parameters.AddWithValue("@p10", altaArticulo);
+				comand.Parameters.AddWithValue("@p11", BajaArticulo);
+				comand.Parameters.AddWithValue("@p12", ModificaArticulo);
+				comand.Parameters.AddWithValue("@p13", AltaCliente);
+				comand.Parameters.AddWithValue("@p14", modificaCliente);
+				comand.Parameters.AddWithValue("@p15", altaPedido);
+				comand.Parameters.AddWithValue("@p16", ModificaPedido);
+				comand.Parameters.AddWithValue("@p17", detallePedido);
+				comand.Parameters.AddWithValue("@p18", altaMatriz);
+				comand.Parameters.AddWithValue("@p19", modificaMatriz);
+				comand.Parameters.AddWithValue("@p20", nitrurado);
 
 				comand.ExecuteNonQuery();
 				AutoClosingMessageBox.Show("Usuario Modificado","Usuario",MessageBoxButtons.OK,MessageBoxIcon.Information,1600);
@@ -1550,6 +1576,35 @@ namespace Login
 				AutoClosingMessageBox.Show("Terminación eliminada correctamente", "Terminación", MessageBoxButtons.OK, MessageBoxIcon.Information, 1600);
 			}
 			catch (Exception ex) { MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); }
+		}
+
+
+
+		public static DataTable ReporteNitrurado(int umbral1,int umbral2, int umbral3)
+		{
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			DataTable dt = new DataTable();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand("ReporteNitrurado", conectar);
+				comand.CommandType = CommandType.StoredProcedure;
+				comand.Parameters.AddWithValue("@p0", umbral1);
+				comand.Parameters.AddWithValue("@p1", umbral2);
+				comand.Parameters.AddWithValue("@p2", umbral3);
+				MySqlDataAdapter adp = new MySqlDataAdapter(comand);
+				adp.Fill(dt);
+				if (dt.Rows.Count > 0)
+				{
+
+					return dt;
+				}
+				else { MessageBox.Show("No hay registros según los parametros ingresados"); return null; }
+
+			}
+
+			catch (Exception ex) { MessageBox.Show("Error al buscar " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); return null; }
 			finally { conectar.Close(); }
 		}
 

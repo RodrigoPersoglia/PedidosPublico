@@ -19,6 +19,8 @@ namespace Login
         private string _leyenda; //
         private int _propietario; //
         private int _kgAcumulados;//
+        private int _kgAcumulados2;//
+        private bool _Controlada;//
 
         public int Propietario { get { return this._propietario; } set { this._propietario = value; } }
         public int ID { get { return this._id; } set { this._id = value; } }
@@ -35,8 +37,8 @@ namespace Login
         
         public string Leyenda { get { return this._leyenda; } set { this._leyenda = value; } }
         public int KgAcumulados { get { return this._kgAcumulados; } set { this._kgAcumulados = value; } }
-
-
+        public int KgAcumulados2 { get { return this._kgAcumulados2; } set { this._kgAcumulados2 = value; } }
+        public bool Controlada { get { return this._Controlada; } set { this._Controlada = value; } }
 
     }
 }
