@@ -76,9 +76,10 @@ namespace Login
             this.proyeccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enProducciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeProducciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeNitruradoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteDeNitruradoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteMatricesPesadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -317,7 +318,8 @@ namespace Login
             this.proyeccionToolStripMenuItem,
             this.enProducciónToolStripMenuItem,
             this.reporteDeProducciónToolStripMenuItem,
-            this.reporteDeNitruradoToolStripMenuItem});
+            this.reporteDeNitruradoToolStripMenuItem,
+            this.reporteMatricesPesadasToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             resources.ApplyResources(this.reportesToolStripMenuItem, "reportesToolStripMenuItem");
             // 
@@ -342,6 +344,13 @@ namespace Login
             resources.ApplyResources(this.reporteDeProducciónToolStripMenuItem, "reporteDeProducciónToolStripMenuItem");
             this.reporteDeProducciónToolStripMenuItem.Click += new System.EventHandler(this.reporteDeProducciónToolStripMenuItem_Click_1);
             // 
+            // reporteDeNitruradoToolStripMenuItem
+            // 
+            this.reporteDeNitruradoToolStripMenuItem.Image = global::Login.Properties.Resources.reporte;
+            this.reporteDeNitruradoToolStripMenuItem.Name = "reporteDeNitruradoToolStripMenuItem";
+            resources.ApplyResources(this.reporteDeNitruradoToolStripMenuItem, "reporteDeNitruradoToolStripMenuItem");
+            this.reporteDeNitruradoToolStripMenuItem.Click += new System.EventHandler(this.reporteDeNitruradoToolStripMenuItem_Click);
+            // 
             // usuarioToolStripMenuItem
             // 
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
@@ -354,12 +363,12 @@ namespace Login
             resources.ApplyResources(this.ayudaToolStripMenuItem, "ayudaToolStripMenuItem");
             this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
             // 
-            // reporteDeNitruradoToolStripMenuItem
+            // reporteMatricesPesadasToolStripMenuItem
             // 
-            this.reporteDeNitruradoToolStripMenuItem.Image = global::Login.Properties.Resources.reporte;
-            this.reporteDeNitruradoToolStripMenuItem.Name = "reporteDeNitruradoToolStripMenuItem";
-            resources.ApplyResources(this.reporteDeNitruradoToolStripMenuItem, "reporteDeNitruradoToolStripMenuItem");
-            this.reporteDeNitruradoToolStripMenuItem.Click += new System.EventHandler(this.reporteDeNitruradoToolStripMenuItem_Click);
+            this.reporteMatricesPesadasToolStripMenuItem.Image = global::Login.Properties.Resources.reporte;
+            this.reporteMatricesPesadasToolStripMenuItem.Name = "reporteMatricesPesadasToolStripMenuItem";
+            resources.ApplyResources(this.reporteMatricesPesadasToolStripMenuItem, "reporteMatricesPesadasToolStripMenuItem");
+            this.reporteMatricesPesadasToolStripMenuItem.Click += new System.EventHandler(this.reporteMatricesPesadasToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -403,5 +412,6 @@ namespace Login
         private System.Windows.Forms.ToolStripMenuItem templeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem terminaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDeNitruradoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteMatricesPesadasToolStripMenuItem;
     }
 }

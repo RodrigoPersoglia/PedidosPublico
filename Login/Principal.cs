@@ -143,6 +143,7 @@ namespace Login
 			agregarToolStripMenuItem2.Visible = usuario.AltaMatrices;
 			modificarToolStripMenuItem1.Visible = usuario.ModificaMatrices;
 			toolStripMenuItem1.Visible = usuario.Nitrurado;
+			reporteMatricesPesadasToolStripMenuItem.Visible = true;
 
 			if (usuario.User  != "Rodrigo")
             {
@@ -817,5 +818,31 @@ namespace Login
 			}
 			contador = 0;
 		}
-	}
+
+        private void reporteMatricesPesadasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+			int contador = 0;
+			foreach (Form f in Application.OpenForms)
+			{
+				if (f is ReporteMatricesPesadas)
+				{
+					f.Show();
+					if (f.WindowState == FormWindowState.Minimized)
+						f.WindowState = FormWindowState.Normal;
+					f.BringToFront();
+					contador++;
+					return;
+				}
+
+			}
+			if (contador == 0)
+			{
+				ReporteMatricesPesadas ventana = new ReporteMatricesPesadas();
+				ventana.MdiParent = this;
+				ventana.Show();
+			}
+			contador = 0;
+
+		}
+    }
 }

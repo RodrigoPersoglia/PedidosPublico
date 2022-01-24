@@ -47,26 +47,6 @@ namespace Login
             this.FechaDTP = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.Cuadro = new System.Windows.Forms.DataGridView();
-            this.check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Matriceria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PesoMetro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prensa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Turno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Aleacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Colada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LargoTocho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantTochos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoraI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoraF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KgResultantes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tiras = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Largo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Obeservaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.NumOPTXT = new System.Windows.Forms.TextBox();
             this.ArticuloTXB = new System.Windows.Forms.TextBox();
@@ -106,11 +86,47 @@ namespace Login
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label26 = new System.Windows.Forms.Label();
+            this.Rendimiento2 = new System.Windows.Forms.NumericUpDown();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.Rendimiento1 = new System.Windows.Forms.NumericUpDown();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.KgPrensa = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.DiamTocho = new System.Windows.Forms.NumericUpDown();
+            this.label21 = new System.Windows.Forms.Label();
+            this.check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Matriceria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PesoMetro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prensa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Turno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Aleacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Colada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiametroTocho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LargoTocho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantTochos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoraI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoraF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KgsPrensa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KgResultantes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tiras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Largo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Obeservaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Cuadro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Rendimiento2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Rendimiento1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DiamTocho)).BeginInit();
             this.SuspendLayout();
             // 
             // Buscar
@@ -139,11 +155,11 @@ namespace Login
             // Cancelar
             // 
             this.Cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.Cancelar.Location = new System.Drawing.Point(561, 11);
+            this.Cancelar.Location = new System.Drawing.Point(745, 11);
             this.Cancelar.Margin = new System.Windows.Forms.Padding(2);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(67, 24);
-            this.Cancelar.TabIndex = 21;
+            this.Cancelar.TabIndex = 24;
             this.Cancelar.Text = "Salir";
             this.Cancelar.UseVisualStyleBackColor = true;
             this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
@@ -151,11 +167,11 @@ namespace Login
             // Exportarboton
             // 
             this.Exportarboton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.Exportarboton.Location = new System.Drawing.Point(561, 39);
+            this.Exportarboton.Location = new System.Drawing.Point(745, 39);
             this.Exportarboton.Margin = new System.Windows.Forms.Padding(2);
             this.Exportarboton.Name = "Exportarboton";
             this.Exportarboton.Size = new System.Drawing.Size(67, 24);
-            this.Exportarboton.TabIndex = 22;
+            this.Exportarboton.TabIndex = 25;
             this.Exportarboton.Text = "Exportar";
             this.Exportarboton.UseVisualStyleBackColor = true;
             this.Exportarboton.Click += new System.EventHandler(this.Exportarboton_Click);
@@ -213,10 +229,12 @@ namespace Login
             this.Turno,
             this.Aleacion,
             this.Colada,
+            this.DiametroTocho,
             this.LargoTocho,
             this.CantTochos,
             this.HoraI,
             this.HoraF,
+            this.KgsPrensa,
             this.KgResultantes,
             this.Tiras,
             this.Largo,
@@ -229,167 +247,11 @@ namespace Login
             this.Cuadro.RowHeadersVisible = false;
             this.Cuadro.RowHeadersWidth = 51;
             this.Cuadro.RowTemplate.Height = 24;
-            this.Cuadro.Size = new System.Drawing.Size(639, 261);
+            this.Cuadro.Size = new System.Drawing.Size(823, 261);
             this.Cuadro.TabIndex = 38;
             this.Cuadro.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cuadro_CellClick);
             this.Cuadro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cuadro_CellContentClick);
             this.Cuadro.SelectionChanged += new System.EventHandler(this.Cuadro_SelectionChanged);
-            // 
-            // check
-            // 
-            this.check.HeaderText = "";
-            this.check.Name = "check";
-            this.check.ReadOnly = true;
-            this.check.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.check.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.check.Width = 20;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            this.ID.Width = 125;
-            // 
-            // Numero
-            // 
-            this.Numero.HeaderText = "Numero";
-            this.Numero.MinimumWidth = 6;
-            this.Numero.Name = "Numero";
-            this.Numero.ReadOnly = true;
-            this.Numero.Visible = false;
-            this.Numero.Width = 50;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.MinimumWidth = 6;
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            this.Fecha.Width = 60;
-            // 
-            // Cliente
-            // 
-            this.Cliente.HeaderText = "Cliente";
-            this.Cliente.MinimumWidth = 6;
-            this.Cliente.Name = "Cliente";
-            this.Cliente.ReadOnly = true;
-            // 
-            // Articulo
-            // 
-            this.Articulo.HeaderText = "Articulo";
-            this.Articulo.MinimumWidth = 6;
-            this.Articulo.Name = "Articulo";
-            this.Articulo.ReadOnly = true;
-            this.Articulo.Width = 120;
-            // 
-            // Matriceria
-            // 
-            this.Matriceria.HeaderText = "Matriz";
-            this.Matriceria.Name = "Matriceria";
-            this.Matriceria.ReadOnly = true;
-            this.Matriceria.Width = 50;
-            // 
-            // PesoMetro
-            // 
-            this.PesoMetro.HeaderText = "Peso Metro";
-            this.PesoMetro.MinimumWidth = 6;
-            this.PesoMetro.Name = "PesoMetro";
-            this.PesoMetro.ReadOnly = true;
-            this.PesoMetro.Width = 50;
-            // 
-            // Prensa
-            // 
-            this.Prensa.HeaderText = "Prensa";
-            this.Prensa.Name = "Prensa";
-            this.Prensa.ReadOnly = true;
-            this.Prensa.Width = 60;
-            // 
-            // Turno
-            // 
-            this.Turno.HeaderText = "Turno";
-            this.Turno.Name = "Turno";
-            this.Turno.ReadOnly = true;
-            this.Turno.Width = 60;
-            // 
-            // Aleacion
-            // 
-            this.Aleacion.HeaderText = "Aleacion";
-            this.Aleacion.MinimumWidth = 6;
-            this.Aleacion.Name = "Aleacion";
-            this.Aleacion.ReadOnly = true;
-            this.Aleacion.Width = 60;
-            // 
-            // Colada
-            // 
-            this.Colada.HeaderText = "Colada";
-            this.Colada.MinimumWidth = 6;
-            this.Colada.Name = "Colada";
-            this.Colada.ReadOnly = true;
-            this.Colada.Width = 60;
-            // 
-            // LargoTocho
-            // 
-            this.LargoTocho.HeaderText = "Largo Tocho";
-            this.LargoTocho.MinimumWidth = 6;
-            this.LargoTocho.Name = "LargoTocho";
-            this.LargoTocho.ReadOnly = true;
-            this.LargoTocho.Width = 60;
-            // 
-            // CantTochos
-            // 
-            this.CantTochos.HeaderText = "Cantidad Tochos";
-            this.CantTochos.MinimumWidth = 6;
-            this.CantTochos.Name = "CantTochos";
-            this.CantTochos.ReadOnly = true;
-            this.CantTochos.Width = 60;
-            // 
-            // HoraI
-            // 
-            this.HoraI.HeaderText = "Hora inicio";
-            this.HoraI.MinimumWidth = 6;
-            this.HoraI.Name = "HoraI";
-            this.HoraI.ReadOnly = true;
-            this.HoraI.Width = 60;
-            // 
-            // HoraF
-            // 
-            this.HoraF.HeaderText = "Hora Fin";
-            this.HoraF.MinimumWidth = 6;
-            this.HoraF.Name = "HoraF";
-            this.HoraF.ReadOnly = true;
-            this.HoraF.Width = 60;
-            // 
-            // KgResultantes
-            // 
-            this.KgResultantes.HeaderText = "Kg Fabricados";
-            this.KgResultantes.MinimumWidth = 6;
-            this.KgResultantes.Name = "KgResultantes";
-            this.KgResultantes.ReadOnly = true;
-            this.KgResultantes.Width = 60;
-            // 
-            // Tiras
-            // 
-            this.Tiras.HeaderText = "Tiras";
-            this.Tiras.Name = "Tiras";
-            this.Tiras.ReadOnly = true;
-            this.Tiras.Width = 60;
-            // 
-            // Largo
-            // 
-            this.Largo.HeaderText = "Largo";
-            this.Largo.Name = "Largo";
-            this.Largo.ReadOnly = true;
-            this.Largo.Width = 60;
-            // 
-            // Obeservaciones
-            // 
-            this.Obeservaciones.HeaderText = "Obeservaciones";
-            this.Obeservaciones.MinimumWidth = 6;
-            this.Obeservaciones.Name = "Obeservaciones";
-            this.Obeservaciones.ReadOnly = true;
             // 
             // label4
             // 
@@ -613,26 +475,28 @@ namespace Login
             // 
             // ObervTXT
             // 
-            this.ObervTXT.Location = new System.Drawing.Point(516, 245);
+            this.ObervTXT.Location = new System.Drawing.Point(526, 275);
             this.ObervTXT.Margin = new System.Windows.Forms.Padding(2);
             this.ObervTXT.Name = "ObervTXT";
             this.ObervTXT.Size = new System.Drawing.Size(112, 20);
-            this.ObervTXT.TabIndex = 17;
+            this.ObervTXT.TabIndex = 18;
             // 
             // KgTXT
             // 
-            this.KgTXT.Location = new System.Drawing.Point(516, 155);
+            this.KgTXT.Location = new System.Drawing.Point(526, 185);
             this.KgTXT.Margin = new System.Windows.Forms.Padding(2);
             this.KgTXT.Name = "KgTXT";
             this.KgTXT.Size = new System.Drawing.Size(112, 20);
-            this.KgTXT.TabIndex = 14;
+            this.KgTXT.TabIndex = 15;
+            this.KgTXT.Text = "0";
+            this.KgTXT.TextChanged += new System.EventHandler(this.KgTXT_TextChanged);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(458, 215);
+            this.label15.Location = new System.Drawing.Point(473, 245);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(49, 17);
@@ -644,7 +508,7 @@ namespace Login
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(458, 185);
+            this.label16.Location = new System.Drawing.Point(473, 215);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(44, 17);
@@ -656,19 +520,19 @@ namespace Login
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(473, 155);
+            this.label17.Location = new System.Drawing.Point(445, 185);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(29, 17);
+            this.label17.Size = new System.Drawing.Size(77, 17);
             this.label17.TabIndex = 73;
-            this.label17.Text = "Kg:";
+            this.label17.Text = "Kg Reales:";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(451, 245);
+            this.label14.Location = new System.Drawing.Point(459, 275);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 17);
@@ -677,19 +541,19 @@ namespace Login
             // 
             // TirasTXT
             // 
-            this.TirasTXT.Location = new System.Drawing.Point(516, 185);
+            this.TirasTXT.Location = new System.Drawing.Point(526, 215);
             this.TirasTXT.Margin = new System.Windows.Forms.Padding(2);
             this.TirasTXT.Name = "TirasTXT";
             this.TirasTXT.Size = new System.Drawing.Size(112, 20);
-            this.TirasTXT.TabIndex = 15;
+            this.TirasTXT.TabIndex = 16;
             // 
             // LargoTXT
             // 
-            this.LargoTXT.Location = new System.Drawing.Point(516, 215);
+            this.LargoTXT.Location = new System.Drawing.Point(526, 245);
             this.LargoTXT.Margin = new System.Windows.Forms.Padding(2);
             this.LargoTXT.Name = "LargoTXT";
             this.LargoTXT.Size = new System.Drawing.Size(112, 20);
-            this.LargoTXT.TabIndex = 16;
+            this.LargoTXT.TabIndex = 17;
             // 
             // AgregarBTN
             // 
@@ -698,7 +562,7 @@ namespace Login
             this.AgregarBTN.Margin = new System.Windows.Forms.Padding(2);
             this.AgregarBTN.Name = "AgregarBTN";
             this.AgregarBTN.Size = new System.Drawing.Size(66, 22);
-            this.AgregarBTN.TabIndex = 18;
+            this.AgregarBTN.TabIndex = 21;
             this.AgregarBTN.Text = "Agregar";
             this.AgregarBTN.UseVisualStyleBackColor = true;
             this.AgregarBTN.Click += new System.EventHandler(this.AgregarBTN_Click);
@@ -710,7 +574,7 @@ namespace Login
             this.QuitarBTN.Margin = new System.Windows.Forms.Padding(2);
             this.QuitarBTN.Name = "QuitarBTN";
             this.QuitarBTN.Size = new System.Drawing.Size(66, 22);
-            this.QuitarBTN.TabIndex = 19;
+            this.QuitarBTN.TabIndex = 22;
             this.QuitarBTN.Text = "Quitar";
             this.QuitarBTN.UseVisualStyleBackColor = true;
             this.QuitarBTN.Click += new System.EventHandler(this.QuitarBTN_Click);
@@ -722,7 +586,7 @@ namespace Login
             this.ModificarBTN.Margin = new System.Windows.Forms.Padding(2);
             this.ModificarBTN.Name = "ModificarBTN";
             this.ModificarBTN.Size = new System.Drawing.Size(75, 22);
-            this.ModificarBTN.TabIndex = 20;
+            this.ModificarBTN.TabIndex = 23;
             this.ModificarBTN.Text = "Modificar";
             this.ModificarBTN.UseVisualStyleBackColor = true;
             this.ModificarBTN.Click += new System.EventHandler(this.ModificarBTN_Click);
@@ -749,15 +613,17 @@ namespace Login
             // 
             // CanTochoTXT
             // 
-            this.CanTochoTXT.Location = new System.Drawing.Point(516, 125);
+            this.CanTochoTXT.Location = new System.Drawing.Point(526, 125);
             this.CanTochoTXT.Margin = new System.Windows.Forms.Padding(2);
             this.CanTochoTXT.Name = "CanTochoTXT";
             this.CanTochoTXT.Size = new System.Drawing.Size(112, 20);
             this.CanTochoTXT.TabIndex = 13;
+            this.CanTochoTXT.TextChanged += new System.EventHandler(this.CanTochoTXT_TextChanged);
+            this.CanTochoTXT.Leave += new System.EventHandler(this.CanTochoTXT_Leave);
             // 
             // LargoTochoTXT
             // 
-            this.LargoTochoTXT.Location = new System.Drawing.Point(516, 95);
+            this.LargoTochoTXT.Location = new System.Drawing.Point(526, 95);
             this.LargoTochoTXT.Margin = new System.Windows.Forms.Padding(2);
             this.LargoTochoTXT.Name = "LargoTochoTXT";
             this.LargoTochoTXT.Size = new System.Drawing.Size(112, 20);
@@ -768,7 +634,7 @@ namespace Login
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(406, 125);
+            this.label19.Location = new System.Drawing.Point(416, 125);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(96, 17);
@@ -780,7 +646,7 @@ namespace Login
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(409, 95);
+            this.label20.Location = new System.Drawing.Point(419, 95);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(93, 17);
@@ -798,6 +664,17 @@ namespace Login
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.splitContainer1.Panel1.Controls.Add(this.label26);
+            this.splitContainer1.Panel1.Controls.Add(this.Rendimiento2);
+            this.splitContainer1.Panel1.Controls.Add(this.label27);
+            this.splitContainer1.Panel1.Controls.Add(this.label25);
+            this.splitContainer1.Panel1.Controls.Add(this.Rendimiento1);
+            this.splitContainer1.Panel1.Controls.Add(this.label24);
+            this.splitContainer1.Panel1.Controls.Add(this.label23);
+            this.splitContainer1.Panel1.Controls.Add(this.KgPrensa);
+            this.splitContainer1.Panel1.Controls.Add(this.label22);
+            this.splitContainer1.Panel1.Controls.Add(this.DiamTocho);
+            this.splitContainer1.Panel1.Controls.Add(this.label21);
             this.splitContainer1.Panel1.Controls.Add(this.LargoTXT);
             this.splitContainer1.Panel1.Controls.Add(this.NumOPTXT);
             this.splitContainer1.Panel1.Controls.Add(this.CanTochoTXT);
@@ -843,13 +720,315 @@ namespace Login
             this.splitContainer1.Panel1.Controls.Add(this.label13);
             this.splitContainer1.Panel1.Controls.Add(this.HoraFin);
             this.splitContainer1.Panel1.Controls.Add(this.ColadaTXT);
+            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.Cuadro);
-            this.splitContainer1.Size = new System.Drawing.Size(639, 565);
+            this.splitContainer1.Size = new System.Drawing.Size(823, 565);
             this.splitContainer1.SplitterDistance = 300;
             this.splitContainer1.TabIndex = 60;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(803, 185);
+            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(20, 17);
+            this.label26.TabIndex = 98;
+            this.label26.Text = "%";
+            // 
+            // Rendimiento2
+            // 
+            this.Rendimiento2.DecimalPlaces = 2;
+            this.Rendimiento2.Location = new System.Drawing.Point(745, 182);
+            this.Rendimiento2.Name = "Rendimiento2";
+            this.Rendimiento2.Size = new System.Drawing.Size(56, 20);
+            this.Rendimiento2.TabIndex = 20;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.White;
+            this.label27.Location = new System.Drawing.Point(653, 185);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(91, 17);
+            this.label27.TabIndex = 96;
+            this.label27.Text = "Rendimiento:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(803, 155);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(20, 17);
+            this.label25.TabIndex = 95;
+            this.label25.Text = "%";
+            // 
+            // Rendimiento1
+            // 
+            this.Rendimiento1.DecimalPlaces = 2;
+            this.Rendimiento1.Location = new System.Drawing.Point(745, 152);
+            this.Rendimiento1.Name = "Rendimiento1";
+            this.Rendimiento1.Size = new System.Drawing.Size(56, 20);
+            this.Rendimiento1.TabIndex = 19;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(653, 155);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(91, 17);
+            this.label24.TabIndex = 93;
+            this.label24.Text = "Rendimiento:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(445, 155);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(78, 17);
+            this.label23.TabIndex = 92;
+            this.label23.Text = "Kg Prensa:";
+            // 
+            // KgPrensa
+            // 
+            this.KgPrensa.Location = new System.Drawing.Point(526, 155);
+            this.KgPrensa.Margin = new System.Windows.Forms.Padding(2);
+            this.KgPrensa.Name = "KgPrensa";
+            this.KgPrensa.Size = new System.Drawing.Size(112, 20);
+            this.KgPrensa.TabIndex = 14;
+            this.KgPrensa.Text = "0";
+            this.KgPrensa.TextChanged += new System.EventHandler(this.KgPrensa_TextChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(571, 65);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(67, 17);
+            this.label22.TabIndex = 90;
+            this.label22.Text = "Pulgadas";
+            // 
+            // DiamTocho
+            // 
+            this.DiamTocho.Location = new System.Drawing.Point(526, 66);
+            this.DiamTocho.Maximum = new decimal(new int[] {
+            7,
+            0,
+            0,
+            0});
+            this.DiamTocho.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.DiamTocho.Name = "DiamTocho";
+            this.DiamTocho.Size = new System.Drawing.Size(40, 20);
+            this.DiamTocho.TabIndex = 89;
+            this.DiamTocho.Value = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(419, 68);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(92, 17);
+            this.label21.TabIndex = 88;
+            this.label21.Text = "Diam. Tocho:";
+            // 
+            // check
+            // 
+            this.check.HeaderText = "";
+            this.check.Name = "check";
+            this.check.ReadOnly = true;
+            this.check.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.check.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.check.Width = 20;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            this.ID.Width = 125;
+            // 
+            // Numero
+            // 
+            this.Numero.HeaderText = "Numero";
+            this.Numero.MinimumWidth = 6;
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
+            this.Numero.Visible = false;
+            this.Numero.Width = 50;
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.MinimumWidth = 6;
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            this.Fecha.Width = 60;
+            // 
+            // Cliente
+            // 
+            this.Cliente.HeaderText = "Cliente";
+            this.Cliente.MinimumWidth = 6;
+            this.Cliente.Name = "Cliente";
+            this.Cliente.ReadOnly = true;
+            // 
+            // Articulo
+            // 
+            this.Articulo.HeaderText = "Articulo";
+            this.Articulo.MinimumWidth = 6;
+            this.Articulo.Name = "Articulo";
+            this.Articulo.ReadOnly = true;
+            this.Articulo.Width = 120;
+            // 
+            // Matriceria
+            // 
+            this.Matriceria.HeaderText = "Matriz";
+            this.Matriceria.Name = "Matriceria";
+            this.Matriceria.ReadOnly = true;
+            this.Matriceria.Width = 50;
+            // 
+            // PesoMetro
+            // 
+            this.PesoMetro.HeaderText = "Peso Metro";
+            this.PesoMetro.MinimumWidth = 6;
+            this.PesoMetro.Name = "PesoMetro";
+            this.PesoMetro.ReadOnly = true;
+            this.PesoMetro.Width = 50;
+            // 
+            // Prensa
+            // 
+            this.Prensa.HeaderText = "Prensa";
+            this.Prensa.Name = "Prensa";
+            this.Prensa.ReadOnly = true;
+            this.Prensa.Width = 60;
+            // 
+            // Turno
+            // 
+            this.Turno.HeaderText = "Turno";
+            this.Turno.Name = "Turno";
+            this.Turno.ReadOnly = true;
+            this.Turno.Width = 60;
+            // 
+            // Aleacion
+            // 
+            this.Aleacion.HeaderText = "Aleacion";
+            this.Aleacion.MinimumWidth = 6;
+            this.Aleacion.Name = "Aleacion";
+            this.Aleacion.ReadOnly = true;
+            this.Aleacion.Width = 60;
+            // 
+            // Colada
+            // 
+            this.Colada.HeaderText = "Colada";
+            this.Colada.MinimumWidth = 6;
+            this.Colada.Name = "Colada";
+            this.Colada.ReadOnly = true;
+            this.Colada.Width = 60;
+            // 
+            // DiametroTocho
+            // 
+            this.DiametroTocho.HeaderText = "Diam. Tocho";
+            this.DiametroTocho.Name = "DiametroTocho";
+            this.DiametroTocho.ReadOnly = true;
+            this.DiametroTocho.Width = 50;
+            // 
+            // LargoTocho
+            // 
+            this.LargoTocho.HeaderText = "Largo Tocho";
+            this.LargoTocho.MinimumWidth = 6;
+            this.LargoTocho.Name = "LargoTocho";
+            this.LargoTocho.ReadOnly = true;
+            this.LargoTocho.Width = 60;
+            // 
+            // CantTochos
+            // 
+            this.CantTochos.HeaderText = "Cantidad Tochos";
+            this.CantTochos.MinimumWidth = 6;
+            this.CantTochos.Name = "CantTochos";
+            this.CantTochos.ReadOnly = true;
+            this.CantTochos.Width = 60;
+            // 
+            // HoraI
+            // 
+            this.HoraI.HeaderText = "Hora inicio";
+            this.HoraI.MinimumWidth = 6;
+            this.HoraI.Name = "HoraI";
+            this.HoraI.ReadOnly = true;
+            this.HoraI.Width = 60;
+            // 
+            // HoraF
+            // 
+            this.HoraF.HeaderText = "Hora Fin";
+            this.HoraF.MinimumWidth = 6;
+            this.HoraF.Name = "HoraF";
+            this.HoraF.ReadOnly = true;
+            this.HoraF.Width = 60;
+            // 
+            // KgsPrensa
+            // 
+            this.KgsPrensa.HeaderText = "Kgs de Prensa";
+            this.KgsPrensa.Name = "KgsPrensa";
+            this.KgsPrensa.ReadOnly = true;
+            // 
+            // KgResultantes
+            // 
+            this.KgResultantes.HeaderText = "Kg Fabricados";
+            this.KgResultantes.MinimumWidth = 6;
+            this.KgResultantes.Name = "KgResultantes";
+            this.KgResultantes.ReadOnly = true;
+            this.KgResultantes.Width = 60;
+            // 
+            // Tiras
+            // 
+            this.Tiras.HeaderText = "Tiras";
+            this.Tiras.Name = "Tiras";
+            this.Tiras.ReadOnly = true;
+            this.Tiras.Width = 60;
+            // 
+            // Largo
+            // 
+            this.Largo.HeaderText = "Largo";
+            this.Largo.Name = "Largo";
+            this.Largo.ReadOnly = true;
+            this.Largo.Width = 60;
+            // 
+            // Obeservaciones
+            // 
+            this.Obeservaciones.HeaderText = "Obeservaciones";
+            this.Obeservaciones.MinimumWidth = 6;
+            this.Obeservaciones.Name = "Obeservaciones";
+            this.Obeservaciones.ReadOnly = true;
             // 
             // DetalleFabricacion
             // 
@@ -857,7 +1036,7 @@ namespace Login
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.CancelButton = this.Cancelar;
-            this.ClientSize = new System.Drawing.Size(639, 565);
+            this.ClientSize = new System.Drawing.Size(823, 565);
             this.ControlBox = false;
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -872,6 +1051,9 @@ namespace Login
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Rendimiento2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Rendimiento1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DiamTocho)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1147,6 +1329,17 @@ namespace Login
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.TextBox KgPrensa;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.NumericUpDown DiamTocho;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.NumericUpDown Rendimiento2;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.NumericUpDown Rendimiento1;
+        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.DataGridViewCheckBoxColumn check;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
@@ -1159,10 +1352,12 @@ namespace Login
         private System.Windows.Forms.DataGridViewTextBoxColumn Turno;
         private System.Windows.Forms.DataGridViewTextBoxColumn Aleacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Colada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiametroTocho;
         private System.Windows.Forms.DataGridViewTextBoxColumn LargoTocho;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantTochos;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoraI;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoraF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KgsPrensa;
         private System.Windows.Forms.DataGridViewTextBoxColumn KgResultantes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tiras;
         private System.Windows.Forms.DataGridViewTextBoxColumn Largo;

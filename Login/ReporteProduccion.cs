@@ -77,8 +77,51 @@ namespace Login
 			n = e.RowIndex;
 
 		}
+
+
+		private double rendimiento(int diamTocho,double largo,int cantidad,double kgs)
+		{
+			try
+			{
+				double radioTocho = (diamTocho * 25.4) / 2;
+				double largoBarrote = largo / 1000;
+				double pesobarrote = Math.Round((radioTocho * radioTocho) * Math.PI / 1000 * 2.7 * largoBarrote, 2);
+				double porcentaje = kgs / cantidad / pesobarrote * 100;
+				return Math.Round(porcentaje,2);
+			}
+			catch (Exception)
+			{
+				return 0;
+			}
+		}
+
+		private void limpiar2()
+        {
+			totalBarrotesTXT.Text = "";
+			kgPrensaTXT.Text = "";
+			kgDespachoTXT.Text = "";
+			tochoHoraTXT.Text = "";
+			kgHoraTXT.Text = "";
+			TiempoTXT.Text = "";
+		}
+
+		private double TimeToDouble(TimeSpan tiempo)
+        {
+			double min = Math.Round(tiempo.Minutes/60.00,2);
+			double hora = tiempo.Hours;
+			double x = min + hora;
+			return x;
+        }
+
 		private void Cuadro_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
+			limpiar2();
+			int cantbarrotes = 0;
+			double kgPrensa = 0;
+			double kgDesacho = 0;
+			TimeSpan tiempo = new TimeSpan(0, 0, 0);
+			TimeSpan inicio = new TimeSpan(25, 0, 0);
+			TimeSpan fin = new TimeSpan(0, 0, 0);
 			n = e.RowIndex;
 			if ((bool)Cuadro.Rows[n].Cells[0].Value == true)
 			{
@@ -106,23 +149,69 @@ namespace Login
 
 					if (dt2 != null)
 					{
+						TimeSpan horaFin, horaIn;
+
 
 						foreach (DataRow x in dt2.Rows)
 						{
+						double rend = rendimiento((int)x[8], double.Parse(((int)x[6]).ToString()), (int)x[7], decimal.ToDouble((decimal)x[3]));
 							int n = Cuadro2.Rows.Add();
 							Cuadro2.Rows[n].Cells[0].Value = (int)x[0];
 							Cuadro2.Rows[n].Cells[1].Value = (string)x[1];
 							Cuadro2.Rows[n].Cells[2].Value = (string)x[2];
-							Cuadro2.Rows[n].Cells[3].Value = ((decimal)x[3]).ToString();
-							Cuadro2.Rows[n].Cells[4].Value = (string)x[4];
+							Cuadro2.Rows[n].Cells[3].Value = ((decimal)x[5]).ToString();
+							Cuadro2.Rows[n].Cells[4].Value = ((decimal)x[3]).ToString();
+							
+							Cuadro2.Rows[n].Cells[5].Value = rend;
+							Cuadro2.Rows[n].Cells[6].Value = (string)x[4];
+
+							cantbarrotes += (int)x[7];
+							kgDesacho += decimal.ToDouble((decimal)x[3]);
+							kgPrensa+= decimal.ToDouble((decimal)x[5]);
+
+							if(fin< (TimeSpan)x[9])
+                            {
+								fin = (TimeSpan)x[9];
+
+							}
+							if (inicio > (TimeSpan)x[10])
+							{
+								inicio = (TimeSpan)x[10];
+							}
+
+
+							try
+                            {
+                                horaFin = (TimeSpan)x[9];
+							}
+                            catch (Exception) { horaFin = new TimeSpan(0, 0, 0); }
+
+							try
+							{
+								horaIn = (TimeSpan)x[10];
+							}
+							catch (Exception) { horaIn = new TimeSpan(0, 0, 0); }
+
+
+							tiempo+=(horaFin - horaIn);
+
 
 						}
 					}
 
-            }
+					totalBarrotesTXT.Text = cantbarrotes.ToString();
+					kgPrensaTXT.Text = kgPrensa.ToString();
+					kgDespachoTXT.Text = kgDesacho.ToString();
+					TiempoTXT.Text = tiempo.ToString();
+					tochoHoraTXT.Text =(Math.Round( cantbarrotes / TimeToDouble(tiempo),2)).ToString();
+					kgHoraTXT.Text = (Math.Round(kgDesacho / TimeToDouble(tiempo), 2)).ToString();
+					TiempoParadaTXT.Text = ((fin - inicio) - tiempo).ToString();
+
+
+				}
 
                 catch (Exception) { }
-        }
+            }
 		}
 
 
@@ -140,7 +229,7 @@ namespace Login
 
         private void ReporteProduccion_Load(object sender, EventArgs e)
         {
-			Fecha1DTP.Value = DateTime.Today;
+			Fecha1DTP.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
 			Fecha2DTP.Value = DateTime.Today;
 
 		}

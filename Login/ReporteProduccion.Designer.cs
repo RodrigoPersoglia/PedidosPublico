@@ -42,6 +42,7 @@ namespace Login
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteProduccion));
             this.Buscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,12 +60,29 @@ namespace Login
             this.label1 = new System.Windows.Forms.Label();
             this.Acumulados = new System.Windows.Forms.TextBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.Cuadro2 = new System.Windows.Forms.DataGridView();
             this.OP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn201 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KgsPresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn200 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rendi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.TiempoTXT = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.kgHoraTXT = new System.Windows.Forms.TextBox();
+            this.tochoHoraTXT = new System.Windows.Forms.TextBox();
+            this.kgDespachoTXT = new System.Windows.Forms.TextBox();
+            this.kgPrensaTXT = new System.Windows.Forms.TextBox();
+            this.totalBarrotesTXT = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TiempoParadaTXT = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Cuadro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -74,6 +92,10 @@ namespace Login
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Cuadro2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,7 +187,7 @@ namespace Login
             this.Cuadro.RowHeadersVisible = false;
             this.Cuadro.RowHeadersWidth = 51;
             this.Cuadro.RowTemplate.Height = 24;
-            this.Cuadro.Size = new System.Drawing.Size(221, 448);
+            this.Cuadro.Size = new System.Drawing.Size(215, 448);
             this.Cuadro.TabIndex = 38;
             this.Cuadro.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cuadro_CellClick);
             this.Cuadro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cuadro_CellContentClick);
@@ -229,7 +251,7 @@ namespace Login
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(778, 562);
+            this.splitContainer1.Size = new System.Drawing.Size(862, 562);
             this.splitContainer1.SplitterDistance = 110;
             this.splitContainer1.TabIndex = 50;
             // 
@@ -289,10 +311,42 @@ namespace Login
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.Cuadro2);
-            this.splitContainer2.Size = new System.Drawing.Size(778, 448);
-            this.splitContainer2.SplitterDistance = 221;
+            this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
+            this.splitContainer2.Size = new System.Drawing.Size(862, 448);
+            this.splitContainer2.SplitterDistance = 215;
             this.splitContainer2.TabIndex = 39;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.Cuadro2);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.BackColor = System.Drawing.Color.DimGray;
+            this.splitContainer3.Panel2.Controls.Add(this.TiempoParadaTXT);
+            this.splitContainer3.Panel2.Controls.Add(this.label11);
+            this.splitContainer3.Panel2.Controls.Add(this.TiempoTXT);
+            this.splitContainer3.Panel2.Controls.Add(this.label8);
+            this.splitContainer3.Panel2.Controls.Add(this.kgHoraTXT);
+            this.splitContainer3.Panel2.Controls.Add(this.tochoHoraTXT);
+            this.splitContainer3.Panel2.Controls.Add(this.kgDespachoTXT);
+            this.splitContainer3.Panel2.Controls.Add(this.kgPrensaTXT);
+            this.splitContainer3.Panel2.Controls.Add(this.totalBarrotesTXT);
+            this.splitContainer3.Panel2.Controls.Add(this.label9);
+            this.splitContainer3.Panel2.Controls.Add(this.label10);
+            this.splitContainer3.Panel2.Controls.Add(this.label7);
+            this.splitContainer3.Panel2.Controls.Add(this.label6);
+            this.splitContainer3.Panel2.Controls.Add(this.label5);
+            this.splitContainer3.Size = new System.Drawing.Size(643, 448);
+            this.splitContainer3.SplitterDistance = 304;
+            this.splitContainer3.TabIndex = 40;
             // 
             // Cuadro2
             // 
@@ -304,7 +358,9 @@ namespace Login
             this.OP,
             this.dataGridViewTextBoxColumn201,
             this.Articulo,
+            this.KgsPresa,
             this.dataGridViewTextBoxColumn200,
+            this.rendi,
             this.dataGridViewButtonColumn1});
             this.Cuadro2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Cuadro2.Location = new System.Drawing.Point(0, 0);
@@ -314,7 +370,7 @@ namespace Login
             this.Cuadro2.RowHeadersVisible = false;
             this.Cuadro2.RowHeadersWidth = 51;
             this.Cuadro2.RowTemplate.Height = 24;
-            this.Cuadro2.Size = new System.Drawing.Size(553, 448);
+            this.Cuadro2.Size = new System.Drawing.Size(643, 304);
             this.Cuadro2.TabIndex = 39;
             this.Cuadro2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cuadro2_CellClick);
             // 
@@ -323,7 +379,7 @@ namespace Login
             this.OP.HeaderText = "OP";
             this.OP.Name = "OP";
             this.OP.ReadOnly = true;
-            this.OP.Width = 60;
+            this.OP.Width = 40;
             // 
             // dataGridViewTextBoxColumn201
             // 
@@ -344,16 +400,35 @@ namespace Login
             this.Articulo.ReadOnly = true;
             this.Articulo.Width = 150;
             // 
+            // KgsPresa
+            // 
+            this.KgsPresa.HeaderText = "Kgs Presa";
+            this.KgsPresa.Name = "KgsPresa";
+            this.KgsPresa.ReadOnly = true;
+            this.KgsPresa.Width = 70;
+            // 
             // dataGridViewTextBoxColumn200
             // 
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridViewTextBoxColumn200.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewTextBoxColumn200.HeaderText = "Kgs";
+            this.dataGridViewTextBoxColumn200.HeaderText = "Kgs Despacho";
             this.dataGridViewTextBoxColumn200.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn200.Name = "dataGridViewTextBoxColumn200";
             this.dataGridViewTextBoxColumn200.ReadOnly = true;
-            this.dataGridViewTextBoxColumn200.Width = 90;
+            this.dataGridViewTextBoxColumn200.Width = 70;
+            // 
+            // rendi
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.rendi.DefaultCellStyle = dataGridViewCellStyle5;
+            this.rendi.HeaderText = "Rend. %";
+            this.rendi.Name = "rendi";
+            this.rendi.ReadOnly = true;
+            this.rendi.Width = 60;
             // 
             // dataGridViewButtonColumn1
             // 
@@ -365,13 +440,167 @@ namespace Login
             this.dataGridViewButtonColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewButtonColumn1.Text = "Ver Detalle";
             // 
+            // TiempoTXT
+            // 
+            this.TiempoTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TiempoTXT.ForeColor = System.Drawing.Color.Red;
+            this.TiempoTXT.Location = new System.Drawing.Point(506, 16);
+            this.TiempoTXT.Name = "TiempoTXT";
+            this.TiempoTXT.ReadOnly = true;
+            this.TiempoTXT.Size = new System.Drawing.Size(100, 22);
+            this.TiempoTXT.TabIndex = 61;
+            this.TiempoTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(356, 16);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(145, 30);
+            this.label8.TabIndex = 60;
+            this.label8.Text = "Tiempo de Trabajo:";
+            // 
+            // kgHoraTXT
+            // 
+            this.kgHoraTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kgHoraTXT.ForeColor = System.Drawing.Color.Red;
+            this.kgHoraTXT.Location = new System.Drawing.Point(506, 106);
+            this.kgHoraTXT.Name = "kgHoraTXT";
+            this.kgHoraTXT.ReadOnly = true;
+            this.kgHoraTXT.Size = new System.Drawing.Size(100, 22);
+            this.kgHoraTXT.TabIndex = 59;
+            this.kgHoraTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tochoHoraTXT
+            // 
+            this.tochoHoraTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tochoHoraTXT.ForeColor = System.Drawing.Color.Red;
+            this.tochoHoraTXT.Location = new System.Drawing.Point(506, 76);
+            this.tochoHoraTXT.Name = "tochoHoraTXT";
+            this.tochoHoraTXT.ReadOnly = true;
+            this.tochoHoraTXT.Size = new System.Drawing.Size(100, 22);
+            this.tochoHoraTXT.TabIndex = 58;
+            this.tochoHoraTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // kgDespachoTXT
+            // 
+            this.kgDespachoTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kgDespachoTXT.ForeColor = System.Drawing.Color.Red;
+            this.kgDespachoTXT.Location = new System.Drawing.Point(179, 76);
+            this.kgDespachoTXT.Name = "kgDespachoTXT";
+            this.kgDespachoTXT.ReadOnly = true;
+            this.kgDespachoTXT.Size = new System.Drawing.Size(100, 22);
+            this.kgDespachoTXT.TabIndex = 57;
+            this.kgDespachoTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // kgPrensaTXT
+            // 
+            this.kgPrensaTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kgPrensaTXT.ForeColor = System.Drawing.Color.Red;
+            this.kgPrensaTXT.Location = new System.Drawing.Point(178, 46);
+            this.kgPrensaTXT.Name = "kgPrensaTXT";
+            this.kgPrensaTXT.ReadOnly = true;
+            this.kgPrensaTXT.Size = new System.Drawing.Size(100, 22);
+            this.kgPrensaTXT.TabIndex = 56;
+            this.kgPrensaTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // totalBarrotesTXT
+            // 
+            this.totalBarrotesTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalBarrotesTXT.ForeColor = System.Drawing.Color.Red;
+            this.totalBarrotesTXT.Location = new System.Drawing.Point(178, 16);
+            this.totalBarrotesTXT.Name = "totalBarrotesTXT";
+            this.totalBarrotesTXT.ReadOnly = true;
+            this.totalBarrotesTXT.Size = new System.Drawing.Size(100, 22);
+            this.totalBarrotesTXT.TabIndex = 51;
+            this.totalBarrotesTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(373, 106);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(175, 33);
+            this.label9.TabIndex = 55;
+            this.label9.Text = "Prom. Kgs/hora:";
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(356, 76);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(145, 30);
+            this.label10.TabIndex = 54;
+            this.label10.Text = "Prom. Tocho/hora:";
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(16, 76);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(158, 33);
+            this.label7.TabIndex = 53;
+            this.label7.Text = "Total Kgs Despacho:";
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(38, 46);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(175, 33);
+            this.label6.TabIndex = 52;
+            this.label6.Text = "Total Kgs Prensa:";
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(58, 16);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(145, 30);
+            this.label5.TabIndex = 51;
+            this.label5.Text = "Total Barrotes:";
+            // 
+            // TiempoParadaTXT
+            // 
+            this.TiempoParadaTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TiempoParadaTXT.ForeColor = System.Drawing.Color.Red;
+            this.TiempoParadaTXT.Location = new System.Drawing.Point(506, 46);
+            this.TiempoParadaTXT.Name = "TiempoParadaTXT";
+            this.TiempoParadaTXT.ReadOnly = true;
+            this.TiempoParadaTXT.Size = new System.Drawing.Size(100, 22);
+            this.TiempoParadaTXT.TabIndex = 63;
+            this.TiempoParadaTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(354, 46);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(145, 30);
+            this.label11.TabIndex = 62;
+            this.label11.Text = "Tiempo de parada:";
+            // 
             // ReporteProduccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.CancelButton = this.Cancelar;
-            this.ClientSize = new System.Drawing.Size(778, 562);
+            this.ClientSize = new System.Drawing.Size(862, 562);
             this.ControlBox = false;
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -390,6 +619,11 @@ namespace Login
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            this.splitContainer3.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Cuadro2)).EndInit();
             this.ResumeLayout(false);
 
@@ -639,7 +873,24 @@ namespace Login
         private System.Windows.Forms.DataGridViewTextBoxColumn OP;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn201;
         private System.Windows.Forms.DataGridViewTextBoxColumn Articulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KgsPresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn200;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rendi;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox kgHoraTXT;
+        private System.Windows.Forms.TextBox tochoHoraTXT;
+        private System.Windows.Forms.TextBox kgDespachoTXT;
+        private System.Windows.Forms.TextBox kgPrensaTXT;
+        private System.Windows.Forms.TextBox totalBarrotesTXT;
+        private System.Windows.Forms.TextBox TiempoTXT;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox TiempoParadaTXT;
+        private System.Windows.Forms.Label label11;
     }
 }

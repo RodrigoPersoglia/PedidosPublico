@@ -174,3 +174,5 @@ C:\Users\usuario\Desktop\Pedidos - copia\Login\obj\Debug\Pedidos.exe
 C:\Users\usuario\Desktop\Pedidos - copia\Login\obj\Debug\Pedidos.pdb
 C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.fondo.resources
 C:\Users\usuario\Desktop\Pedidos\Login\obj\Debug\Login.ReporteNitrurado.resources
+C:\Users\usuario\Desktop\Pedidos - copia\Login\obj\Debug\Login.ReporteMatricesPesadas.resources
+C:\Users\usuario\Desktop\Pedidos - copia\Login\obj\Debug\Login.ReporteNitrurado.resources

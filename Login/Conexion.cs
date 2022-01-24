@@ -525,7 +525,7 @@ namespace Login
 
 
 
-		public static void AgregarDetallePedido(DateTime fecha, string horaInicio, string horaFin, double kgs, int tiras, string largoPerfil, double pesoMetro, string colada, string observaciones, int largoTocho, int cantidadTochos, int matriz_ID, int puesto_ID, int pedido_ID, int turno_ID, int Aleacion_ID,  int Kg)
+		public static void AgregarDetallePedido(DateTime fecha, string horaInicio, string horaFin, double kgs, int tiras, string largoPerfil, double pesoMetro, string colada, string observaciones, int largoTocho, int cantidadTochos, int matriz_ID, int puesto_ID, int pedido_ID, int turno_ID, int Aleacion_ID,  int Kg, int diamTocho, double kgPrensa)
 		{
 			MySqlConnection conectar = Conexion.ObtenerConexion();
 			conectar.Open();
@@ -550,6 +550,8 @@ namespace Login
 				comand.Parameters.AddWithValue("@turno_ID", turno_ID);
 				comand.Parameters.AddWithValue("@Aleacion_ID", Aleacion_ID);
 				comand.Parameters.AddWithValue("@kg_acumulados", Kg);
+				comand.Parameters.AddWithValue("@p18", diamTocho);
+				comand.Parameters.AddWithValue("@p19", kgPrensa);
 				comand.ExecuteNonQuery();
 				MessageBox.Show("Detalle de fabricación guardado");
 			}
@@ -747,7 +749,7 @@ namespace Login
 
 
 
-		public static void ModificarDetallePedido(int idDetalle,DateTime fecha, string horaInicio, string horaFin, double kgs, int tiras, string largoPerfil, double pesoMetro, string colada, string observaciones, int largoTocho, int cantidadTochos, int matriz_ID, int puesto_ID, int turno_ID, int Aleacion_ID,double kgs_Anteriores)
+		public static void ModificarDetallePedido(int idDetalle,DateTime fecha, string horaInicio, string horaFin, double kgs, int tiras, string largoPerfil, double pesoMetro, string colada, string observaciones, int largoTocho, int cantidadTochos, int matriz_ID, int puesto_ID, int turno_ID, int Aleacion_ID,double kgs_Anteriores,int diamTocho, double kgPrensa)
 		{
 			MySqlConnection conectar = Conexion.ObtenerConexion();
 			conectar.Open();
@@ -773,7 +775,8 @@ namespace Login
 				comand.Parameters.AddWithValue("@p14", observaciones);
 				comand.Parameters.AddWithValue("@p15", matriz_ID);
 				comand.Parameters.AddWithValue("@p16", kgs_Anteriores);
-
+				comand.Parameters.AddWithValue("@p18", diamTocho);
+				comand.Parameters.AddWithValue("@p19", kgPrensa);
 				comand.ExecuteNonQuery();
 				MessageBox.Show("Detalle de fabricación modificado");
 			}
@@ -1608,6 +1611,31 @@ namespace Login
 			finally { conectar.Close(); }
 		}
 
+
+
+		public static DataTable ReporteMatricesPesadas()
+		{
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			DataTable dt = new DataTable();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand("VerMatricesPesadas", conectar);
+				comand.CommandType = CommandType.StoredProcedure;
+				MySqlDataAdapter adp = new MySqlDataAdapter(comand);
+				adp.Fill(dt);
+				if (dt.Rows.Count > 0)
+				{
+
+					return dt;
+				}
+				else { MessageBox.Show("No hay registros"); return null; }
+
+			}
+
+			catch (Exception ex) { MessageBox.Show("Error al buscar " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); return null; }
+			finally { conectar.Close(); }
+		}
 	}
 
 

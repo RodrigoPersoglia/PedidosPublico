@@ -85,29 +85,33 @@ namespace Login
 					AleacionComboBox.Text = (string)Cuadro.Rows[n].Cells[10].Value;
 					ColadaTXT.Text = (string)Cuadro.Rows[n].Cells[11].Value;
 
-				try { LargoTochoTXT.Text = ((int)Cuadro.Rows[n].Cells[12].Value).ToString(); }
+					DiamTocho.Value = (int)Cuadro.Rows[n].Cells[12].Value;
+					try { LargoTochoTXT.Text = ((int)Cuadro.Rows[n].Cells[13].Value).ToString(); }
 				catch (Exception) { LargoTochoTXT.Text = ""; }
 
 
-				try { CanTochoTXT.Text = ((int)Cuadro.Rows[n].Cells[13].Value).ToString(); }
+				try { CanTochoTXT.Text = ((int)Cuadro.Rows[n].Cells[14].Value).ToString(); }
 				catch (Exception) { CanTochoTXT.Text = ""; }
 
 
 			
 
-				horaIN.Text = (string)Cuadro.Rows[n].Cells[14].Value;
-				HoraFin.Text = (string)Cuadro.Rows[n].Cells[15].Value;
+				horaIN.Text = (string)Cuadro.Rows[n].Cells[15].Value;
+				HoraFin.Text = (string)Cuadro.Rows[n].Cells[16].Value;
 
-				try { KgTXT.Text = ((double)Cuadro.Rows[n].Cells[16].Value).ToString(); }
+					try { KgPrensa.Text = ((double)Cuadro.Rows[n].Cells[17].Value).ToString(); }
+					catch (Exception) { KgTXT.Text = ""; }
+
+				try { KgTXT.Text = ((double)Cuadro.Rows[n].Cells[18].Value).ToString(); }
 				catch (Exception) { KgTXT.Text  = ""; }
 
-                try { TirasTXT.Text = ((int)Cuadro.Rows[n].Cells[17].Value).ToString(); }
+                try { TirasTXT.Text = ((int)Cuadro.Rows[n].Cells[19].Value).ToString(); }
                 catch (Exception) { TirasTXT.Text = ""; }
 
-                try { LargoTXT.Text = (string)Cuadro.Rows[n].Cells[18].Value; }
+                try { LargoTXT.Text = (string)Cuadro.Rows[n].Cells[20].Value; }
                 catch (Exception) { LargoTXT.Text = ""; }
 
-                try { ObervTXT.Text = (string)Cuadro.Rows[n].Cells[19].Value; }
+                try { ObervTXT.Text = (string)Cuadro.Rows[n].Cells[21].Value; }
                 catch (Exception) { ObervTXT.Text = ""; }
 
 
@@ -117,6 +121,8 @@ namespace Login
 
 
             }
+
+			CanTochoTXT_Leave(sender, e);
 
 
 
@@ -298,14 +304,16 @@ namespace Login
 							Cuadro.Rows[n].Cells[9].Value = (string)x[8];
 							Cuadro.Rows[n].Cells[10].Value = (string)x[9];
 							Cuadro.Rows[n].Cells[11].Value = (string)x[10];
-							Cuadro.Rows[n].Cells[12].Value = (int)x[11];
-							Cuadro.Rows[n].Cells[13].Value = (int)x[12];
-							Cuadro.Rows[n].Cells[14].Value = (string)x[13];
-							Cuadro.Rows[n].Cells[15].Value = (string)x[14];
-							Cuadro.Rows[n].Cells[16].Value = decimal.ToDouble((decimal)x[15]);
-							Cuadro.Rows[n].Cells[17].Value = (int)x[16];
-							Cuadro.Rows[n].Cells[18].Value = (string)x[17];
-							Cuadro.Rows[n].Cells[19].Value = (string)x[18];
+							Cuadro.Rows[n].Cells[12].Value = (int)x[19];
+							Cuadro.Rows[n].Cells[13].Value = (int)x[11];
+							Cuadro.Rows[n].Cells[14].Value = (int)x[12];
+							Cuadro.Rows[n].Cells[15].Value = ((TimeSpan)x[13]).ToString(@"hh\:mm");
+						Cuadro.Rows[n].Cells[16].Value = ((TimeSpan)x[14]).ToString(@"hh\:mm");
+						Cuadro.Rows[n].Cells[17].Value = decimal.ToDouble((decimal)x[20]);
+							Cuadro.Rows[n].Cells[18].Value = decimal.ToDouble((decimal)x[15]);
+							Cuadro.Rows[n].Cells[19].Value = (int)x[16];
+							Cuadro.Rows[n].Cells[20].Value = (string)x[17];
+							Cuadro.Rows[n].Cells[21].Value = (string)x[18];
 
 						}
 					}
@@ -426,7 +434,7 @@ namespace Login
 				}
 				catch (Exception) { }
 
-				Conexion.AgregarDetallePedido(FechaDTP.Value, horaIN.Text, HoraFin.Text, kg_fabricados, tiras_fabricadas, LargoTXT.Text, peso_metro, ColadaTXT.Text, ObervTXT.Text, largo_tochos, cantidad_tochos,(int)MatrizComboBox.SelectedValue, (int)PrensaCBX.SelectedValue, pedido.ID, (int)TurnoCBX.SelectedValue, (int)AleacionComboBox.SelectedValue, kg_acumulados);
+				Conexion.AgregarDetallePedido(FechaDTP.Value, horaIN.Text, HoraFin.Text, kg_fabricados, tiras_fabricadas, LargoTXT.Text, peso_metro, ColadaTXT.Text, ObervTXT.Text, largo_tochos, cantidad_tochos,(int)MatrizComboBox.SelectedValue, (int)PrensaCBX.SelectedValue, pedido.ID, (int)TurnoCBX.SelectedValue, (int)AleacionComboBox.SelectedValue, kg_acumulados,decimal.ToInt32(DiamTocho.Value),double.Parse(KgPrensa.Text));
 				Limpiar();
 				Buscar_Click(sender, e);
 
@@ -438,7 +446,7 @@ namespace Login
 						Conexion.ModificarEstado(pedido.Numero.ToString(), 5,false);
 						break;
 					case DialogResult.No:
-						Conexion.ModificarEstado(pedido.Numero.ToString(), 2,false);
+						//Conexion.ModificarEstado(pedido.Numero.ToString(), 2,false);
 						break;
 
 				}
@@ -476,6 +484,7 @@ namespace Login
 			TirasTXT.Text = "";
 			LargoTXT.Text = "";
 			ObervTXT.Text = "";
+			KgPrensa.Text = "";
 
 
 		}
@@ -581,9 +590,22 @@ namespace Login
 
 				if (check == true)
 				{
-					Conexion.ModificarDetallePedido((int)Cuadro.Rows[n].Cells[1].Value, FechaDTP.Value, horaIN.Text, HoraFin.Text, kg_fabricados, tiras_fabricadas, LargoTXT.Text, peso_metro, ColadaTXT.Text, ObervTXT.Text, largo_tochos, cantidad_tochos, (int)MatrizComboBox.SelectedValue, (int)PrensaCBX.SelectedValue, (int)TurnoCBX.SelectedValue, (int)AleacionComboBox.SelectedValue, (double)Cuadro.Rows[n].Cells[16].Value);
+					Conexion.ModificarDetallePedido((int)Cuadro.Rows[n].Cells[1].Value, FechaDTP.Value, horaIN.Text, HoraFin.Text, kg_fabricados, tiras_fabricadas, LargoTXT.Text, peso_metro, ColadaTXT.Text, ObervTXT.Text, largo_tochos, cantidad_tochos, (int)MatrizComboBox.SelectedValue, (int)PrensaCBX.SelectedValue, (int)TurnoCBX.SelectedValue, (int)AleacionComboBox.SelectedValue, (double)Cuadro.Rows[n].Cells[18].Value, decimal.ToInt32(DiamTocho.Value),double.Parse(KgPrensa.Text));
 					Limpiar();
 					Buscar_Click(sender, e);
+
+					DialogResult result = MessageBox.Show("¿Desea marcar el pedido " + pedido.Numero.ToString() + " como Terminado?", "Reporte de Producción", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+					switch (result)
+					{
+						case DialogResult.Yes:
+							Conexion.ModificarEstado(pedido.Numero.ToString(), 5, false);
+							break;
+						case DialogResult.No:
+							//Conexion.ModificarEstado(pedido.Numero.ToString(), 2, false);
+							break;
+
+					}
 				}
 
 
@@ -612,13 +634,72 @@ namespace Login
 
 			if (check == true)
 			{
-				Conexion.EliminarDetallePedido((int)Cuadro.Rows[n].Cells[1].Value, (int)Cuadro.Rows[n].Cells[6].Value, (double)Cuadro.Rows[n].Cells[16].Value);
+				Conexion.EliminarDetallePedido((int)Cuadro.Rows[n].Cells[1].Value, (int)Cuadro.Rows[n].Cells[6].Value, (double)Cuadro.Rows[n].Cells[18].Value);
 				Limpiar();
 				Buscar_Click(sender, e);
 			}
 
 
 			else { MessageBox.Show("No hay ningun registro seleccionado"); }
+		}
+
+        private void CanTochoTXT_TextChanged(object sender, EventArgs e)
+        {
+
+		}
+
+		private void CanTochoTXT_Leave(object sender, EventArgs e)
+		{
+            try
+            {
+                double radioTocho = (decimal.ToDouble(DiamTocho.Value) * 25.4) / 2;
+				double largoBarrote = double.Parse(LargoTochoTXT.Text) / 1000;
+				int cantidadBarrotes = int.Parse(CanTochoTXT.Text);
+				double pesobarrote = Math.Round((radioTocho * radioTocho) * Math.PI /1000 * 2.7 * largoBarrote, 2);
+				double kgPrensa = Math.Round(pesobarrote * 0.7 * cantidadBarrotes, 2);
+				KgPrensa.Text = kgPrensa.ToString();
+			}
+            catch (Exception) { KgPrensa.Text = "0"; }
+
+		}
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void KgPrensa_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                double radioTocho = (decimal.ToDouble(DiamTocho.Value) * 25.4) / 2;
+                double largoBarrote = double.Parse(LargoTochoTXT.Text) / 1000;
+                int cantidadBarrotes = int.Parse(CanTochoTXT.Text);
+                double pesobarrote = Math.Round((radioTocho * radioTocho) * Math.PI / 1000 * 2.7 * largoBarrote, 2);
+                double kgPrensa = double.Parse(KgPrensa.Text);
+                double porcentaje = kgPrensa / cantidadBarrotes / pesobarrote * 100;
+                Rendimiento1.Value = decimal.Parse(porcentaje.ToString());
+			}
+            catch (Exception) {
+			}
+
+}
+
+        private void KgTXT_TextChanged(object sender, EventArgs e)
+        {
+			try
+			{
+				double radioTocho = (decimal.ToDouble(DiamTocho.Value) * 25.4) / 2;
+				double largoBarrote = double.Parse(LargoTochoTXT.Text) / 1000;
+				int cantidadBarrotes = int.Parse(CanTochoTXT.Text);
+				double pesobarrote = Math.Round((radioTocho * radioTocho) * Math.PI / 1000 * 2.7 * largoBarrote, 2);
+				double kgr = double.Parse(KgTXT.Text);
+				double porcentaje = kgr / cantidadBarrotes / pesobarrote * 100;
+				Rendimiento2.Value = decimal.Parse(porcentaje.ToString());
+			}
+			catch (Exception)
+			{
+			}
 		}
     }
 }

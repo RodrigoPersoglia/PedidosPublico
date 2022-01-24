@@ -368,6 +368,12 @@
   <data name="reporteDeNitruradoToolStripMenuItem.Text" xml:space="preserve">
     <value>Reporte de Nitrurado</value>
   </data>
+  <data name="reporteMatricesPesadasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 26</value>
+  </data>
+  <data name="reporteMatricesPesadasToolStripMenuItem.Text" xml:space="preserve">
+    <value>Reporte Matrices Pesadas</value>
+  </data>
   <data name="reportesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 24</value>
   </data>
@@ -5106,6 +5112,12 @@
   <data name="&gt;&gt;reporteDeProducciónToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;reporteDeNitruradoToolStripMenuItem.Name" xml:space="preserve">
+    <value>reporteDeNitruradoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;reporteDeNitruradoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;usuarioToolStripMenuItem.Name" xml:space="preserve">
     <value>usuarioToolStripMenuItem</value>
   </data>
@@ -5118,10 +5130,10 @@
   <data name="&gt;&gt;ayudaToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;reporteDeNitruradoToolStripMenuItem.Name" xml:space="preserve">
-    <value>reporteDeNitruradoToolStripMenuItem</value>
+  <data name="&gt;&gt;reporteMatricesPesadasToolStripMenuItem.Name" xml:space="preserve">
+    <value>reporteMatricesPesadasToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;reporteDeNitruradoToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;reporteMatricesPesadasToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
