@@ -529,9 +529,9 @@ namespace Login
 		{
 			MySqlConnection conectar = Conexion.ObtenerConexion();
 			conectar.Open();
-			try
-			{
-				MySqlCommand comand = new MySqlCommand("AgregarDetalleFabricacion", conectar);
+            try
+            {
+                MySqlCommand comand = new MySqlCommand("AgregarDetalleFabricacion", conectar);
 				comand.CommandType = CommandType.StoredProcedure;
 				comand.Parameters.AddWithValue("@fecha", fecha);
 				comand.Parameters.AddWithValue("@horaInicio", horaInicio);
@@ -545,7 +545,7 @@ namespace Login
 				comand.Parameters.AddWithValue("@largoTocho", largoTocho);
 				comand.Parameters.AddWithValue("@cantidadTochos", cantidadTochos);
 				comand.Parameters.AddWithValue("@matriz_ID", matriz_ID);
-				comand.Parameters.AddWithValue("@puesto_ID", puesto_ID);
+				comand.Parameters.AddWithValue("@prensa", puesto_ID);
 				comand.Parameters.AddWithValue("@pedido_ID", pedido_ID);
 				comand.Parameters.AddWithValue("@turno_ID", turno_ID);
 				comand.Parameters.AddWithValue("@Aleacion_ID", Aleacion_ID);
@@ -554,7 +554,7 @@ namespace Login
 				comand.Parameters.AddWithValue("@p19", kgPrensa);
 				comand.ExecuteNonQuery();
 				MessageBox.Show("Detalle de fabricación guardado");
-			}
+        }
 			catch (Exception ex) { MessageBox.Show("Error " + ex.Message); }
 			finally { conectar.Close(); }
 
@@ -650,7 +650,11 @@ namespace Login
 						articulo.Topologia = (string)x[10];
 						articulo.Cliente = (string)x[11];
 						articulo.Precio = decimal.ToDouble((decimal)x[12]);
-						
+						articulo.Prensa = (int)x[13];
+						articulo.Ubicacion = (string)x[14];
+
+
+
 					}
 					return articulo;
 				}
@@ -695,7 +699,7 @@ namespace Login
 
 
 
-		public static DataTable ObtenerProyeccion (DateTime fecha)
+		public static DataTable ObtenerProyeccion (DateTime fecha, int prensa_ID)
         {
 			MySqlConnection conectar = Conexion.ObtenerConexion();
 			conectar.Open();
@@ -705,6 +709,7 @@ namespace Login
 				MySqlCommand comand = new MySqlCommand("proyeccion", conectar);
 				comand.CommandType = CommandType.StoredProcedure;
 				comand.Parameters.AddWithValue("@p1", fecha);
+				comand.Parameters.AddWithValue("@p2", prensa_ID);
 				MySqlDataAdapter adp = new MySqlDataAdapter(comand);
 				adp.Fill(dt);
 				if (dt.Rows.Count > 0)
@@ -721,7 +726,7 @@ namespace Login
 		}
 
 
-		public static DataTable ObtenerProyeccion2(DateTime fecha)
+		public static DataTable ObtenerProyeccion2(DateTime fecha, int prensa_ID)
 		{
 			MySqlConnection conectar = Conexion.ObtenerConexion();
 			conectar.Open();
@@ -731,6 +736,7 @@ namespace Login
 				MySqlCommand comand = new MySqlCommand("proyeccion2", conectar);
 				comand.CommandType = CommandType.StoredProcedure;
 				comand.Parameters.AddWithValue("@p1", fecha);
+				comand.Parameters.AddWithValue("@p2", prensa_ID);
 				MySqlDataAdapter adp = new MySqlDataAdapter(comand);
 				adp.Fill(dt);
 				if (dt.Rows.Count > 0)
@@ -746,10 +752,60 @@ namespace Login
 			finally { conectar.Close(); }
 		}
 
+		public static DataTable ObtenerProyeccion3(DateTime fecha, int prensa_ID)
+		{
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			DataTable dt = new DataTable();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand("proyeccion3", conectar);
+				comand.CommandType = CommandType.StoredProcedure;
+				comand.Parameters.AddWithValue("@p1", fecha);
+				comand.Parameters.AddWithValue("@p2", prensa_ID);
+				MySqlDataAdapter adp = new MySqlDataAdapter(comand);
+				adp.Fill(dt);
+				if (dt.Rows.Count > 0)
+				{
+
+					return dt;
+				}
+				else { MessageBox.Show("No hay registros en el intervalo seleccionado"); return null; }
+
+			}
+
+			catch (Exception ex) { MessageBox.Show("Error al buscar " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); return null; }
+			finally { conectar.Close(); }
+		}
+
+		public static DataTable ObtenerProyeccion4(DateTime fecha, int prensa_ID)
+		{
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			conectar.Open();
+			DataTable dt = new DataTable();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand("proyeccion4", conectar);
+				comand.CommandType = CommandType.StoredProcedure;
+				comand.Parameters.AddWithValue("@p1", fecha);
+				comand.Parameters.AddWithValue("@p2", prensa_ID);
+				MySqlDataAdapter adp = new MySqlDataAdapter(comand);
+				adp.Fill(dt);
+				if (dt.Rows.Count > 0)
+				{
+
+					return dt;
+				}
+				else { MessageBox.Show("No hay registros en el intervalo seleccionado"); return null; }
+
+			}
+
+			catch (Exception ex) { MessageBox.Show("Error al buscar " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); return null; }
+			finally { conectar.Close(); }
+		}
 
 
-
-		public static void ModificarDetallePedido(int idDetalle,DateTime fecha, string horaInicio, string horaFin, double kgs, int tiras, string largoPerfil, double pesoMetro, string colada, string observaciones, int largoTocho, int cantidadTochos, int matriz_ID, int puesto_ID, int turno_ID, int Aleacion_ID,double kgs_Anteriores,int diamTocho, double kgPrensa)
+		public static void ModificarDetallePedido(int idDetalle,DateTime fecha, string horaInicio, string horaFin, double kgs, int tiras, string largoPerfil, double pesoMetro, string colada, string observaciones, int largoTocho, int cantidadTochos, int matriz_ID, int puesto_ID, int turno_ID, int Aleacion_ID,double kgs_Anteriores,int diamTocho, double kgPrensa, int pedido_ID)
 		{
 			MySqlConnection conectar = Conexion.ObtenerConexion();
 			conectar.Open();
@@ -777,6 +833,7 @@ namespace Login
 				comand.Parameters.AddWithValue("@p16", kgs_Anteriores);
 				comand.Parameters.AddWithValue("@p18", diamTocho);
 				comand.Parameters.AddWithValue("@p19", kgPrensa);
+				comand.Parameters.AddWithValue("@p20", pedido_ID);
 				comand.ExecuteNonQuery();
 				MessageBox.Show("Detalle de fabricación modificado");
 			}

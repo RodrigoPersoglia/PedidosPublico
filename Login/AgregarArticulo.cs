@@ -103,8 +103,24 @@ namespace Login
 				ClienteComboBox.ValueMember = "ID";
 			}
 			catch (MySqlException ex) { MessageBox.Show("Error al buscar " + ex.Message,"Atención",MessageBoxButtons.OK,MessageBoxIcon.Error); }
-			finally{conectar.Close();} // Cerramos la conexion a la base de datos
 
+			// COMBOBOX PRENSA
+			string consulta6 = "Select ID,descripcion From Puesto p order by p.descripcion";
+			try
+			{
+				MySqlCommand comand = new MySqlCommand(consulta6, conectar);
+				reader = comand.ExecuteReader();
+				DataTable dt = new DataTable();
+				dt.Load(reader);
+				DataRow newRow = dt.NewRow();
+				newRow["descripcion"] = "Seleccione";
+				dt.Rows.InsertAt(newRow, 0);
+				PrensaCBX.DataSource = dt;
+				PrensaCBX.DisplayMember = "descripcion";
+				PrensaCBX.ValueMember = "ID";
+			}
+			catch (MySqlException ex) { MessageBox.Show("Error al buscar " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); } // Cerramos la conexion a la base de datos
 		}
 
 
@@ -130,16 +146,17 @@ namespace Login
 				int _clasificacionID = (int)ClasificacionComboBox.SelectedValue;
 				int _topologiaID = (int)TopologiaComboBox.SelectedValue;
 				int _clienteID = (int)ClienteComboBox.SelectedValue;
+				int _prensaID = (int)PrensaCBX.SelectedValue;
 
 				if (Conexion.ExisteArticulo(_codigo)) { MessageBox.Show("el codigo ingresado ya existe. Ingrese otro."); }
 				else
 				{
 
-					if ( _descripcion != "" && _tolerancia > 0 && _tolerancia < 50 && _multiplos < 6000 && AleacionComboBox.Text != "Seleccione" && TempleComboBox.Text != "Seleccione" && ClasificacionComboBox.Text != "Seleccione" && TopologiaComboBox.Text != "Seleccione" && ClienteComboBox.Text != "Seleccione")
+					if ( _descripcion != "" && _tolerancia > 0 && _tolerancia < 50 && _multiplos < 6000 && AleacionComboBox.Text != "Seleccione" && TempleComboBox.Text != "Seleccione" && ClasificacionComboBox.Text != "Seleccione" && TopologiaComboBox.Text != "Seleccione" && PrensaCBX.Text != "Seleccione" && ClienteComboBox.Text != "Seleccione")
 					{
 
 						//revisar aca
-						string sql = "INSERT INTO articulo (codigo,descripcion,pesoNominal, tolerancia,Aleacion_ID,Temple_ID,Clasificacion_ID,Topologia_ID,Cliente_ID) VALUES ('" + _codigo + "', '" + _descripcion + "','" + _pesoNominal + "','" + _tolerancia + "','" + _aleacionID + "','" + _templeID + "','" + _clasificacionID + "','" + _topologiaID + "','" + _clienteID + "')";
+						string sql = "INSERT INTO articulo (codigo,descripcion,pesoNominal, tolerancia,Aleacion_ID,Temple_ID,Clasificacion_ID,Topologia_ID,Cliente_ID,Puesto_ID,Ubicacion) VALUES ('" + _codigo + "', '" + _descripcion + "','" + _pesoNominal + "','" + _tolerancia + "','" + _aleacionID + "','" + _templeID + "','" + _clasificacionID + "','" + _topologiaID + "','" + _clienteID + "','" + _prensaID + "' , '" + UbicacionTXT.Text + "')";
 
 						MySqlConnection conexionBD = Conexion.ObtenerConexion();
 						conexionBD.Open();
@@ -159,7 +176,9 @@ namespace Login
 							ClasificacionComboBox.Text = "Seleccione";
 							TopologiaComboBox.Text = "Seleccione";
 							ClienteComboBox.Text = "Seleccione";
+							PrensaCBX.Text = "Seleccione";
 							pictureBox1.ImageLocation = null;
+							UbicacionTXT.Text = "";
 
                         }
                         catch (MySqlException ex)

@@ -130,7 +130,7 @@ namespace Login
             this.NumeroTxt.MaxLength = 20;
             this.NumeroTxt.Name = "NumeroTxt";
             this.NumeroTxt.Size = new System.Drawing.Size(152, 19);
-            this.NumeroTxt.TabIndex = 1;
+            this.NumeroTxt.TabIndex = 0;
             // 
             // ModificarBtn
             // 
@@ -608,7 +608,7 @@ namespace Login
             this.BuscarPedBTN.Location = new System.Drawing.Point(326, 100);
             this.BuscarPedBTN.Name = "BuscarPedBTN";
             this.BuscarPedBTN.Size = new System.Drawing.Size(65, 23);
-            this.BuscarPedBTN.TabIndex = 58;
+            this.BuscarPedBTN.TabIndex = 1;
             this.BuscarPedBTN.Text = "Buscar";
             this.BuscarPedBTN.UseVisualStyleBackColor = true;
             this.BuscarPedBTN.Click += new System.EventHandler(this.BuscarPedBTN_Click);

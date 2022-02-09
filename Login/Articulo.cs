@@ -20,7 +20,8 @@ namespace Login
         private string _topologia;
         private string _cliente;
         private double _precio;
-
+        private int _prensa;
+        private string _ubicacion;
 
 
 
@@ -39,7 +40,9 @@ namespace Login
         public double Precio{ get { return this._precio; } set { this._precio = value; } }
 
         public string Cliente { get { return this._cliente; } set { this._cliente = value; } }
+        public int Prensa { get { return this._prensa; } set { this._prensa = value; } }
 
+        public string Ubicacion { get { return this._ubicacion; } set { this._ubicacion = value; } }
 
         public Articulo() { }
 

@@ -80,6 +80,8 @@ namespace Login
             this.Ignorar_Chek = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Acumulados = new System.Windows.Forms.TextBox();
+            this.PrensaCBX = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Cuadro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -90,7 +92,7 @@ namespace Login
             // Buscar
             // 
             this.Buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Buscar.Location = new System.Drawing.Point(162, 43);
+            this.Buscar.Location = new System.Drawing.Point(200, 43);
             this.Buscar.Margin = new System.Windows.Forms.Padding(2);
             this.Buscar.Name = "Buscar";
             this.Buscar.Size = new System.Drawing.Size(67, 24);
@@ -370,7 +372,9 @@ namespace Login
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.Ignorar_Chek);
+            this.splitContainer1.Panel1.Controls.Add(this.PrensaCBX);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.Acumulados);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
@@ -391,7 +395,7 @@ namespace Login
             // 
             this.Ignorar_Chek.AutoSize = true;
             this.Ignorar_Chek.ForeColor = System.Drawing.Color.White;
-            this.Ignorar_Chek.Location = new System.Drawing.Point(15, 87);
+            this.Ignorar_Chek.Location = new System.Drawing.Point(15, 106);
             this.Ignorar_Chek.Name = "Ignorar_Chek";
             this.Ignorar_Chek.Size = new System.Drawing.Size(173, 17);
             this.Ignorar_Chek.TabIndex = 48;
@@ -419,6 +423,26 @@ namespace Login
             this.Acumulados.Size = new System.Drawing.Size(100, 22);
             this.Acumulados.TabIndex = 46;
             this.Acumulados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // PrensaCBX
+            // 
+            this.PrensaCBX.FormattingEnabled = true;
+            this.PrensaCBX.Location = new System.Drawing.Point(63, 72);
+            this.PrensaCBX.Name = "PrensaCBX";
+            this.PrensaCBX.Size = new System.Drawing.Size(125, 21);
+            this.PrensaCBX.TabIndex = 51;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(2, 72);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 17);
+            this.label4.TabIndex = 52;
+            this.label4.Text = "Prensa:";
             // 
             // Proyeccion
             // 
@@ -697,5 +721,7 @@ namespace Login
         private System.Windows.Forms.DataGridViewTextBoxColumn Prioridad;
         private System.Windows.Forms.DataGridViewTextBoxColumn KgEstimados;
         private System.Windows.Forms.DataGridViewTextBoxColumn Terminacion;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox PrensaCBX;
     }
 }

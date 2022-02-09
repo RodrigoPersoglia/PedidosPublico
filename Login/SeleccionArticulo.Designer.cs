@@ -41,6 +41,12 @@ namespace Login
             this.label1 = new System.Windows.Forms.Label();
             this.Busquedatext = new System.Windows.Forms.TextBox();
             this.Cuadro = new System.Windows.Forms.DataGridView();
+            this.Buscar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Cancelar = new System.Windows.Forms.Button();
+            this.Aceptar = new System.Windows.Forms.Button();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,12 +59,8 @@ namespace Login
             this.Clasificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Topologia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Buscar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Cancelar = new System.Windows.Forms.Button();
-            this.Aceptar = new System.Windows.Forms.Button();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Prensa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ubicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Cuadro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -115,7 +117,9 @@ namespace Login
             this.Temple,
             this.Clasificacion,
             this.Topologia,
-            this.Precio});
+            this.Precio,
+            this.Prensa,
+            this.Ubicacion});
             this.Cuadro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Cuadro.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Cuadro.Location = new System.Drawing.Point(0, 0);
@@ -127,78 +131,6 @@ namespace Login
             this.Cuadro.Size = new System.Drawing.Size(634, 298);
             this.Cuadro.TabIndex = 2;
             this.Cuadro.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Selecccioncelda);
-            // 
-            // Cliente
-            // 
-            this.Cliente.HeaderText = "Cliente";
-            this.Cliente.Name = "Cliente";
-            this.Cliente.Width = 80;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Visible = false;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.Width = 60;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 200;
-            // 
-            // PesoNominal
-            // 
-            this.PesoNominal.HeaderText = "Peso";
-            this.PesoNominal.Name = "PesoNominal";
-            this.PesoNominal.Width = 40;
-            // 
-            // Tolerancia
-            // 
-            this.Tolerancia.HeaderText = "Tolerancia";
-            this.Tolerancia.Name = "Tolerancia";
-            this.Tolerancia.Visible = false;
-            // 
-            // Multiplo
-            // 
-            this.Multiplo.HeaderText = "Multiplo";
-            this.Multiplo.Name = "Multiplo";
-            this.Multiplo.Visible = false;
-            // 
-            // Aleacion
-            // 
-            this.Aleacion.HeaderText = "Aleacion";
-            this.Aleacion.Name = "Aleacion";
-            this.Aleacion.Width = 60;
-            // 
-            // Temple
-            // 
-            this.Temple.HeaderText = "Temple";
-            this.Temple.Name = "Temple";
-            this.Temple.Width = 60;
-            // 
-            // Clasificacion
-            // 
-            this.Clasificacion.HeaderText = "Clasificacion";
-            this.Clasificacion.Name = "Clasificacion";
-            this.Clasificacion.Width = 70;
-            // 
-            // Topologia
-            // 
-            this.Topologia.HeaderText = "Topologia";
-            this.Topologia.Name = "Topologia";
-            this.Topologia.Width = 60;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.Visible = false;
             // 
             // Buscar
             // 
@@ -279,6 +211,90 @@ namespace Login
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
+            // 
+            // Cliente
+            // 
+            this.Cliente.HeaderText = "Cliente";
+            this.Cliente.Name = "Cliente";
+            this.Cliente.Width = 80;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.Width = 60;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Width = 200;
+            // 
+            // PesoNominal
+            // 
+            this.PesoNominal.HeaderText = "Peso";
+            this.PesoNominal.Name = "PesoNominal";
+            this.PesoNominal.Width = 40;
+            // 
+            // Tolerancia
+            // 
+            this.Tolerancia.HeaderText = "Tolerancia";
+            this.Tolerancia.Name = "Tolerancia";
+            this.Tolerancia.Visible = false;
+            // 
+            // Multiplo
+            // 
+            this.Multiplo.HeaderText = "Multiplo";
+            this.Multiplo.Name = "Multiplo";
+            this.Multiplo.Visible = false;
+            // 
+            // Aleacion
+            // 
+            this.Aleacion.HeaderText = "Aleacion";
+            this.Aleacion.Name = "Aleacion";
+            this.Aleacion.Width = 60;
+            // 
+            // Temple
+            // 
+            this.Temple.HeaderText = "Temple";
+            this.Temple.Name = "Temple";
+            this.Temple.Width = 60;
+            // 
+            // Clasificacion
+            // 
+            this.Clasificacion.HeaderText = "Clasificacion";
+            this.Clasificacion.Name = "Clasificacion";
+            this.Clasificacion.Width = 70;
+            // 
+            // Topologia
+            // 
+            this.Topologia.HeaderText = "Topologia";
+            this.Topologia.Name = "Topologia";
+            this.Topologia.Width = 60;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.Visible = false;
+            // 
+            // Prensa
+            // 
+            this.Prensa.HeaderText = "Prensa";
+            this.Prensa.Name = "Prensa";
+            this.Prensa.Visible = false;
+            // 
+            // Ubicacion
+            // 
+            this.Ubicacion.HeaderText = "Ubicacion";
+            this.Ubicacion.Name = "Ubicacion";
+            this.Ubicacion.Visible = false;
             // 
             // SeleccionArticulo
             // 
@@ -393,6 +409,7 @@ namespace Login
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn68;
         private System.Windows.Forms.DataGridViewTextBoxColumn clienteDataGridViewTextBoxColumn;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
@@ -405,6 +422,7 @@ namespace Login
         private System.Windows.Forms.DataGridViewTextBoxColumn Clasificacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Topologia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prensa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ubicacion;
     }
 }

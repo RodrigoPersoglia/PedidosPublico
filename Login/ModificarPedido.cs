@@ -636,6 +636,7 @@ namespace Login
 		{
 			Font Arial10 = new Font("Arial", 10, FontStyle.Regular);
 			Font ArialB14 = new Font("Arial Black", 14, FontStyle.Regular);
+			Font ArialB12 = new Font("Arial Black", 12, FontStyle.Regular);
 			Pen lineaFina = new Pen(Color.Black, 1);
 			Pen lineaGruesa = new Pen(Color.Black, 3);
 			int x = 40;
@@ -896,18 +897,44 @@ namespace Login
 			e.Graphics.DrawString(rend630_.rendimientos.ToString() + " %", Arial10, Brushes.Black, 860, 550);
 			e.Graphics.DrawString(rend630_.despunte_Perfil.ToString(), Arial10, Brushes.Black, 965, 550);
 			e.Graphics.DrawString(rend630_.cant_Tochos.ToString(), Arial10, Brushes.Black, 1070, 550);
+			string prensa = "";
+
+			string consulta5 = "select p.descripcion from puesto p where p.ID=" + articuloPedido.Prensa + " limit 1";
+			MySqlConnection conectar = Conexion.ObtenerConexion();
+			MySqlDataReader reader;
+			conectar.Open();
+			try
+			{
+				MySqlCommand comand = new MySqlCommand(consulta5, conectar);
+				reader = comand.ExecuteReader();
+				DataTable dt = new DataTable();
+				dt.Load(reader);
+				foreach (DataRow i in dt.Rows)
+				{
+
+					prensa = (string)i[0];
+				}
+			}
+			catch (MySqlException ex) { MessageBox.Show("Error al buscar " + ex.Message); }
+			finally { conectar.Close(); }
+
+			e.Graphics.DrawString("PRENSA ASIGNADA: " + prensa, ArialB12, Brushes.Black, 585, 580);
+
+
+
 
 
 			e.Graphics.DrawString("IMAGEN:", Arial10, Brushes.Black, 585, 70);
 			e.Graphics.DrawString("DATOS ADICIONALES", Arial10, Brushes.Black, 920, 90);
-			e.Graphics.DrawString("Peso nominal (kg/m): ", Arial10, Brushes.Black, 920, 125);
-			e.Graphics.DrawString(articuloPedido.PesoNominal.ToString(), Arial10, Brushes.Black, 1060, 125);
-			e.Graphics.DrawString("Peso máximo (kg/m):", Arial10, Brushes.Black, 920, 160);
-			e.Graphics.DrawString(Math.Round((articuloPedido.PesoNominal * 1.12), 3).ToString(), Arial10, Brushes.Black, 1060, 160);
-			e.Graphics.DrawString("Multiplo (mm):", Arial10, Brushes.Black, 920, 195);
-			e.Graphics.DrawString(articuloPedido.Multiplo.ToString(), Arial10, Brushes.Black, 1060, 195);
-			e.Graphics.DrawString("Precio:", Arial10, Brushes.Black, 920, 230);
-			e.Graphics.DrawString(articuloPedido.Clasificacion, Arial10, Brushes.Black, 1060, 230);
+			e.Graphics.DrawString("Peso nominal (kg/m): ", Arial10, Brushes.Black, 920, 120);
+			e.Graphics.DrawString(articuloPedido.PesoNominal.ToString(), Arial10, Brushes.Black, 1060, 120);
+			e.Graphics.DrawString("Peso máximo (kg/m):", Arial10, Brushes.Black, 920, 150);
+			e.Graphics.DrawString(Math.Round((articuloPedido.PesoNominal * 1.12), 3).ToString(), Arial10, Brushes.Black, 1060, 150);
+			e.Graphics.DrawString("Multiplo (mm):", Arial10, Brushes.Black, 920, 180);
+			e.Graphics.DrawString(articuloPedido.Multiplo.ToString(), Arial10, Brushes.Black, 1060, 180);
+			e.Graphics.DrawString("Precio:", Arial10, Brushes.Black, 920, 210);
+			e.Graphics.DrawString(articuloPedido.Clasificacion, Arial10, Brushes.Black, 1060, 210);
+			e.Graphics.DrawString("Ubicación matriz: " + articuloPedido.Ubicacion, Arial10, Brushes.Black, 920, 240);
 
 			Rectangle rect00 = new Rectangle(340, 92, 160, 30);
 			e.Graphics.DrawRectangle(lineaGruesa, rect00);

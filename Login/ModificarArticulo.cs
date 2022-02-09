@@ -115,7 +115,23 @@ namespace Login
 				ClienteComboBox.ValueMember = "ID";
 			}
 			catch (MySqlException ex) { MessageBox.Show("Error al buscar " + ex.Message,"Atención",MessageBoxButtons.OK,MessageBoxIcon.Error); }
-			finally{conectar.Close();} // Cerramos la conexion a la base de datos
+			// COMBOBOX PRENSA
+			string consulta6 = "Select ID,descripcion From Puesto p order by p.descripcion";
+			try
+			{
+				MySqlCommand comand = new MySqlCommand(consulta6, conectar);
+				reader = comand.ExecuteReader();
+				DataTable dt = new DataTable();
+				dt.Load(reader);
+				DataRow newRow = dt.NewRow();
+				newRow["descripcion"] = "Seleccione";
+				dt.Rows.InsertAt(newRow, 0);
+				PrensaCBX.DataSource = dt;
+				PrensaCBX.DisplayMember = "descripcion";
+				PrensaCBX.ValueMember = "ID";
+			}
+			catch (MySqlException ex) { MessageBox.Show("Error al buscar " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+			finally { conectar.Close(); } // Cerramos la conexion a la base de datos
 
 		}
 
@@ -146,10 +162,10 @@ namespace Login
 				else
 				{
 
-					if (_codigo != "" && _descripcion != "" && _tolerancia > 0 && _tolerancia < 50 && _multiplos < 6000 && AleacionComboBox.Text != "Seleccione" && TempleComboBox.Text != "Seleccione" && ClasificacionComboBox.Text != "Seleccione" && TopologiaComboBox.Text != "Seleccione" && ClienteComboBox.Text != "Seleccione")
+					if (_codigo != "" && _descripcion != "" && _tolerancia > 0 && _tolerancia < 50 && _multiplos < 6000 && AleacionComboBox.Text != "Seleccione" && TempleComboBox.Text != "Seleccione" && ClasificacionComboBox.Text != "Seleccione" && TopologiaComboBox.Text != "Seleccione" && ClienteComboBox.Text != "Seleccione" && PrensaCBX.Text != "Seleccione")
 					{
 						
-						string sql = "UPDATE articulo SET  codigo='" + _codigo + "', descripcion= '" + _descripcion + "',pesoNominal= '" + _pesoNominal + "', tolerancia= '" + _tolerancia + "', multiplo=  '" + _multiplos + "',  Aleacion_ID='" + _aleacionID + "',Temple_ID='" + _templeID + "', Clasificacion_ID='" + _clasificacionID + "', Topologia_ID='" + _topologiaID + "', Cliente_ID='" + _clienteID + "' WHERE ID='"+IDTex.Text+"'";
+						string sql = "UPDATE articulo SET  codigo='" + _codigo + "', descripcion= '" + _descripcion + "', Ubicacion= '" + UbicacionTXT.Text + "',pesoNominal= '" + _pesoNominal + "', tolerancia= '" + _tolerancia + "', multiplo=  '" + _multiplos + "',  Aleacion_ID='" + _aleacionID + "',Temple_ID='" + _templeID + "', Clasificacion_ID='" + _clasificacionID + "', Topologia_ID='" + _topologiaID + "', Cliente_ID='" + _clienteID + "',  Puesto_ID='" + PrensaCBX.SelectedValue + "' WHERE ID='" + IDTex.Text+"'";
 						MySqlConnection conexionBD = Conexion.ObtenerConexion();
 						conexionBD.Open();
 
@@ -171,6 +187,7 @@ namespace Login
 							TopologiaComboBox.Text = "Seleccione";
 							ClienteComboBox.Text = "Seleccione";
 							pictureBox1.Image = null;
+							UbicacionTXT.Text = "";
 						}
 
 
@@ -213,6 +230,8 @@ namespace Login
 			ClasificacionComboBox.Text = articulo.Clasificacion;
 			TopologiaComboBox.Text = articulo.Topologia;
 			ClienteComboBox.Text = articulo.Cliente;
+			PrensaCBX.SelectedValue = articulo.Prensa;
+			UbicacionTXT.Text = articulo.Ubicacion;
 			try
 			{
 				string ruta = "//Rodrigo/imagenes/" + articulo.Codigo + ".bmp";
@@ -241,6 +260,7 @@ namespace Login
 			TopologiaComboBox.Text = "Seleccione";
 			ClienteComboBox.Text = "Seleccione";
 			pictureBox1.Image = null;
+			PrensaCBX.Text = "Seleccione";
 		}
     }
 }

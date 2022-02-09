@@ -169,7 +169,7 @@ namespace Login
 
 			// COMBOBOX PRENSA
 			MySqlDataReader reader2;
-			string consulta2 = "Select ID,descripcion From Puesto a order by a.descripcion";
+			string consulta2 = "Select ID,descripcion From Puesto a where a.descripcion <> 'Sin Asignar' order by a.descripcion";
 			
 
 			try
@@ -590,7 +590,7 @@ namespace Login
 
 				if (check == true)
 				{
-					Conexion.ModificarDetallePedido((int)Cuadro.Rows[n].Cells[1].Value, FechaDTP.Value, horaIN.Text, HoraFin.Text, kg_fabricados, tiras_fabricadas, LargoTXT.Text, peso_metro, ColadaTXT.Text, ObervTXT.Text, largo_tochos, cantidad_tochos, (int)MatrizComboBox.SelectedValue, (int)PrensaCBX.SelectedValue, (int)TurnoCBX.SelectedValue, (int)AleacionComboBox.SelectedValue, (double)Cuadro.Rows[n].Cells[18].Value, decimal.ToInt32(DiamTocho.Value),double.Parse(KgPrensa.Text));
+					Conexion.ModificarDetallePedido((int)Cuadro.Rows[n].Cells[1].Value, FechaDTP.Value, horaIN.Text, HoraFin.Text, kg_fabricados, tiras_fabricadas, LargoTXT.Text, peso_metro, ColadaTXT.Text, ObervTXT.Text, largo_tochos, cantidad_tochos, (int)MatrizComboBox.SelectedValue, (int)PrensaCBX.SelectedValue, (int)TurnoCBX.SelectedValue, (int)AleacionComboBox.SelectedValue, (double)Cuadro.Rows[n].Cells[18].Value, decimal.ToInt32(DiamTocho.Value),double.Parse(KgPrensa.Text),pedido.ID);
 					Limpiar();
 					Buscar_Click(sender, e);
 

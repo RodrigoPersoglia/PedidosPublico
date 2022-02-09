@@ -62,6 +62,8 @@ namespace Login
 						Cuadro.Rows[n].Cells[9].Value = (string)x[9];
 						Cuadro.Rows[n].Cells[10].Value = (string)x[10];
 						Cuadro.Rows[n].Cells[11].Value = decimal.ToDouble((decimal)x[12]);
+						Cuadro.Rows[n].Cells[12].Value = (int)x[13];
+						Cuadro.Rows[n].Cells[13].Value = (string)x[14];
 
 					}
 			}
@@ -108,6 +110,9 @@ namespace Login
 			ArticuloSeleccionado.Clasificacion = Cuadro.Rows[n].Cells[9].Value.ToString();
 			ArticuloSeleccionado.Topologia = Cuadro.Rows[n].Cells[10].Value.ToString();
 			ArticuloSeleccionado.Precio = Double.Parse(Cuadro.Rows[n].Cells[11].Value.ToString());
+			ArticuloSeleccionado.Prensa = int.Parse(Cuadro.Rows[n].Cells[12].Value.ToString());
+			ArticuloSeleccionado.Ubicacion = Cuadro.Rows[n].Cells[13].Value.ToString();
+
 			this.Close();
 
 		}
@@ -150,6 +155,8 @@ namespace Login
 						Cuadro.Rows[n].Cells[9].Value = (string)x[9];
 						Cuadro.Rows[n].Cells[10].Value = (string)x[10];
 						Cuadro.Rows[n].Cells[11].Value = decimal.ToDouble((decimal)x[12]);
+						Cuadro.Rows[n].Cells[12].Value = (int)x[13];
+						Cuadro.Rows[n].Cells[13].Value = (string)x[14];
 
 					}
 				}

@@ -70,6 +70,10 @@ namespace Login
             this.label12 = new System.Windows.Forms.Label();
             this.BuscarBoton = new System.Windows.Forms.Button();
             this.IDTex = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.PrensaCBX = new System.Windows.Forms.ComboBox();
+            this.UbicacionTXT = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PesoNominalTxt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToleranciaTxt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -135,7 +139,7 @@ namespace Login
             this.DescripcionTxt.MaxLength = 60;
             this.DescripcionTxt.Name = "DescripcionTxt";
             this.DescripcionTxt.Size = new System.Drawing.Size(265, 19);
-            this.DescripcionTxt.TabIndex = 2;
+            this.DescripcionTxt.TabIndex = 3;
             // 
             // label8
             // 
@@ -167,7 +171,7 @@ namespace Login
             this.PesoNominalTxt.Margin = new System.Windows.Forms.Padding(4);
             this.PesoNominalTxt.Name = "PesoNominalTxt";
             this.PesoNominalTxt.Size = new System.Drawing.Size(267, 19);
-            this.PesoNominalTxt.TabIndex = 3;
+            this.PesoNominalTxt.TabIndex = 4;
             // 
             // ToleranciaTxt
             // 
@@ -175,16 +179,16 @@ namespace Login
             this.ToleranciaTxt.Margin = new System.Windows.Forms.Padding(4);
             this.ToleranciaTxt.Name = "ToleranciaTxt";
             this.ToleranciaTxt.Size = new System.Drawing.Size(267, 19);
-            this.ToleranciaTxt.TabIndex = 4;
+            this.ToleranciaTxt.TabIndex = 5;
             // 
             // ModificarBoton
             // 
             this.ModificarBoton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ModificarBoton.Location = new System.Drawing.Point(219, 446);
+            this.ModificarBoton.Location = new System.Drawing.Point(219, 502);
             this.ModificarBoton.Margin = new System.Windows.Forms.Padding(4);
             this.ModificarBoton.Name = "ModificarBoton";
             this.ModificarBoton.Size = new System.Drawing.Size(120, 33);
-            this.ModificarBoton.TabIndex = 12;
+            this.ModificarBoton.TabIndex = 14;
             this.ModificarBoton.Text = "Modificar";
             this.ModificarBoton.UseVisualStyleBackColor = true;
             this.ModificarBoton.Click += new System.EventHandler(this.CrearClick);
@@ -193,11 +197,11 @@ namespace Login
             // 
             this.Cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancelar.Location = new System.Drawing.Point(366, 446);
+            this.Cancelar.Location = new System.Drawing.Point(366, 502);
             this.Cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(120, 33);
-            this.Cancelar.TabIndex = 13;
+            this.Cancelar.TabIndex = 15;
             this.Cancelar.Text = "Salir";
             this.Cancelar.UseVisualStyleBackColor = true;
             this.Cancelar.Click += new System.EventHandler(this.CancelarClick);
@@ -236,7 +240,7 @@ namespace Login
             0});
             this.MultiplosTxt.Name = "MultiplosTxt";
             this.MultiplosTxt.Size = new System.Drawing.Size(267, 19);
-            this.MultiplosTxt.TabIndex = 5;
+            this.MultiplosTxt.TabIndex = 6;
             // 
             // AleacionComboBox
             // 
@@ -246,7 +250,7 @@ namespace Login
             this.AleacionComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.AleacionComboBox.Name = "AleacionComboBox";
             this.AleacionComboBox.Size = new System.Drawing.Size(265, 21);
-            this.AleacionComboBox.TabIndex = 6;
+            this.AleacionComboBox.TabIndex = 7;
             // 
             // TempleComboBox
             // 
@@ -255,7 +259,7 @@ namespace Login
             this.TempleComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.TempleComboBox.Name = "TempleComboBox";
             this.TempleComboBox.Size = new System.Drawing.Size(265, 21);
-            this.TempleComboBox.TabIndex = 7;
+            this.TempleComboBox.TabIndex = 8;
             // 
             // ClasificacionComboBox
             // 
@@ -264,7 +268,7 @@ namespace Login
             this.ClasificacionComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.ClasificacionComboBox.Name = "ClasificacionComboBox";
             this.ClasificacionComboBox.Size = new System.Drawing.Size(265, 21);
-            this.ClasificacionComboBox.TabIndex = 8;
+            this.ClasificacionComboBox.TabIndex = 9;
             // 
             // TopologiaComboBox
             // 
@@ -273,7 +277,7 @@ namespace Login
             this.TopologiaComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.TopologiaComboBox.Name = "TopologiaComboBox";
             this.TopologiaComboBox.Size = new System.Drawing.Size(265, 21);
-            this.TopologiaComboBox.TabIndex = 9;
+            this.TopologiaComboBox.TabIndex = 10;
             // 
             // ClienteComboBox
             // 
@@ -282,7 +286,7 @@ namespace Login
             this.ClienteComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.ClienteComboBox.Name = "ClienteComboBox";
             this.ClienteComboBox.Size = new System.Drawing.Size(265, 21);
-            this.ClienteComboBox.TabIndex = 10;
+            this.ClienteComboBox.TabIndex = 11;
             // 
             // label3
             // 
@@ -368,7 +372,7 @@ namespace Login
             this.BuscarBoton.Margin = new System.Windows.Forms.Padding(4);
             this.BuscarBoton.Name = "BuscarBoton";
             this.BuscarBoton.Size = new System.Drawing.Size(88, 31);
-            this.BuscarBoton.TabIndex = 33;
+            this.BuscarBoton.TabIndex = 2;
             this.BuscarBoton.Text = "Buscar";
             this.BuscarBoton.UseVisualStyleBackColor = true;
             this.BuscarBoton.Click += new System.EventHandler(this.BuscarBoton_Click);
@@ -380,8 +384,48 @@ namespace Login
             this.IDTex.MaxLength = 20;
             this.IDTex.Name = "IDTex";
             this.IDTex.Size = new System.Drawing.Size(265, 19);
-            this.IDTex.TabIndex = 34;
+            this.IDTex.TabIndex = 0;
             this.IDTex.Visible = false;
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(59, 410);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(129, 23);
+            this.label13.TabIndex = 36;
+            this.label13.Text = "PRENSA";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // PrensaCBX
+            // 
+            this.PrensaCBX.FormattingEnabled = true;
+            this.PrensaCBX.Location = new System.Drawing.Point(219, 410);
+            this.PrensaCBX.Name = "PrensaCBX";
+            this.PrensaCBX.Size = new System.Drawing.Size(200, 21);
+            this.PrensaCBX.TabIndex = 12;
+            // 
+            // UbicacionTXT
+            // 
+            this.UbicacionTXT.Location = new System.Drawing.Point(219, 448);
+            this.UbicacionTXT.MaxLength = 20;
+            this.UbicacionTXT.Name = "UbicacionTXT";
+            this.UbicacionTXT.Size = new System.Drawing.Size(200, 19);
+            this.UbicacionTXT.TabIndex = 13;
+            // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(67, 448);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(129, 23);
+            this.label14.TabIndex = 38;
+            this.label14.Text = "UBICACION";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // ModificarArticulo
             // 
@@ -392,6 +436,10 @@ namespace Login
             this.CancelButton = this.Cancelar;
             this.ClientSize = new System.Drawing.Size(735, 548);
             this.ControlBox = false;
+            this.Controls.Add(this.UbicacionTXT);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.PrensaCBX);
             this.Controls.Add(this.IDTex);
             this.Controls.Add(this.BuscarBoton);
             this.Controls.Add(this.label12);
@@ -449,5 +497,9 @@ namespace Login
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button BuscarBoton;
         private System.Windows.Forms.TextBox IDTex;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox PrensaCBX;
+        private System.Windows.Forms.TextBox UbicacionTXT;
+        private System.Windows.Forms.Label label14;
     }
 }

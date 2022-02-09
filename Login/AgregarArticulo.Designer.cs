@@ -70,6 +70,10 @@ namespace Login
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.PrensaCBX = new System.Windows.Forms.ComboBox();
+            this.UbicacionTXT = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PesoNominalTxt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToleranciaTxt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -170,10 +174,10 @@ namespace Login
             // Crear
             // 
             this.Crear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Crear.Location = new System.Drawing.Point(162, 368);
+            this.Crear.Location = new System.Drawing.Point(164, 392);
             this.Crear.Name = "Crear";
             this.Crear.Size = new System.Drawing.Size(90, 27);
-            this.Crear.TabIndex = 12;
+            this.Crear.TabIndex = 13;
             this.Crear.Text = "Crear";
             this.Crear.UseVisualStyleBackColor = true;
             this.Crear.Click += new System.EventHandler(this.CrearClick);
@@ -182,10 +186,10 @@ namespace Login
             // 
             this.Cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancelar.Location = new System.Drawing.Point(274, 368);
+            this.Cancelar.Location = new System.Drawing.Point(276, 392);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(90, 27);
-            this.Cancelar.TabIndex = 13;
+            this.Cancelar.TabIndex = 14;
             this.Cancelar.Text = "Salir";
             this.Cancelar.UseVisualStyleBackColor = true;
             this.Cancelar.Click += new System.EventHandler(this.CancelarClick);
@@ -336,6 +340,46 @@ namespace Login
             this.label12.Text = "IMAGEN";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(12, 331);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(129, 23);
+            this.label13.TabIndex = 34;
+            this.label13.Text = "PRENSA";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // PrensaCBX
+            // 
+            this.PrensaCBX.FormattingEnabled = true;
+            this.PrensaCBX.Location = new System.Drawing.Point(164, 333);
+            this.PrensaCBX.Name = "PrensaCBX";
+            this.PrensaCBX.Size = new System.Drawing.Size(200, 21);
+            this.PrensaCBX.TabIndex = 11;
+            // 
+            // UbicacionTXT
+            // 
+            this.UbicacionTXT.Location = new System.Drawing.Point(164, 360);
+            this.UbicacionTXT.MaxLength = 20;
+            this.UbicacionTXT.Name = "UbicacionTXT";
+            this.UbicacionTXT.Size = new System.Drawing.Size(200, 19);
+            this.UbicacionTXT.TabIndex = 12;
+            // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(12, 360);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(129, 23);
+            this.label14.TabIndex = 36;
+            this.label14.Text = "UBICACION";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // AgregarArticulo
             // 
             this.AcceptButton = this.Crear;
@@ -345,6 +389,10 @@ namespace Login
             this.CancelButton = this.Cancelar;
             this.ClientSize = new System.Drawing.Size(551, 445);
             this.ControlBox = false;
+            this.Controls.Add(this.UbicacionTXT);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.PrensaCBX);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -397,5 +445,9 @@ namespace Login
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox PrensaCBX;
+        private System.Windows.Forms.TextBox UbicacionTXT;
+        private System.Windows.Forms.Label label14;
     }
 }
