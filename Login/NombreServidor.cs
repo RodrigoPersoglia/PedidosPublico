@@ -27,9 +27,7 @@ namespace Login
         {
             string rutaCompleta = @"NombreServidor.txt";
             string texto = ServidorTXT.Text;
-            StreamWriter file = new StreamWriter(rutaCompleta, true);
-            file.WriteLine(texto); 
-            file.Close();
+            File.WriteAllText(rutaCompleta, texto); //escribe y cierra, si no existe lo crea
             this.Close();
         }
     }

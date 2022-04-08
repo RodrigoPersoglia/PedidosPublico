@@ -452,7 +452,8 @@ namespace Login
 			
 			
 			
-			// dimensiones de la hoja A4 en puntos 1169 x 826 (297 x 210 mm) factor de conversion 3.93
+			// dimensiones de la hoja A4 en puntos 1169 x 826 (297 x 210 mm) factor de conversion 3.93 probar 794*1123
+
 			Rectangle rect0 = new Rectangle(20, 20, 1129,786);
 			e.Graphics.DrawRectangle(lineaGruesa, rect0);
 

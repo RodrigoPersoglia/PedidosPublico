@@ -26,9 +26,10 @@ namespace Login
             {
 				StreamReader sr = new StreamReader("NombreServidor.txt");
 				servidor = sr.ReadLine();
+				sr.Close();
 			}
 			catch (Exception) { }
-			MySqlConnection Conexion = new MySqlConnection("Server="+servidor+";database=pedidos;Uid=cuaquierUsuario;pwd=;");
+			MySqlConnection Conexion = new MySqlConnection("Server="+servidor+";database=pedidos;Uid=cualquierUsuario;pwd=;");
 			
 			return Conexion;
 		}

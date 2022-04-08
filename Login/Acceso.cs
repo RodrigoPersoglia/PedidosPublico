@@ -33,11 +33,11 @@ namespace Login
 
 		void EntrarClick(object sender, EventArgs e)
         {
-			try
-			{
+            try
+            {
 
 
-				MySqlConnection conectar = Conexion.ObtenerConexion();
+                MySqlConnection conectar = Conexion.ObtenerConexion();
 				conectar.Open();
 				DataTable dt = new DataTable();
 				try
@@ -146,14 +146,14 @@ namespace Login
 				catch (Exception ex) { MessageBox.Show("Error al buscar " + ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error); ; }
 
 				finally { conectar.Close(); }
-			}
+        }
 
             catch (Exception)
 			{ 
 				AutoClosingMessageBox.Show("No se encuentra el servidor","Error",MessageBoxButtons.OK,MessageBoxIcon.Error,1200);
 				NombreServidor nameServer = new NombreServidor();
-				nameServer.Show();
+        nameServer.Show();
 			}
-		}
+}
 	}
 }
